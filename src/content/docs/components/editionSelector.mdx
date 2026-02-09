@@ -1,0 +1,67 @@
+---
+type: "component"
+title: "Edition selector"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  Edition selection presents a single release of a dataset within the Edition selector, helping users understand and navigate between different editions. Each tile clearly communicates whether an edition is current or previous, alongside key metadata such as release date and accreditation status. Together, these selections support confident navigation and version awareness across dataset pages.
+properties:
+  - name: "Page"
+    type: "Variant"
+    default: "1"
+  - name: "Number of editions"
+    type: "Text"
+    default: "[number]"
+nestedInstances:
+  - id: editionSelection
+    component: "Edition selection"
+---
+
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+
+<FigmaDesign
+  embedHeight={680}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1328-4315&t=nldLDu3sgvIPPnjv-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1328-4315&m=dev&t=nldLDu3sgvIPPnjv-1"
+/>
+
+## Overview
+
+The Edition selector component allows users to browse and move between different editions of a dataset without leaving the context of the dataset page. An edition represents a specific release of a dataset. Editions may be time-based (for example, “2025 edition” or “November 2024 edition”), geography-based, or differentiated by the type of data they contain, such as glossaries or supplementary releases.
+
+This component works in conjunction with the [Edition selection](/components/editionSelection) components (tiles), which represent individual editions. Together, they form a horizontally navigable list that clearly communicates which edition the user is currently viewing, while making it easy to explore previous or alternative editions.
+
+## Purpose and intent
+
+Historically, users navigated between dataset editions by moving back and forth between a listing page and individual dataset pages. This pattern introduced unnecessary context switching and made it harder for users to understand how editions relate to one another.
+
+The Edition selector brings the list of editions directly into the dataset edition page itself. This allows users to:
+* clearly see when they are viewing the latest edition
+* understand that other editions exist
+* move between editions without leaving the dataset context
+
+By keeping the editions visible and accessible, the component supports comparison, discovery, and confidence that the user is working with the correct version of the data.
+
+## Structure and behaviour
+
+The Edition selector presents a horizontal sequence of [Edition selection](/components/editionSelection) tiles. Where the number of editions exceeds the available horizontal space, pagination controls are provided to allow users to move through the list.
+
+The pagination follows the same pattern used elsewhere on the site (for example, in search results), ensuring a familiar interaction and reducing cognitive load. Although the component introduces a new use case, it intentionally reuses an established interaction pattern to maintain consistency across the service.
+
+To support a smooth and responsive experience, the full list of editions should be rendered on page load. Pagination and navigation between editions should not require a page reload. This approach avoids unnecessary delays, improves performance perception, and works well across both desktop and touch-based devices.
+
+## Ordering logic
+
+Editions should be ordered in a clear and predictable way, with the most recent edition presented first. This ensures that users are immediately exposed to the latest release and do not need to infer recency from titles or dates alone.
+
+Previous editions should follow in descending order based on their release date or relevant sequencing logic. Maintaining a consistent ordering helps users scan the list quickly, understand the historical progression of the dataset, and locate specific editions with minimal effort.
+
+Ordering should remain consistent regardless of pagination, so that moving between pages of editions does not disrupt the user's mental model of the dataset's release history.
+
+## Design considerations
+
+The component is designed to be compact and unobtrusive. Dataset pages are often content-heavy, and the Edition selector should support navigation without competing with the primary task of reading or using the data.
+
+Visual emphasis is placed on the currently active edition through the active tile variant, while inactive editions remain discoverable but visually secondary. This helps users quickly orient themselves without overwhelming them with options.
+
+The Edition selector is always be paired with [Edition selection](/components/editionSelection) tiles and used specifically in the context of dataset edition pages.

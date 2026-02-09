@@ -1,0 +1,31 @@
+---
+type: "component"
+title: "File download"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  Edition selection presents a single release of a dataset within the Edition selector, helping users understand and navigate between different editions. Each tile clearly communicates whether an edition is current or previous, alongside key metadata such as release date and accreditation status. Together, these selections support confident navigation and version awareness across dataset pages.
+properties:
+  - name: "File format"
+    type: "Text"
+    default: "True"
+  - name: "File name"
+    type: "Text"
+    default: "True"
+  - name: "Supporting information"
+    type: "Text"
+    default: "True"
+nestedInstances:
+  - id: icon
+    component: "Icon"
+---
+
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+
+<FigmaDesign
+  embedHeight={400}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=580-4363&t=nldLDu3sgvIPPnjv-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1204-2210&m=dev&t=nldLDu3sgvIPPnjv-1"
+/>
+
+## Overview

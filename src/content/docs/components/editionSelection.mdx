@@ -1,0 +1,88 @@
+---
+type: "component"
+title: "Edition selection"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  Edition selection presents a single release of a dataset within the Edition selector, helping users understand and navigate between different editions. Each tile clearly communicates whether an edition is current or previous, alongside key metadata such as release date and accreditation status. Together, these selections support confident navigation and version awareness across dataset pages.
+properties:
+  - name: "Active"
+    type: "Boolean"
+    default: "True"
+  - name: "Release date"
+    type: "Text"
+    default: "Released on [date]"
+  - name: "Show accredited statistics badge"
+    type: "Boolean"
+    default: "True"
+nestedInstances:
+  - id: heading
+    component: "Heading"
+---
+
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+
+<FigmaDesign
+  embedHeight={400}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1204-2210&t=nldLDu3sgvIPPnjv-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1204-2210&m=dev&t=nldLDu3sgvIPPnjv-1"
+/>
+
+## Overview
+
+The Edition selection component represents a single edition of a dataset and acts as a navigational tile within the parent [Edition selector](/components/editionSelector) component. It allows users to understand and move between different releases of the same dataset, providing clarity about what data is available and which edition they are currently viewing.
+
+An *edition* is a specific release of a dataset. Datasets may have multiple editions over time or by scope, and users often need to compare or navigate between them confidently.
+
+## Purpose and goals
+
+The Edition selection component exists to make dataset releases easy to identify and select. It supports users by clearly communicating:
+* which edition they are viewing
+* which editions are available
+* whether an edition is current or superseded
+* key metadata that helps users assess relevance and trust
+
+The component is designed to reduce ambiguity around dataset versions and to support informed navigation rather than simple chronological browsing.
+
+## When to use this component
+
+Use the Edition selection component when presenting multiple editions of a dataset and allowing users to move between them. It should always be used as part of the [Edition selector](/components/editionSelector) component and is not intended for standalone use elsewhere in the interface.
+
+This component is particularly useful when datasets:
+* are released on a regular schedule (for example, monthly or yearly)
+* vary by geography or scope
+* provide alternative versions such as glossaries or supporting datasets
+
+## Structure and content
+
+Each Edition selection tile presents a concise summary of a dataset edition. It includes:
+* the edition title, which clearly identifies the release (for example by time period, region, or content type)
+* the release date, providing temporal context
+an indicator showing whether the edition is the latest or a previous release
+* an accreditation indicator where applicable, signalling official Accredited Statistics status
+
+This information is intentionally compact, allowing users to scan multiple editions quickly without needing to open each one.
+
+
+
+## States and visual treatment
+
+The component has two visual variants: **inactive** and **active**.
+
+The **inactive** variant represents editions that are available to navigate to. These tiles are clickable and use neutral colours to avoid drawing undue attention away from the current edition. The edition title is presented as a link, clearly indicating that selecting it will navigate the user to a different edition.
+
+The **active** variant represents the edition the user is currently viewing. It is visually emphasised using the primary brand colour palette to provide clear orientation and reassurance. In this state, the title is displayed as plain text rather than a link, reinforcing that the user is already on that edition and preventing redundant navigation.
+
+This distinction helps users understand their current context at a glance and reduces the risk of confusion when multiple editions are presented together.
+
+## Behaviour and interaction
+
+Selecting an inactive Edition selection tile navigates the user to the corresponding dataset edition. Only one tile should ever be in the active state at any given time.
+
+The component itself does not manage selection logic; it visually reflects the state passed to it by the parent [Edition selector](/components/editionSelector). This separation ensures the component remains predictable and reusable within the wider pattern.
+
+## Relationship to the Edition selector
+
+The Edition selection component is a *building block*, not a complete solution. It is designed to be composed within the Edition selector, which handles layout, grouping, and overall navigation behaviour.
+
+By keeping the Edition selection focused on presentation and state, the design system allows the Edition selector to remain flexible while ensuring consistent visual and interaction patterns across all dataset pages.
