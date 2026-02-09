@@ -1,0 +1,83 @@
+---
+type: "component"
+title: "Contact details"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  The Contact details component provides a consistent way to present information about the team responsible for a piece of content. It helps users find the right point of contact quickly, improving confidence and reducing friction when support or clarification is needed.
+properties:
+  - name: "Show team"
+    type: "Boolean"
+    default: "True"
+  - name: "Team name"
+    type: "Text"
+    default: "[Contact team]"
+  - name: "Show email"
+    type: "Boolean"
+    default: "True"
+  - name: "Email address"
+    type: "Text"
+    default: "[example@email.com]"
+  - name: "Show telephone"
+    type: "Boolean"
+    default: "True"
+  - name: "Telephone number"
+    type: "Text"
+    default: "[Telephone number]"
+---
+{/* 
+import FigmaDesign from '../../components/FigmaDesign.astro';
+import ComponentProperties from '../../components/ComponentProperties.astro';
+
+<FigmaDesign
+  embedHeight={560}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=863-1505&t=vRilS4jjdeGYMIwB-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=863-1505&m=dev&t=vRilS4jjdeGYMIwB-1"
+/>
+
+<ComponentProperties properties={frontmatter.properties} /> */}
+
+## Overview
+
+The Contact details component is a simple, text-based pattern used to show who published a piece of content and how users can reach them. It helps users understand who is responsible for the information they’re reading and supports clear communication between teams and the public. The component typically appears near the bottom of a content page, where users naturally look for additional help or clarification.
+
+## Purpose and goals
+
+This component ensures that contact information is presented consistently across ONS content. By standardising layout, tone, and structure, the component helps users quickly identify the publisher and understand how to get in touch. It aims to build trust, make support pathways predictable, and avoid ambiguity about which team owns the content.
+
+## When to use this component
+
+Use the Contact details component on content pages where users may need further information, clarification, or technical support related to the content. It is most appropriate when a team needs to provide a direct route for feedback or queries.
+
+The component should not be used for general-purpose organisational contact information, which belongs in dedicated “Contact us” pages or service-wide patterns. It also shouldn’t be used as a substitute for clear signposting within content; users should only reach this section once they have exhausted the informational pathways above it.
+
+## Structure and anatomy
+
+The component is made up of a set of simple text elements arranged in a clear, readable block.
+It may include:
+
+* the team or publisher name
+* an email address
+* a telephone number (optional)
+* contact hours or availability (optional)
+* any additional instructions relevant to contacting the team
+
+Each of these elements is presented in a clean, consistent layout, ensuring the essential information is easy to scan. Optional fields appear only when needed, and the layout adapts gracefully whether there is a single line of information or several.
+
+## Behaviour and usage rules
+
+The component is entirely non-interactive aside from the email and telephone elements, which behave as standard mailto: or tel: links in live environments.
+
+Designers should ensure that:
+* the component remains visually unobtrusive but clearly distinguishable from the main content
+* link text is clear and unambiguous
+* long team names or additional notes wrap naturally within the content width
+* optional fields are removed rather than left blank
+
+The component should feel consistent with other informational patterns and should not draw unnecessary attention away from the main content.
+
+## Figma assembly guidance
+
+In Figma, the component is built using text primitives with properties that allow designers to toggle fields on and off. The layout adjusts automatically depending on which pieces of information are included.
+
+Designers can swap text values to match their content, and optional fields should be disabled when not needed. The component is designed to remain readable and visually balanced regardless of how many text lines are present.

@@ -1,0 +1,63 @@
+---
+type: "component"
+title: "Notices and corrections"
+version: "1.0.0"
+atomicLevel: "organism"
+summary: >
+  A panel used to notify users of notices or corrections related to a publication, providing clear visibility of updates while allowing users to expand and view details when needed.
+---
+{/* 
+import FigmaDesign from '../../components/FigmaDesign.astro';
+
+<FigmaDesign
+  embedHeight={640}
+  designLink="https://www.figma.com/design/Yf4Cpxc8vYdoVrWcJojk2R/New-Website-Platform-Design-System?m=auto&node-id=2593-4488&t=1ZKtR1Gu0VQV19kD-1"
+  devModeLink="https://www.figma.com/design/Yf4Cpxc8vYdoVrWcJojk2R/New-Website-Platform-Design-System?m=dev&node-id=2593-4488&t=1ZKtR1Gu0VQV19kD-1"
+/> */}
+
+## Overview
+
+The Notices and Corrections component is used to inform users when a publication includes important notices or has been updated following a correction. It provides a clear, consistent way to surface changes to published content while allowing users to decide how much detail they need to view.
+
+This component helps maintain transparency and trust in published statistics, without overwhelming users or disrupting the primary reading experience.
+
+## Purpose and goals
+
+The primary purpose of the Notices and Corrections component is to ensure users are made aware of relevant updates to the content they are viewing. This includes both informational notices and formal corrections to previously published data or commentary.
+
+The component is designed to balance visibility with restraint. It clearly signals that additional information exists, while avoiding unnecessary interruption to the user’s journey through the page.
+
+## Placement and visibility
+
+When a notice exists or a correction has been made, the Notices and Corrections panel is displayed directly after the page banner. This placement ensures that users encounter the information early, before engaging deeply with the content, while still keeping the page hierarchy intact.
+
+The panel is minimised by default. This is a deliberate design decision based on the principle of [progressive disclosure](https://www.nngroup.com/articles/progressive-disclosure/). Not all users need to read the full detail of notices or corrections, but all users should be aware that they exist. A collapsed panel provides this awareness without forcing additional content into the main reading flow.
+
+Keeping the panel minimised also prevents the page from becoming overly long, particularly in cases where multiple corrections or detailed notices are present. This is especially important on mobile devices, where expanded panels can push primary content significantly further down the page and increase cognitive load.
+
+By allowing users to expand the panel only when they choose to, the component respects user intent while still meeting transparency requirements.
+
+## Structure and anatomy
+
+The Notices and Corrections component consists of a container panel that can be expanded or collapsed. Within the panel, individual entries are presented as a list.
+
+Each entry includes:
+* A clear label indicating whether the entry is a notice or a correction
+* The date and time the notice or correction was added
+* A concise summary or description explaining the nature of the notice or correction
+
+This structure allows users to quickly scan entries and understand their relevance without needing to read every item in full.
+
+## Behaviour and usage rules
+
+The panel should only be displayed when there is at least one notice or correction associated with the publication. It should not appear as an empty or placeholder element.
+
+When collapsed, the component should clearly indicate that notices or corrections are available and how many entries are present, encouraging informed interaction rather than accidental dismissal.
+
+Expanding the panel reveals the full list of entries without navigating the user away from the page, ensuring context is preserved.
+
+## Figma implementation guidance
+
+In Figma, the component should be built as a flexible container with a default collapsed variant and an expanded variant. Individual notice and correction entries should be designed to scale vertically based on content length and number of entries.
+
+Designers should ensure that the component behaves predictably when populated with multiple entries, long summaries, or mixed notice and correction types, and that it remains visually subordinate to the main page content while still being clearly visible.

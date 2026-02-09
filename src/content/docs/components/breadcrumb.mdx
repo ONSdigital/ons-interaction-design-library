@@ -1,0 +1,82 @@
+---
+type: "component"
+title: "Breadcrumb"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  The Breadcrumb component represents a single step in a navigation trail. It helps users understand their location within a hierarchy and provides a clear route back to earlier pages.
+properties:
+  - name: "Show icon"
+    type: "Boolean"
+    default: "True"
+  - name: "Label"
+    type: "Text"
+    default: "[Breadcrumb label]"
+nestedInstances:
+  - id: icon
+    component: "Icon"
+---
+{/* 
+import FigmaDesign from '../../components/FigmaDesign.astro';
+import ComponentProperties from '../../components/ComponentProperties.astro';
+import NestedInstances from '../../components/NestedInstances.astro';
+
+<FigmaDesign
+  embedHeight={320}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=79-422&t=vRilS4jjdeGYMIwB-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=79-422&m=dev&t=vRilS4jjdeGYMIwB-1"
+/>
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} /> */}
+
+## Overview
+The Breadcrumb component represents a single step in a user's navigational trail. It is used exclusively inside the broader Breadcrumbs component and provides the building blocks for constructing hierarchical journeys. Each breadcrumb reflects a page or location in the website structure and helps users understand where they are and how they arrived there.
+
+While the Breadcrumbs component handles layout, ordering, and separators, the Breadcrumb component focuses on semantic clarity: the label, the link, and the destination of that particular step in the journey.
+
+## Purpose and goals
+
+Breadcrumbs support orientation by making the site hierarchy visible. They allow users to step back through broader pages and help reinforce how content areas relate to one another. The component ensures consistent behaviour across ONS services while offering a familiar pattern for returning to earlier steps in a journey.
+
+## When to use this component
+Use the Breadcrumb component when you need to construct a breadcrumb navigation trail. It is not intended to be used on its own, only as part of a Breadcrumbs component, where multiple Breadcrumb components are combined to form a complete hierarchical path.
+
+Breadcrumbs should be used on pages where users are likely to want context or a quick way to navigate “up” the content structure, such as within deep topic structures, methodologies, articles, or dataset pages.
+
+## Structure and anatomy
+
+Each Breadcrumb component contains:
+
+### Link
+
+A link with a text label matching the title of the page it represents. This ensures consistency between the breadcrumb and the destination page. Labels should be short, descriptive, and meaningful out of context (e.g., “Population statistics,” not “Overview”).
+
+### Optional icon
+If the Breadcrumb is not the first item in the trail, it should include the Right Chevron icon to indicate the next step in the hierarchical path.
+
+## Behaviour and usage rules
+
+Breadcrumb labels should match the page title they refer to, ensuring consistency and reducing cognitive load. Breadcrumbs should not be truncated or collapsed; if a page has a deep hierarchy, all levels should be shown to maintain clarity.
+
+Breadcrumbs should appear near the top of the page, directly below the main header, and should not compete with the primary navigation.
+
+### Labels must match page titles
+
+Breadcrumb labels should always use the exact page title to reflect the structure of the site and ensure alignment with user expectations.
+
+### Must always be used inside a Breadcrumbs component
+
+The Breadcrumb component should not be placed standalone in designs. The Breadcrumbs component provides spacing, ordering, and separators that the single Breadcrumb component does not handle.
+
+### Keep labels short and meaningful
+
+Because breadcrumb trails can grow long, labels should use plain language and avoid unnecessary words.
+
+## Figma implementation guidance
+
+The approach of placing multiple Breadcrumb components inside the [Breadcrumbs](/components/breadcrumbs) component is the preferred way to structure. The [Breadcrumbs](/components/breadcrumbs) component manages layout: spacing, separators, reading direction, and responsive behaviour and the Breadcrumb component (this component) manages content: icon and link.
+* Use the Breadcrumb component from the design library when constructing breadcrumb trails.
+* Combine Breadcrumb instances within the [Breadcrumbs](/components/breadcrumbs) component to build the full trail.
+* Apply the icon (right chevron) when required using the boolean property
+
+Breadcrumbs should remain as component instances to preserve consistency; avoid detaching the structure.

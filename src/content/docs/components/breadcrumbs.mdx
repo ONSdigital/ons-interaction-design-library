@@ -1,0 +1,87 @@
+---
+type: "component"
+title: "Breadcrumbs"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  The Breadcrumbs component provides a clear, hierarchical navigation trail that helps users understand where they are within the ONS website. Each breadcrumb reflects the structure of the site and the path taken to reach the current page, starting with the homepage and following the logical content hierarchy.
+properties:
+  - name: "Show breadcrumb 2"
+    type: "Boolean"
+    default: "False"
+  - name: "Show breadcrumb 3"
+    type: "Boolean"
+    default: "False"
+  - name: "Show breadcrumb 4"
+    type: "Boolean"
+    default: "False"
+  - name: "Show breadcrumb 5"
+    type: "Boolean"
+    default: "False"
+nestedInstances:
+  - id: breadcrumb
+    component: "Breadcrumb"
+---
+{/* 
+import FigmaDesign from '../../components/FigmaDesign.astro';
+
+<FigmaDesign
+  embedHeight={280}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=79-444&t=vRilS4jjdeGYMIwB-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=79-444&m=dev&t=vRilS4jjdeGYMIwB-1"
+/> */}
+
+## Overview
+
+Breadcrumbs appear at the top of a page and provide an at-a-glance view of where the user is within the wider site structure. They support navigation in areas with deep or complex hierarchies by giving users a predictable and familiar route back to parent pages. The trail helps situate the page within a broader narrative, especially across topic areas, data releases, and articles.
+
+The Breadcrumbs component is used across templates where users may enter from search, external sources, or cross-site navigation, ensuring that context is always visible.
+
+## Purpose and goals
+
+The primary purpose of Breadcrumbs is to support orientation. Many ONS pages sit within layered content structures, and the Breadcrumbs component reflects that organisation in a clear, transparent way. It reduces friction by offering quick access to broader pages while reinforcing the relationship between content areas.
+
+### Orientation
+
+Users can immediately understand where they are within the wider site structure.
+
+### Navigation
+
+Users can move up through broader categories or previous steps without needing to retrace their paths manually.
+
+### Consistency
+
+A standard breadcrumb pattern ensures that navigation expectations are met across all pages.
+
+### Accessibility
+
+Breadcrumbs provide users with a clear structural context, which is especially important for screen readers navigating complex content.
+
+Breadcrumbs are not designed to replicate browsing history; instead, they show the logical hierarchy of the site.
+
+## When to use this component
+
+Breadcrumbs should be used whenever understanding the surrounding context is important, such as within datasets, methodologies, topic pages, and any content with multiple levels.
+
+They are not necessary on standalone pages or in linear processes, such as multi-step forms or transactions.
+
+## Structure and anatomy
+
+The Breadcrumbs component is composed of multiple nested [Breadcrumb](/components/breadcrumb) components, assembled to form the complete navigation trail.
+
+A breadcrumb trail always begins with a link to the homepage, followed by one or more levels that represent the route to the current content. Chevron icons appear between items to indicate progression through the hierarchy. They must reflect the true structure of the site, not the user's personal browsing journey.
+
+Each item in the breadcrumb trail must match the title of the page it links to, ensuring consistency and recognisability.
+
+## Behaviour and usage rules
+
+The breadcrumb trail should always reflect the actual structure of the site. Intermediate steps must not be omitted for convenience. Labels should remain clear and concise, and the component should sit directly below the page header.
+
+Breadcrumbs should remain fully visible on all viewports. While wrapping may occur on smaller screens, the trail should not collapse or be shortened, as this removes valuable context.
+
+* Breadcrumbs behave as a simple hierarchy, not a history trail.
+* Breadcrumbs should be visible on all pages that sit within a navigable hierarchy.
+
+## Figma implementation guidance
+
+The Breadcrumb component is built from multiple [Breadcrumb](/components/breadcrumb) components. Designers should use the boolean properties to hide and show breadcrumbs in the trail to reflect the specific hierarchy of the page being designed.

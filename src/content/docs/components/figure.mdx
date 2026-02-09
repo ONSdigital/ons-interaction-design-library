@@ -1,0 +1,185 @@
+---
+type: "component"
+title: "Figure"
+version: "1.0.0"
+atomicLevel: "organism"
+summary: >
+  The Figure component provides a consistent, accessible way to display data visualisations within ONS content. It acts as a flexible container for charts, maps, or tables, ensuring each figure includes the necessary context, metadata, and supporting information for clear interpretation.
+properties:
+  - name: "Figure number"
+    type: "Text"
+    default: "1"
+  - name: "Figure title"
+    type: "Text"
+    default: "[Figure title]"
+  - name: "Figure subtitle"
+    type: "Text"
+    default: "[Figure subtitle]"
+  - name: "Visualisation"
+    type: "Instance swap"
+    default: "Content slot"
+  - name: "Source"
+    type: "Text"
+    default: "Office for National Statistics"
+nestedInstances:
+  - id: heading
+    component: "Heading"
+  - id: contentslot
+    component: "Content slot"
+  - id: details
+    component: "Details"
+---
+{/* 
+import FigmaDesign from '../../components/FigmaDesign.astro';
+import ComponentProperties from '../../components/ComponentProperties.astro';
+import NestedInstances from '../../components/NestedInstances.astro';
+
+<FigmaDesign
+  embedHeight={900}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-New-Design-System?node-id=105-480&t=s5gjExxYFlgPTp3e-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-New-Design-System?node-id=105-480&m=dev&t=s5gjExxYFlgPTp3e-1"
+/>
+
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} /> */}
+
+## Overview
+
+The Figure component standardises the presentation of data visualisations across the ONS website. It ensures figures are consistently labelled, attributed, and accessible, regardless of the visualisation type or the page template in which they appear.
+
+Figures are a key part of communicating data-driven insight, helping users understand quantitative information through clear visual presentation and appropriate contextual detail.
+
+## Purpose and goals
+
+The primary purpose of the Figure component is to provide a structured and reusable way to display visual data in ONS content. It ensures that every figure, whether a chart, map, or table, includes the essential supporting information required for users to understand the data accurately and in context.
+
+Figures maintain clarity and consistency across analytical articles and datasets. They support narrative content by providing numbered reference points (e.g. “Figure 2”) and present data in an accessible way. The surrounding elements such as the subtitle, source, and optional footnotes, help ensure transparency and trustworthiness while allowing users to explore the underlying data in multiple ways.
+
+This component helps maintain:
+
+### Consistency
+
+All figures follow a unified layout and metadata pattern.
+
+### Accessibility
+
+Proper structure and supporting text aid comprehension and meet accessibility standards.
+
+### Flexibility
+
+The component supports a variety of visualisation types, including static images, embedded charts, and interactive tools.
+
+## When to use this component
+
+Use the Figure component whenever data is being visualised. This includes charts, tables and maps that form part of an article, methodology, dataset page, or any other analytical content.
+
+It should not be used for decorative imagery or for simple standalone numbers; in those cases, a statistic or key figure component may be more appropriate.
+
+## Structure and anatomy
+
+Each instance of the Figure component is composed of the following elements:
+
+### Figure number
+
+Provides a sequential reference for figures within an article or report (e.g. “Figure 3”). This allows authors and users to refer to figures unambiguously.
+
+### Figure title
+
+The main title summarises what the figure shows. It should be concise, factual, and descriptive enough to stand alone if the visualisation were removed from context.
+
+### Figure subtitle
+
+The subtitle provides additional context, such as the data range, population, or geographical scope. It helps clarify the specifics of what the data represents without overloading the title.
+
+### Visualisation slot
+
+The visualisation slot is intentionally designed to be as flexible as possible. It acts as a neutral container within the Figure component, allowing any type of visual content to be placed inside it without imposing layout, styling, or behavioural constraints.
+
+Rather than defining a fixed visualisation type, the slot uses an instance swap approach. This means the Figure component does not “know” or care what content is placed inside it, it simply provides the surrounding structure (caption, numbering, source, and spacing) that ensures consistency across the page.
+
+#### What can be placed in the slot
+
+The visualisation slot can contain anything that can exist as a component or frame in Figma, including but not limited to:
+* Charts and graphs of any type (bar, line, scatter, small multiples, etc)
+* Tables
+* Maps
+* Diagrams and illustrations
+* Images and screenshots
+* Embedded interactive visualisations
+* Composite or bespoke visual layouts created specifically for a publication
+
+If it can be designed in Figma, it can be placed inside the slot.
+
+#### Why this approach was chosen
+
+This approach was chosen specifically to avoid limiting the data visualisation team. By not prescribing chart types, aspect ratios, or internal layout rules, the Figure component remains future-proof and adaptable to emerging visualisation needs.
+
+The Figure component’s responsibility is to:
+* Provide consistent spacing and alignment within the page layout
+* Ensure captions, sources, and numbering behave predictably
+* Support accessibility and readability at the page level
+
+It is not responsible for defining how a visualisation is designed internally.
+
+#### Separation of responsibilities
+
+The Figure component deliberately separates concerns:
+* Data visualisation teams retain full control over how visualisations are designed, structured, and composed.
+* The Figure component ensures those visualisations sit consistently within the content flow and are supported by appropriate contextual information.
+
+This separation allows complex or highly bespoke visualisations to coexist alongside simpler figures without compromise.
+
+### Data source
+
+The data source acknowledges where the data originates from, ensuring transparency and trust. This should include the organisation name and, where possible, a link to the dataset.
+
+### Download links
+
+Figures may optionally provide download links for the underlying data or asset. These links allow users to reuse, analyse, or explore the information presented in the figure.
+
+The Figure component does not assume a fixed set of download formats. Instead, only formats that are available for a given figure are displayed.
+
+#### Behaviour
+* Download links are conditionally rendered
+* A figure may display:
+  * No download links
+  * A single download format
+  * Multiple download formats
+* The presence and type of formats is determined by the data or asset associated with the figure
+
+The design examples may show multiple formats (for example CSV, XLSX, and image formats) to demonstrate the pattern, but this should not be interpreted as a requirement that all figures provide the same options.
+
+#### Design intent
+
+The purpose of the download area is to:
+
+* Clearly expose available formats to the user
+* Avoid presenting unavailable or irrelevant options
+* Support reuse of published data without overwhelming the interface
+
+By allowing the number of download links to vary, the component remains flexible and accurate, while ensuring users are only presented with meaningful actions.
+
+#### Implementation note
+
+The logic for determining which download formats are shown is handled in code. The design system defines:
+* The layout and styling of download links
+* Their position within the Figure component
+* Their relationship to captions and sources
+
+It does not define or enforce which formats must be provided.
+
+### Footnotes (optional)
+
+Additional information or clarifications about the data can be added using the Detail component in an expandable format. This helps maintain a clean layout while allowing users to access further explanation when needed.
+
+## Behaviour and usage rules
+
+Figure numbers should run sequentially through a piece of content. Titles should be descriptive but neutral. They should explain what the visualisation is showing, not interpret it. Subtitles should include key details such as dates, geography or populations.
+
+Footnotes should be used sparingly and only when necessary. The visualisation itself must remain clear, accessible, and legible on all screen sizes, and colour should never be the sole means of communicating meaning.
+
+## Figma implementation guidance
+
+Figure numbers should run sequentially through a piece of content. Titles should be descriptive but neutral — they should explain what the visualisation is showing, not interpret it. Subtitles should include key details such as dates, geography or populations.
+
+Footnotes should be used sparingly and only when necessary. The visualisation itself must remain clear, accessible, and legible on all screen sizes, and colour should never be the sole means of communicating meaning.
