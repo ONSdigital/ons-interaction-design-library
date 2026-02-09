@@ -2,10 +2,61 @@
 type: "template"
 title: "Dataset"
 version: "1.0.0"
-summary: "A dataset page template"
+description: >
+  The Dataset template provides a consistent and accessible framework for presenting official statistics. It enables users to access the latest release of a dataset, explore previous editions and versions, download data in a range of formats, and find related content such as articles, dashboards, and methodological information.
 ---
 
-## Overview
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+import NestedInstances from '../../../components/NestedInstances.astro';
 
-The Dataset template is designed to present statistical datasets in a clear and accessible manner. It provides a structured layout that includes key elements such as dataset title, description, metadata, download options, and visualisations.
+## Preview
 
+<FigmaDesign
+  embedHeight={900}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=477-648&t=AauwUuST4kaR7tMT-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=477-648&m=dev&t=AauwUuST4kaR7tMT-1"
+/>
+
+## Purpose and goal
+
+The primary purpose of the Dataset page is to enable users to find, understand, and download the latest version of a dataset. It also provides clear pathways to related resources — such as older editions, previous versions, and supplementary content — helping users navigate the lifecycle of a dataset with confidence.
+
+This template aims to:
+* Present dataset information in a consistent, structured format
+* Reduce duplication and confusion between editions or versions
+* Improve user confidence in accessing and understanding data
+* Provide a seamless link between data and its wider statistical or analytical context
+
+## Structure and key features
+
+The Dataset template is composed of several key sections, each serving a distinct purpose:
+
+### Page banner
+
+The [page banner](/components/pagebanner) includes a heading, including the content type and dataset title as well as a short summary or description which provides users with an overview of the dataset's content and purpose.
+
+### Edition selector
+A dataset may have multiple editions (separate releases, often representing different time periods). An [edition selector](/components/editionselector) positioned near the top of the page allows users to switch between editions without leaving the dataset view. The most recent edition is shown by default.
+
+### Data download options
+Users can download data and supporting information in a variety of formats (e.g. Excel, CSV/W or TXT).
+Each download option uses the [File download](/components/filedownload) component. Each download option should clearly indicate:
+* The file format (using both text and an icon)
+* File size
+* A short description of what is included (e.g. "Full dataset", "Supporting information", etc)
+
+### Related content
+
+A related content area helps users to navigate and explore the wider context of the dataset, including links to related datasets, statistical articles, dashboards or data visualisations and methodology or guidance pages.
+
+This section supports discoverability and helps connect users to other relevant data sources or analyses.
+
+### Version history
+
+Where a dataset edition has undergone revisions or corrections, a version history is shown to maintain transparency.
+This section lists previous versions in reverse chronological order, with details about what was changed and when. Older versions should remain accessible.
+
+### Contact details
+
+The [Contact details](/components/contactdetails) component provides users with details for the responsible statistical team. This includes the team name, email address, and may also include a telephone number.
