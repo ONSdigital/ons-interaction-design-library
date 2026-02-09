@@ -6,8 +6,17 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'ONS Interaction Design Library',
+			logo: {
+				light: './src/assets/ons-logo-light.svg',
+				dark: './src/assets/ons-logo-dark.svg',
+				replacesTitle: true,
+			},
+			customCss: [
+        // Relative path to your custom CSS file
+        './src/styles/custom.css',
+      ],
+			social: [],
 			sidebar: [
 				{
 					label: 'Components',

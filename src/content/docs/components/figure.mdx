@@ -3,7 +3,7 @@ type: "component"
 title: "Figure"
 version: "1.0.0"
 atomicLevel: "organism"
-summary: >
+description: >
   The Figure component provides a consistent, accessible way to display data visualisations within ONS content. It acts as a flexible container for charts, maps, or tables, ensuring each figure includes the necessary context, metadata, and supporting information for clear interpretation.
 properties:
   - name: "Figure number"
@@ -29,25 +29,20 @@ nestedInstances:
   - id: details
     component: "Details"
 ---
-{/* 
-import FigmaDesign from '../../components/FigmaDesign.astro';
-import ComponentProperties from '../../components/ComponentProperties.astro';
-import NestedInstances from '../../components/NestedInstances.astro';
 
-<FigmaDesign
-  embedHeight={900}
-  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-New-Design-System?node-id=105-480&t=s5gjExxYFlgPTp3e-1"
-  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-New-Design-System?node-id=105-480&m=dev&t=s5gjExxYFlgPTp3e-1"
-/>
-
-<ComponentProperties properties={frontmatter.properties} />
-<NestedInstances instances={frontmatter.nestedInstances} /> */}
-
-## Overview
+import FigmaDesign from '../../../components/FigmaDesign.astro';
 
 The Figure component standardises the presentation of data visualisations across the ONS website. It ensures figures are consistently labelled, attributed, and accessible, regardless of the visualisation type or the page template in which they appear.
 
 Figures are a key part of communicating data-driven insight, helping users understand quantitative information through clear visual presentation and appropriate contextual detail.
+
+## Preview
+
+<FigmaDesign
+  embedHeight={800}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-New-Design-System?node-id=105-480&t=s5gjExxYFlgPTp3e-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-New-Design-System?node-id=105-480&m=dev&t=s5gjExxYFlgPTp3e-1"
+/>
 
 ## Purpose and goals
 
