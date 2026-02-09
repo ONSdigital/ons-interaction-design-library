@@ -22,12 +22,15 @@ The primary purpose of the In-page table of contents is to improve the findabili
 This component helps maintain:
 
 ### Orientation
+
 Users can see the page structure at a glance and understand how the information is organised.
 
 ### Efficiency
+
 It reduces the physical effort of scrolling on long pages, especially for mobile users or those using assistive technologies.
 
 ### Consistency
+
 It provides a standard navigation pattern across statistical articles and other content pages, making the ONS site easier to navigate and discover. Used constantly it will aid users mental modal when using the site.
 
 ## When to use this component
@@ -43,12 +46,15 @@ If the content is brief enough to be viewed in one or two scrolls, a table of co
 The In-page table of contents is composed of the following elements:
 
 ### Section heading
+
 A clear, concise label (usually "Contents") that identifies the purpose of the component.
 
 ### Navigation links
+
 A list of links that correspond directly to the section headings used within the body text. The wording of the links must exactly match the headings on the page. **(Numbering of sections to aid navigation to be considered and on backlog for testing)**
 
 ### Active state indicator
+
 A visual cue (such as a vertical bar or bold text) that highlights which section the user is currently viewing as they scroll.
 
 ## Technical Limitations
@@ -62,16 +68,18 @@ This component uses JavaScript to calculate the height of the table of contents 
 To ensure the best user experience, the following rules should be applied:
 
 ### Link accuracy
+
 Anchor links must work correctly. Clicking a link should take the user directly to the corresponding heading, with enough padding at the top so the heading isn't obscured by the browser header.
 
 ### Back to table of contents
+
 Because of the sticky limitations, a variant of the Back to top component must be used in conjunction with the In-page table of contents. This should work the same as the 'Back to top' component and be fixed to the bottom of the screen as the user scrolls down the page. When clicked though, it shoult return the user to the table of contents as opposed to the top of the page.
 
   **Note:** This dual-navigation approach requires usability testing to confirm that the "Back to top" and "Sticky TOC" work harmoniously for the user.
 
 ### No independent scrolling
-The list of links will not scroll independently of the main page content. Research indicates that "scroll-within-scroll" behavior is confusing and difficult to control for many users.
 
+The list of links will not scroll independently of the main page content. Research indicates that "scroll-within-scroll" behavior is confusing and difficult to control for many users.
 
 ## Figma implementation guidance
 

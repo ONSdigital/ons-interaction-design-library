@@ -18,17 +18,22 @@ nestedInstances:
 ---
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+import NestedInstances from '../../../components/NestedInstances.astro';
+
+The Breadcrumb component represents a single step in a user's navigational trail. It is used exclusively inside the broader Breadcrumbs component and provides the building blocks for constructing hierarchical journeys. Each breadcrumb reflects a page or location in the website structure and helps users understand where they are and how they arrived there.
+
+While the Breadcrumbs component handles layout, ordering, and separators, the Breadcrumb component focuses on semantic clarity: the label, the link, and the destination of that particular step in the journey.
+
+## Preview
 
 <FigmaDesign
   embedHeight={320}
   designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=79-422&t=vRilS4jjdeGYMIwB-1"
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=79-422&m=dev&t=vRilS4jjdeGYMIwB-1"
 />
-
-## Overview
-The Breadcrumb component represents a single step in a user's navigational trail. It is used exclusively inside the broader Breadcrumbs component and provides the building blocks for constructing hierarchical journeys. Each breadcrumb reflects a page or location in the website structure and helps users understand where they are and how they arrived there.
-
-While the Breadcrumbs component handles layout, ordering, and separators, the Breadcrumb component focuses on semantic clarity: the label, the link, and the destination of that particular step in the journey.
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
 
 ## Purpose and goals
 

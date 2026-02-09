@@ -31,6 +31,8 @@ nestedInstances:
 ---
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+import NestedInstances from '../../../components/NestedInstances.astro';
 
 The Figure component standardises the presentation of data visualisations across the ONS website. It ensures figures are consistently labelled, attributed, and accessible, regardless of the visualisation type or the page template in which they appear.
 
@@ -43,6 +45,9 @@ Figures are a key part of communicating data-driven insight, helping users under
   designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-New-Design-System?node-id=105-480&t=s5gjExxYFlgPTp3e-1"
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-New-Design-System?node-id=105-480&m=dev&t=s5gjExxYFlgPTp3e-1"
 />
+
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
 
 ## Purpose and goals
 

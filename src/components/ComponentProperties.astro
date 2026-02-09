@@ -1,0 +1,43 @@
+---
+const { properties } = Astro.props;
+---
+
+<div class="component-properties">
+  <h2 class="subsection-title">Properties</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Property name</th>
+        <th>Type</th>
+        <th>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      { properties.map(property => (
+        <tr>
+          <td>{ property.name }</td>
+          <td>{ property.type }</td>
+          <td>{ property.default }</td>
+        </tr>
+      )) }
+    </tbody>
+  </table>
+</div>
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0;
+  }
+
+  .sl-markdown-content table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .sl-markdown-content th,
+  .sl-markdown-content td {
+    width: auto;
+  }
+</style>

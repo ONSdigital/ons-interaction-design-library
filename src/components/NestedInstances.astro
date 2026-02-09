@@ -1,0 +1,28 @@
+---
+const { instances } = Astro.props;
+---
+
+<div class="nested-instances">
+  <h2 class="subsection-title">Nested instances</h2>
+  <ul>
+    { instances.map(instance => (
+      <li>
+        <a href={`/components/${instance.id}`}>{ instance.component }</a>
+      </li>
+    )) }
+  </ul>
+</div>
+
+<style>
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+</style>

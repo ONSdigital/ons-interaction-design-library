@@ -18,6 +18,14 @@ nestedInstances:
 ---
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+import NestedInstances from '../../../components/NestedInstances.astro';
+
+The Edition selector component allows users to browse and move between different editions of a dataset without leaving the context of the dataset page. An edition represents a specific release of a dataset. Editions may be time-based (for example, “2025 edition” or “November 2024 edition”), geography-based, or differentiated by the type of data they contain, such as glossaries or supplementary releases.
+
+This component works in conjunction with the [Edition selection](/components/editionselection) components (tiles), which represent individual editions. Together, they form a horizontally navigable list that clearly communicates which edition the user is currently viewing, while making it easy to explore previous or alternative editions.
+
+## Preview
 
 <FigmaDesign
   embedHeight={680}
@@ -25,11 +33,8 @@ import FigmaDesign from '../../../components/FigmaDesign.astro';
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1328-4315&m=dev&t=nldLDu3sgvIPPnjv-1"
 />
 
-## Overview
-
-The Edition selector component allows users to browse and move between different editions of a dataset without leaving the context of the dataset page. An edition represents a specific release of a dataset. Editions may be time-based (for example, “2025 edition” or “November 2024 edition”), geography-based, or differentiated by the type of data they contain, such as glossaries or supplementary releases.
-
-This component works in conjunction with the [Edition selection](/components/editionSelection) components (tiles), which represent individual editions. Together, they form a horizontally navigable list that clearly communicates which edition the user is currently viewing, while making it easy to explore previous or alternative editions.
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
 
 ## Purpose and intent
 
@@ -44,7 +49,7 @@ By keeping the editions visible and accessible, the component supports compariso
 
 ## Structure and behaviour
 
-The Edition selector presents a horizontal sequence of [Edition selection](/components/editionSelection) tiles. Where the number of editions exceeds the available horizontal space, pagination controls are provided to allow users to move through the list.
+The Edition selector presents a horizontal sequence of [Edition selection](/components/editionselection) tiles. Where the number of editions exceeds the available horizontal space, pagination controls are provided to allow users to move through the list.
 
 The pagination follows the same pattern used elsewhere on the site (for example, in search results), ensuring a familiar interaction and reducing cognitive load. Although the component introduces a new use case, it intentionally reuses an established interaction pattern to maintain consistency across the service.
 
@@ -64,4 +69,4 @@ The component is designed to be compact and unobtrusive. Dataset pages are often
 
 Visual emphasis is placed on the currently active edition through the active tile variant, while inactive editions remain discoverable but visually secondary. This helps users quickly orient themselves without overwhelming them with options.
 
-The Edition selector is always be paired with [Edition selection](/components/editionSelection) tiles and used specifically in the context of dataset edition pages.
+The Edition selector is always be paired with [Edition selection](/components/editionselection) tiles and used specifically in the context of dataset edition pages.

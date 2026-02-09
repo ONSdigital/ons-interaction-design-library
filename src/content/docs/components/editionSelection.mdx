@@ -21,6 +21,14 @@ nestedInstances:
 ---
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+import NestedInstances from '../../../components/NestedInstances.astro';
+
+The Edition selection component represents a single edition of a dataset and acts as a navigational tile within the parent [Edition selector](/components/editionselector) component. It allows users to understand and move between different releases of the same dataset, providing clarity about what data is available and which edition they are currently viewing.
+
+An *edition* is a specific release of a dataset. Datasets may have multiple editions over time or by scope, and users often need to compare or navigate between them confidently.
+
+## Preview
 
 <FigmaDesign
   embedHeight={400}
@@ -28,11 +36,8 @@ import FigmaDesign from '../../../components/FigmaDesign.astro';
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1204-2210&m=dev&t=nldLDu3sgvIPPnjv-1"
 />
 
-## Overview
-
-The Edition selection component represents a single edition of a dataset and acts as a navigational tile within the parent [Edition selector](/components/editionSelector) component. It allows users to understand and move between different releases of the same dataset, providing clarity about what data is available and which edition they are currently viewing.
-
-An *edition* is a specific release of a dataset. Datasets may have multiple editions over time or by scope, and users often need to compare or navigate between them confidently.
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
 
 ## Purpose and goals
 
@@ -46,7 +51,7 @@ The component is designed to reduce ambiguity around dataset versions and to sup
 
 ## When to use this component
 
-Use the Edition selection component when presenting multiple editions of a dataset and allowing users to move between them. It should always be used as part of the [Edition selector](/components/editionSelector) component and is not intended for standalone use elsewhere in the interface.
+Use the Edition selection component when presenting multiple editions of a dataset and allowing users to move between them. It should always be used as part of the [Edition selector](/components/editionselector) component and is not intended for standalone use elsewhere in the interface.
 
 This component is particularly useful when datasets:
 * are released on a regular schedule (for example, monthly or yearly)
@@ -79,7 +84,7 @@ This distinction helps users understand their current context at a glance and re
 
 Selecting an inactive Edition selection tile navigates the user to the corresponding dataset edition. Only one tile should ever be in the active state at any given time.
 
-The component itself does not manage selection logic; it visually reflects the state passed to it by the parent [Edition selector](/components/editionSelector). This separation ensures the component remains predictable and reusable within the wider pattern.
+The component itself does not manage selection logic; it visually reflects the state passed to it by the parent [Edition selector](/components/editionselector). This separation ensures the component remains predictable and reusable within the wider pattern.
 
 ## Relationship to the Edition selector
 

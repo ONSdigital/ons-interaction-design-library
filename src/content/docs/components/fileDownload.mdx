@@ -21,6 +21,10 @@ nestedInstances:
 ---
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+import NestedInstances from '../../../components/NestedInstances.astro';
+
+## Preview
 
 <FigmaDesign
   embedHeight={400}
@@ -28,4 +32,5 @@ import FigmaDesign from '../../../components/FigmaDesign.astro';
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1204-2210&m=dev&t=nldLDu3sgvIPPnjv-1"
 />
 
-## Overview
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
