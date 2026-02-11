@@ -133,11 +133,17 @@ This separation allows complex or highly bespoke visualisations to coexist along
 
 The data source acknowledges where the data originates from, ensuring transparency and trust. This should include the organisation name and, where possible, a link to the dataset.
 
+### Footnotes (optional)
+
+Additional information or clarifications about the data can be added using the Detail component in an expandable format. This helps maintain a clean layout while allowing users to access further explanation when needed.
+
 ### Download links
 
-Figures may optionally provide download links for the underlying data or asset. These links allow users to reuse, analyse, or explore the information presented in the figure.
+Figures may provide download links for the underlying data or assets associated with the visualisation. These links support transparency and enable users to reuse, analyse or explore the data beyond what is shown in the figure.
 
-The Figure component does not assume a fixed set of download formats. Instead, only formats that are available for a given figure are displayed.
+Download links are presented within an expandable Detail component, as with footnotes.
+
+The component does not assume a fixed set or number of download formats. Only the formats available for a specific figure should be displayed. The design should accommodate a single download link or multiple links without requiring structural changes to the component.
 
 #### Behaviour
 * Download links are conditionally rendered
@@ -167,10 +173,6 @@ The logic for determining which download formats are shown is handled in code. T
 * Their relationship to captions and sources
 
 It does not define or enforce which formats must be provided.
-
-### Footnotes (optional)
-
-Additional information or clarifications about the data can be added using the Detail component in an expandable format. This helps maintain a clean layout while allowing users to access further explanation when needed.
 
 ## Behaviour and usage rules
 
