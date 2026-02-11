@@ -1,0 +1,48 @@
+---
+const { type, name, value } = Astro.props;
+---
+
+<div class={`token token-${type}`}>
+  <div class="token-label">{ name }</div>
+
+  <div class="token-value">
+    { type === "colour" && (
+      <span class="swatch" style={{ backgroundColor: value }} title={ value } />
+      <span class="hex-value">{ value }</span>
+    )}
+
+    { type === "number" && (
+      <span class="number-value">{ value }</span>
+    )}
+
+    { type === "string" && (
+      <span class="string-value">{ value }</span>
+    )}
+  </div>
+</div>
+
+<style>
+  .token {
+    display: flex;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-greyscale-grey-35);
+  }
+
+  .token-label, .token-value {
+    flex: 1;
+  }
+
+  .token-value {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+  }
+
+  .token-value .swatch {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--color-greyscale-grey-35);
+    border-radius: 4px;
+  }
+</style>

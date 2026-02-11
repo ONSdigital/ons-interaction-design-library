@@ -1,0 +1,50 @@
+{
+  "text": {
+    "text / body / primary": "colour / greyscale / black",
+    "text / body / secondary": "colour / greyscale / grey-75",
+    "text / body / inverted": "colour / greyscale / white",
+    "text / link / default": "colour / primary / ocean-blue",
+    "text / link / hover": "colour / primary / night-blue"
+  },
+  "status": {
+    "status / information / border": "colour / primary / ocean-blue",
+    "status / information / indicator": "colour / vibrant / ocean-blue",
+    "status / information / background": "colour / tint / ocean-blue",
+    "status / success / border": "colour / secondary / leaf-green",
+    "status / success / indicator": "colour / vibrant / leaf-green",
+    "status / success / background": "colour / tint / leaf-green",
+    "status / error / border": "colour / secondary / ruby-red",
+    "status / error / indicator": "colour / vibrant / ruby-red",
+    "status / error / background": "colour / tint / ruby-red",
+    "status / pending / border": "colour / secondary / jaffa-orange",
+    "status / pending / indicator": "colour / vibrant / jaffa-orange",
+    "status / pending / background": "colour / tint / jaffa-orange"
+  },
+  "icon": {
+    "icon / primary": "colour / primary / night-blue",
+    "icon / secondary": "colour / primary / ocean-blue",
+    "icon / background": "colour / tint / ocean-blue",
+    "icon / monochrome": "colour / greyscale / black"
+  },
+  "button": {
+    "button / primary / background / default": "colour / secondary / leaf-green",
+    "button / primary / background / hover": "#0c6b37 - not in design system!",
+    "button / primary / shadow": "#073d20 - not in design system!",
+    "button / primary / text": "text / body / inverted",
+    "button / secondary / background / default": "colour / greyscale / grey-15",
+    "button / secondary / background / hover": "#d5d5d6 - not in design system!",
+    "button / secondary / shadow": "colour / greyscale / grey-75",
+    "button / secondary / text": "text / body / primary"
+  },
+  "border": {
+    "border / default": "colour / greyscale / grey-35",
+    "border / input": "colour / greyscale / black"
+  },
+  "tag": {
+    "tag / phase": "colour / greyscale / black"
+  },
+  "banner": {
+    "banner / topic": "colour / tint / ocean-blue",
+    "banner / page": "colour / greyscale / grey-5"
+  }
+}

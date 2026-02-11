@@ -1,0 +1,22 @@
+{
+  "spacing": {
+    "scale": {
+      "spacing / none": "size / spacing / 0-units",
+      "spacing / 3xs": "size / spacing / 1-unit",
+      "spacing / 2xs": "size / spacing / 2-units",
+      "spacing / xs": "size / spacing / 4-units",
+      "spacing / sm": "size / spacing / 6-units",
+      "spacing / md": "size / spacing / 8-units",
+      "spacing / lg": "size / spacing / 10-units",
+      "spacing / xl": "size / spacing / 12-units",
+      "spacing / 2xl": "size / spacing / 14-units",
+      "spacing / 3xl": "size / spacing / 20-units"
+    },
+    "content": {
+      "content / section-gap": "spacing / 2xl",
+      "content / subsection-gap": "spacing / md",
+      "content / heading-gap": "spacing / xs",
+      "content / paragraph-spacing": "spacing / sm"
+    }
+  }
+}

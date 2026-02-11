@@ -1,0 +1,22 @@
+---
+title: "Spacing"
+description: >
+  Our spacing tokens provide a clear and consistent way to apply spacing styles across our designs. They are based on a spacing scale that uses a consistent unit of measurement, allowing for predictable and harmonious layouts.
+---
+
+import Token from "../../../components/Token.astro";
+import spacing from "../../../data/spacing.json";
+
+This table shows how semantic tokens relate back to their underlying primitives.
+
+{ Object.entries(spacing).map(([groupName, spacing]) => (
+  <>
+    <h4>{ groupName }</h4>
+
+    <div class="token-grid">
+      { Object.entries(spacing).map(([name, value]) => (
+        <Token type="string" name={ name } value={ value } />
+      ))}
+    </div>
+  </>
+))}

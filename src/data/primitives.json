@@ -1,0 +1,80 @@
+{
+  "colour": {
+    "primary": {
+      "night-blue": "#003C57",
+      "spring-green": "#A8BD3A",
+      "aqua-teal": "#00A3A6",
+      "ocean-blue": "#206095",
+      "sky-blue": "#27A0CC"
+    },
+    "secondary": {
+      "leaf-green": "#0F8243",
+      "ruby-red": "#D0021B",
+      "jaffa-orange": "#FA6401",
+      "sun-yellow": "#FBC900",
+      "neon-yellow": "#F0F762"
+    },
+    "vibrant": {
+      "ocean-blue": "#1F84D8",
+      "leaf-green": "#10CA64",
+      "ruby-red": "#FD112D",
+      "jaffa-orange": "#FF7B24"
+    },
+    "tint": {
+      "ocean-blue": "#E9EFF4",
+      "leaf-green": "#E7F3EC",
+      "ruby-red": "#FAE6E8",
+      "jaffa-orange": "#FFF0E6"
+    },
+    "greyscale": {
+      "black": "#222222",
+      "grey-100": "#414042",
+      "grey-75": "#707071",
+      "grey-35": "#BCBCBD",
+      "grey-15": "#E2E2E3",
+      "grey-5": "#F5F5F6",
+      "white": "#FFFFFF"
+    }
+  },
+  "fontSize": {
+    "25": 12,
+    "50": 14,
+    "75": 16,
+    "100": 18,
+    "200": 20,
+    "300": 22,
+    "400": 26,
+    "500": 28,
+    "600": 32,
+    "700": 36,
+    "800": 40,
+    "900": 48,
+    "1000": 64,
+    "1100": 80
+  },
+  "spacing": {
+    "0": 0,
+    "1": 4,
+    "2": 8,
+    "3": 12,
+    "4": 16,
+    "5": 20,
+    "6": 24,
+    "7": 28,
+    "8": 32,
+    "9": 36,
+    "10": 40,
+    "11": 44,
+    "12": 48,
+    "13": 52,
+    "14": 56,
+    "15": 60,
+    "16": 64,
+    "17": 68,
+    "18": 72,
+    "19": 76,
+    "20": 80,
+    "80": 320,
+    "326": 1304
+  }
+}

@@ -4,7 +4,7 @@ title: "File download"
 version: "1.0.0"
 atomicLevel: "atom"
 summary: >
-  Edition selection presents a single release of a dataset within the Edition selector, helping users understand and navigate between different editions. Each tile clearly communicates whether an edition is current or previous, alongside key metadata such as release date and accreditation status. Together, these selections support confident navigation and version awareness across dataset pages.
+  The File download component presents a clear and consistent way for users to understand and download files. It provides context about what the file contains, alongside a recognisable file type and a clear call to action.
 properties:
   - name: "File format"
     type: "Text"
@@ -24,6 +24,10 @@ import FigmaDesign from '../../../components/FigmaDesign.astro';
 import ComponentProperties from '../../../components/ComponentProperties.astro';
 import NestedInstances from '../../../components/NestedInstances.astro';
 
+The File download component is used to present downloadable files in a way that is informative, predictable, and easy to scan. It helps users quickly understand what they are about to download before committing to the action, reducing uncertainty and improving trust.
+
+This component is commonly used on dataset pages, publications, and supporting content where multiple files may be available in different formats.
+
 ## Preview
 
 <FigmaDesign
@@ -34,3 +38,71 @@ import NestedInstances from '../../../components/NestedInstances.astro';
 
 <ComponentProperties properties={frontmatter.properties} />
 <NestedInstances instances={frontmatter.nestedInstances} />
+
+## Purpose and goals
+
+The primary purpose of the File download component is to make file downloads clear and self-explanatory. Rather than presenting a simple link, the component provides enough context for users to decide whether the file is relevant to their needs.
+
+It is designed to:
+* Clearly signal that an item is a downloadable file
+* Communicate what the file contains and how it might be used
+* Support comparison between multiple available downloads
+* Maintain consistency across the site wherever files are offered
+
+## When to use this component
+
+Use the File download component when you need to present one or more downloadable files and want users to understand the contents before downloading.
+
+It is particularly appropriate when:
+* Multiple file formats are available (for example CSV, Excel, or PDF)
+* Files contain complex or specialist data
+* Supporting information is required to explain the contents or structure of the file
+* For simple, low-context downloads, a standard text link may be sufficient.
+
+## Variants
+
+The File download component has two variants: Standard and Compact. Both variants contain the same core information but are laid out differently to support varying space constraints.
+
+### Standard
+
+The Standard variant is the default and should be used whenever space allows. It provides generous spacing and a clear hierarchy, making it well suited to content-heavy pages such as dataset editions and publications.
+
+This variant allows supporting information to be more easily scanned and is ideal when multiple downloads are presented together and users may want to compare options.
+
+### Compact
+
+The Compact variant is designed for use in more constrained layouts, such as sidebars or dense content sections. It uses a tighter layout while preserving the same information and visual affordances as the Standard variant.
+
+The Compact variant should not be used to hide or remove essential information, but rather to present it more efficiently when space is limited.
+
+## Structure and anatomy
+
+The component is made up of a small number of clearly defined elements that work together to communicate both function and meaning.
+
+It includes:
+* A file icon, which visually indicates the file type and helps users scan a list of downloads
+* A file name or title, describing the content of the file
+* Supporting information, used to explain what the file contains, such as coverage, level of detail, or intended use
+* A download link, providing a clear and consistent call to action
+
+Both variants use the same core elements, with layout adjustments applied to optimise space usage.
+
+## Behaviour and usage guidance
+
+Each File download component represents a single file. When multiple downloads are available, components should be stacked vertically to allow easy comparison.
+
+The file name or title should be meaningful and user-focused, avoiding technical or internal naming where possible. Supporting information should be concise and written in plain language, focusing on what the user will gain from the download rather than how it was produced.
+
+The download link should be clearly identifiable and consistently placed, so users do not need to hunt for the action.
+
+## Visual design considerations
+
+The visual treatment of the component is intentionally restrained, allowing content to take priority. The file icon provides a strong affordance, while typography and spacing ensure the component remains readable and scannable, even when many downloads are present.
+
+Consistency is particularly important here. Using the same component for all file downloads helps users quickly recognise and understand download patterns across different pages and content types.
+
+## Figma implementation guidance
+
+In Figma, the File download component is built to be flexible while maintaining consistent structure. Text fields should be used as intended to preserve hierarchy and spacing, and file icons should reflect the correct file type rather than being decorative.
+
+Designers should select the appropriate variant based on the available space, rather than modifying spacing or removing elements. Creating one-off variations of this component should be avoided, as this undermines consistency across the design system.

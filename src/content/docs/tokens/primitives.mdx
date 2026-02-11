@@ -1,0 +1,44 @@
+---
+title: Primitives
+description: >
+  Primitives are the most basic building blocks of our design system. They are the foundational elements that other components are built upon, such as colours, typography, spacing, and icons. Primitives ensure consistency across all components and templates by providing a single source of truth for these fundamental design elements.
+---
+
+import Token from "../../../components/Token.astro";
+import primitives from "../../../data/primitives.json";
+
+Primitives are the raw values that underpin our design tokens. These are the “ingredients” of the system — such as hex codes for colours, pixel values for typography, or spacing units. On their own, primitives don't carry meaning. A hex code like `#005ea5` tells us the exact colour, but it doesn't tell us why we are using it.
+
+Designers should not use primitives directly when creating designs in Figma. Instead, we use semantic tokens that reference these primitives, giving them a clear purpose (for example, color-primary rather than `#005ea5`). By doing this, we create a more consistent and flexible system that allows us to update values centrally without breaking designs.
+
+Primitives are documented here for reference and transparency. They provide visibility into the foundations of our design system, support audits to ensure our values remain consistent (e.g. sticking to our type scale or colour palette), and help maintain alignment across design and development.
+
+## Primitives collection
+
+Our design tokens are structured in layers to give us flexibility while maintaining consistency.
+
+### Colour
+
+{ Object.entries(primitives.colour).map(([groupName, colours]) => (
+  <>
+    <h4>{ groupName }</h4>
+
+    <div class="colour-grid">
+      { Object.entries(colours).map(([name, value]) => (
+        <Token type="colour" name={ name } value={ value } />
+      ))}
+    </div>
+  </>
+))}
+
+### Font size
+
+{ Object.entries(primitives.fontSize).map(([name, value]) => (
+  <Token type="number" name={ name } value={ value + "px" } />
+))}
+
+### Spacing
+
+{ Object.entries(primitives.spacing).map(([name, value]) => (
+  <Token type="number" name={ name + "-units"} value={ value + "px" } />
+))}

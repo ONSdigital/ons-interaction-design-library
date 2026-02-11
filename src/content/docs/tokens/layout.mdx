@@ -1,0 +1,20 @@
+---
+title: "Layout"
+description: >
+  Our layout tokens provide a clear and consistent way to apply layout styles across our designs. They are based on a layout scale that uses a consistent unit of measurement, allowing for predictable and harmonious layouts.
+---
+
+import Token from "../../../components/Token.astro";
+import layout from "../../../data/layout.json";
+
+Layout tokens define the core values used to create consistent and flexible page layouts across the ONS website. These tokens include grid settings, container widths, column configurations, and spacing units that align with our design principles.
+
+<div class="token-grid">
+  {Object.entries(layout).map(([name, token]) => (
+    <Token
+      type="string"
+      name={name}
+      value={token.value}
+    />
+  ))}
+</div>

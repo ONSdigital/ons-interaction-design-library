@@ -1,0 +1,42 @@
+{
+  "typography-grid": {
+    "type": "spacing-ref",
+    "value": "size / spacing / 1-unit"
+  },
+  "layout-grid": {
+    "type": "spacing-ref",
+    "value": "size / spacing / 2-units"
+  },
+  "inside-gutter": {
+    "type": "spacing-ref",
+    "value": "size / spacing / 10-units"
+  },
+  "outside-gutter": {
+    "type": "spacing-ref",
+    "value": "size / spacing / 12-units"
+  },
+  "container-width": {
+    "type": "spacing-ref",
+    "value": "size / spacing / 326-units"
+  },
+  "column-count": {
+    "type": "number",
+    "value": 12
+  },
+  "sidebar-width": {
+    "type": "spacing-ref",
+    "value": "size / spacing / 102-units"
+  },
+  "text-width": {
+    "type": "spacing-ref",
+    "value": "size / spacing / 158-units"
+  },
+  "content-width": {
+    "type": "spacing-ref",
+    "value": "size / spacing / 214-units"
+  },
+  "device-width": {
+    "type": "spacing-ref",
+    "value": "size / spacing / 360-units"
+  }
+}

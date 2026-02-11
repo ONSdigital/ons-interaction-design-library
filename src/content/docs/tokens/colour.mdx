@@ -1,0 +1,58 @@
+---
+title: Colour
+description: >
+  Our colour palette is designed to be accessible, versatile, and aligned with our brand identity. It provides a range of colours for different purposes, including primary and secondary colours, neutrals, and functional colours for success, warning, and error states. Each colour is defined as a primitive token with its hex code, and these primitives are then used to create semantic tokens that give them meaning and purpose within our design system.
+---
+
+import Token from "../../../components/Token.astro";
+import colours from "../../../data/colours.json";
+
+Colour tokens in the ONS design system are designed to provide clarity and consistency in how we apply colour. Instead of working directly with raw values and [primitives](/tokens/primitives), we organise all colours into the Colour collection of Figma variables, where each one has a **semantic alias**. These aliases describe the purpose of the colour, not just its appearance. For example, rather than using `leaf-green`, designers would select `button / primary / background`, which happens to reference that green primitive. This approach means that the intent behind the colour is always clear, whether it's being applied to a background, text, or border.
+
+<section class="information">
+  #### Examples
+
+  These examples show how raw hex colour values are translated to a friendly primitive name and how it applies to a semantic alias to give context and meaning to the colour.
+
+  | Raw value | Primitive                         | Semantic alias                  |
+  | --------- | --------------------------------- | ------------------------------- |
+  | `#003c57` | `color / primary / night-blue`    | `text / link / hover`           |
+  | `#d4351c` | `color / supporting / leaf-green` | `button / primary / background` |
+  | `#00703c` | `color / greyscale / grey-35`     | `border / default`              |
+</section>
+
+## Semantic aliases
+
+Semantic tokens can reference primitive values directly, but they can also reference other semantic tokens where it makes sense. This layering creates flexibility: for instance, color-background-page might reference color-background-primary, which in turn points back to the blue primitive. By working this way, we can make system-wide adjustments to colour without breaking consistency or requiring widespread changes to designs.
+
+<section class="information">
+  #### Example
+
+  This example shows how we can nest semantic aliases to create clear context and adjust changes consistently across the product.
+
+  `text / body / inverted` → `button / primary / foreground`
+</section>
+
+## Context and meaning
+
+The main advantage of this structure is that it gives every colour contextual meaning. Designers and developers can quickly see when a colour is meant for text, when it is part of a background, or when it's used to indicate something specific like a critical error. It also gives us the ability to adapt colours over time. If accessibility testing shows a text colour does not meet contrast requirements, for example, we can adjust the primitive or update the semantic alias and know that the change will cascade throughout the system.
+
+## Best practice
+
+When designing in Figma, the expectation is that you will always use semantic tokens rather than primitives. Choosing a colour token should be based on its intended purpose, not its visual appearance. If a situation arises where no existing token feels suitable, the right approach is to request a new semantic token, rather than bypassing the system and using a raw value. This helps us maintain a single source of truth across the design system.
+
+## Color tokens
+
+This table shows how semantic tokens relate back to their underlying primitives.
+
+{ Object.entries(colours).map(([groupName, colours]) => (
+  <>
+    <h4>{ groupName }</h4>
+
+    <div class="colour-grid">
+      { Object.entries(colours).map(([name, value]) => (
+        <Token type="colour" name={ name } value={ value } />
+      ))}
+    </div>
+  </>
+))}

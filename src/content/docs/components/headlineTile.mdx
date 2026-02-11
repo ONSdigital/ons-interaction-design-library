@@ -1,0 +1,167 @@
+---
+type: "component"
+title: "Headline tile"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  The Headline tile presents a single key statistic with a short title and supporting description. It is designed to communicate important information at a glance, with clarity and visual balance across all screen sizes.
+properties:
+  - name: "File format"
+    type: "Text"
+    default: "True"
+  - name: "File name"
+    type: "Text"
+    default: "True"
+  - name: "Supporting information"
+    type: "Text"
+    default: "True"
+nestedInstances:
+  - id: icon
+    component: "Icon"
+---
+
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+
+The Headline tile is a simple but highly visible component used to highlight a single standout statistic. It forms the building block of the [Headline facts and figures](/components/headlinefactsfigures) component and is not intended to be used across a page.
+
+Its purpose is to surface key data quickly and clearly. The design relies on strong hierarchy, generous spacing, and restraint in content to maintain impact.
+
+Although visually simple, careful content guidance is essential to preserve balance and readability.
+
+## Preview
+
+<FigmaDesign
+  embedHeight={1000}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=5516-3157&t=AauwUuST4kaR7tMT-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=5516-3157&m=dev&t=AauwUuST4kaR7tMT-1"
+/>
+
+## Purpose and goals
+
+The primary purpose of the Headline tile is to present a single key statistic in a way that is immediately visible and understandable. It allows users to quickly grasp important information without needing to read through detailed content. By presenting information in a clear, concise format, it supports quick decision-making and helps users find the insights they need efficiently.
+
+The Headline tile is designed to:
+* Present one key statistic clearly and prominently
+* Support quick scanning behaviour
+* Reinforce important messages within a page
+* Provide context through concise supporting text
+It should feel confident and uncluttered. The number or key figure is the focal point, supported — not overshadowed — by surrounding text.
+
+## When to use this component
+
+This component should only be used within the Headline Facts and Figures component, where it is combined with other tiles to create a cohesive presentation of key statistics. It is not intended to be used in isolation across a page.
+
+Use a Headline tile when:
+* There is a single statistic that stands on its own
+* A key figure summarises part of a larger story
+* You need to support scanning behaviour
+It should not be used for detailed explanation, complex data, or multiple competing statistics. Each tile should communicate one clear idea.
+
+## Structure and anatomy
+
+The Headline tile consists of three core elements:
+1. Figure title - a short label describing what the statistic represents
+2. Key figure - the primary data point, visually dominant
+3. Supporting information - a concise line of context or clarification
+
+The visual hierarchy should always prioritise the key figure. The title and supporting information provide clarity but should not compete visually with the main number.
+
+## Content guidance and visual balance
+
+Because publishers can input their own content, strong guidance is necessary to maintain consistency and balance.
+
+### Figure title
+
+Titles should be as short as possible. Ideally, they should be a brief phrase rather than a sentence. Long titles increase vertical height and reduce visual impact.
+
+Avoid:
+* Multi-line headings where possible
+* Explanatory sentences
+
+Prefer:
+* Clear, direct labels
+* Plain language
+
+### Key figure
+
+The key figure should be concise and, wherever possible, fit on a single line. Long phrases or explanatory text within the key figure reduce impact and may break the layout.
+
+Avoid:
+* Full sentences as the main statistic
+* Excessively long qualifiers within the number
+
+Prefer:
+* A clean number or percentage
+* Short qualifiers only when essential (for example, a unit)
+
+If additional explanation is required, it should sit within the supporting text.
+
+### Supporting information
+
+Supporting text should provide brief clarification or context. It should not restate the title or overwhelm the statistic.
+
+Keep this text:
+* Descriptive but short
+* Limited to one or two short lines
+* Free of complex methodological detail
+
+If more detail is required, it should appear in the main body content rather than within the tile.
+
+Restraint is key. Overloading the tile with text undermines its at-a-glance purpose.
+
+The figure title is visually and structurally separated from the key figure and supporting information. This separation helps maintain balance when multiple tiles are displayed alongside one another.
+
+By anchoring the title at the top of the tile and the supporting information at the bottom, the key figure remains visually centred and prominent. If a title or supporting text wraps onto an additional line, the tile can expand naturally without disrupting the overall alignment of neighbouring tiles.
+
+This approach ensures consistent visual rhythm and balance across a row, even when content lengths vary.
+
+## Responsive behaviour
+
+The component must adapt gracefully across screen sizes.
+
+On wider viewports:
+* The key figure remains large and visually dominant
+* Spacing supports clear separation between title, figure, and supporting text
+
+On narrower viewports:
+* The key figure text size should reduce proportionally to prevent wrapping or overflow
+* Layout should prioritise readability over scale
+* Content may wrap naturally, but the hierarchy must remain clear
+
+Designers should test realistic content at smaller breakpoints to ensure that long numbers, percentages, or units do not break the layout unexpectedly.
+
+The aim is to preserve impact while maintaining legibility and comfort on touch devices.
+
+## Behaviour and usage guidance
+
+Headline tiles may optionally link to related content, such as a statistical article or dataset. If used as links, the entire tile should feel interactive and consistent with other interactive components on the page.
+
+When grouped within the Headline facts and figures component, visual weight between tiles should feel balanced. Avoid one tile appearing disproportionately dominant due to excessive text or unusually long content.
+
+Consistency across tiles is important. Similar tone, length, and formatting should be maintained wherever possible.
+
+## Linking behaviour
+
+In some contexts, the figure title can act as a link to more detailed content, such as a statistical article or dataset that explains the headline figure in full.
+
+When used as a link:
+* The title should use the standard link style for the page context.
+* Only the title should be interactive, not the entire tile.
+* The link destination should provide meaningful depth or context to justify navigation.
+
+In other contexts — such as when the headline figures sit within the content they relate to — the title should remain plain text.
+
+This flexible approach allows the component to support both navigational and informational use cases, while maintaining a consistent visual structure.
+
+## Design considerations in Figma
+
+In Figma, the Headline tile should remain a structured component with defined text styles and spacing tokens applied consistently.
+
+Designers should:
+* Test with realistic but controlled content
+* Avoid overriding text styles to accommodate overly long copy
+* Maintain spacing in line with the layout grid
+
+If content does not fit comfortably within the component, this is a signal that the copy should be refined rather than the component adjusted.
+
+The effectiveness of the Headline tile lies in clarity, hierarchy, and disciplined content.

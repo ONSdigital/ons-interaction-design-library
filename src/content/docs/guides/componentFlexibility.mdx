@@ -1,0 +1,50 @@
+---
+type: "guidance"
+title: "Component flexibility"
+description: >
+  Guidance on designing flexible components within the ONS Interaction Design Library.
+---
+
+When building design components, we follow the concept of Modular Design or Configurable Components. This is a standard practice in Design System engineering, but it requires a specific balance to avoid Design System decay.
+
+## Component properties
+
+Our components are built as a “Single Source of Truth” that can adapt to different contexts. We achieve this through Component Properties, and consist of the following:
+* Text properties - A design element that's textual content is editable.
+* Boolean properties - True or False values that enable the ability to show or hide elements.
+* Instance swap properties - A nested component that can be swapped to another instance of another component.
+* Variants - A different version of the component that is used conditionally depending on specific rules.
+
+The benefit of this approach is to reduce Component Bloat. Instead of having multiple different versions of the same component, we use the properties outlined above to modify any instance of a component. It is easier for designers to maintain one component or variant of a component.
+
+It is important to also understand that if too many boolean properties are added to a component, it becomes so complex that it becomes buggy and impossible to test. In this instance, it is better to create a new variant of the component.
+
+### The risks
+
+The biggest warning regarding total component flexibility is the loss of user experience consistency. If a component allows a user to turn off critical information (such as a figure title or data source) then the component is no longer safe.
+
+A component should be flexible enough to handle 80% of use cases. If a bespoke piece requires the remaining 20%, it shouldn’t be using that component at all, or a new variant may be required.
+
+### Ad hoc or bespoke pieces
+
+Our guidance is that “bespoke” should be the exception, not the rule. If a bespoke piece is created and it is useful, our principles are to contribute it back into the Design Library as a new official component or variant.
+
+If designers and developers are constantly turning things off to make things bespoke, it is a reg flag that the core component doesn't actually meet the user's needs.
+
+## Important notes
+
+### Design vs. Code
+
+It is important to understand the differentiation between Design Components and technical implementation (Code Components).
+
+The Design Component is the contract for the user experience. It is the Design's job to define the visual hierarchy, typography, spacing and its behaviours and interactions. It is the Code's job to deliver that visual and behavioural intent using the most accessible semantic HTML. It is extremely important to distinguish between semantic html and visual standards. Even if the code uses a different tag for accessibility, the visual output must strictly adhere to the Design Library's typography and spacing tokens to maintain ONS brand integrity and UI/UX consistency.
+
+### The mirroring principle
+
+In a mature Design Library, the Design Component and the Code Component should be mirrors. If certain elements of the components are hidden via a boolean property in order to use a custom element (for instance a custom Figure title), this is breaking the link to the Design Library.
+
+If every instance of a component has custom elements, then we no longer have a component, we have a collection of loose elements. This makes it impossible to make changes to the look or behaviour of these components across the site at once. This breaks the principle of reusable components and we lose the ability to manage or maintain the component globally. The Code Component (the technical implementation) should instead ensure that the component itself is flexible enough to handle the correct semantic markup (HTML) while keeping the styling locked to the Design Library.
+
+### Consistency is Accessibility
+
+Consistency is an accessibility requirement detailed in WCAG 3.2.4. If elements of a component look different because they are custom or bespoke, users with cognitive disabilities struggle to identify what they are looking at. By ensuring that every instance of a component uses the same visual design, we provide a predictable interface for our users, which is a core principle of our accessibility strategy.

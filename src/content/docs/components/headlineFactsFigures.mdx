@@ -1,0 +1,108 @@
+---
+type: "component"
+title: "Headline facts and figures"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  The Headline facts and figures component presents key statistics in a clear, scannable format. It highlights important data points at a glance and helps users quickly understand the most significant information within a page.
+properties:
+  - name: "File format"
+    type: "Text"
+    default: "True"
+  - name: "File name"
+    type: "Text"
+    default: "True"
+  - name: "Supporting information"
+    type: "Text"
+    default: "True"
+nestedInstances:
+  - id: icon
+    component: "Icon"
+---
+
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+
+The Headline facts and figures component is designed to surface standout statistics or data points from a piece of content. It is commonly used on topic pages, statistical articles, and other content types where there are key figures that users are likely to be searching for.
+
+This component is composed of individual [Headline tile](/components/headlinetile) components arranged together as a group. While each tile functions as a standalone building block, this component governs how they are displayed collectively to create a cohesive and balanced presentation.
+
+The emphasis is on clarity and brevity. This is not a space for detailed explanation, but for immediate, high-impact information.
+
+## Preview
+
+<FigmaDesign
+  embedHeight={400}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=5504-3156&t=AauwUuST4kaR7tMT-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=5504-3156&m=dev&t=AauwUuST4kaR7tMT-1"
+/>
+
+## Purpose and goals
+
+The primary purpose of the Headline facts and figures component is to make key statistics immediately visible and understandable. It allows users to quickly grasp the most important data points without needing to read through detailed content. By presenting information in a clear, concise format, it supports quick decision-making and helps users find the insights they need efficiently.
+
+The purpose of this component is to:
+* Provide immediate access to the most important facts or figures
+* Support users who are scanning rather than reading in detail
+* Reinforce key messages within a page
+* Encourage deeper exploration of related content where appropriate
+
+It should act as an entry point into the wider content, helping users orient themselves quickly before engaging further.
+
+## When to use this component
+
+Use the Headline facts and figures component when there are clear, high-value statistics that would benefit from being surfaced prominently. It is particularly effective on pages where users may be looking for specific data points or where there are standout figures that summarise the content.
+
+It is particularly appropriate when:
+* A page contains standout data that summarises the overall message
+* Users are likely to visit primarily for specific figures
+* You want to support quick scanning behaviour
+
+It should not be used when there are no clear headline statistics, or when the figures require substantial explanation to be understood. In these cases, the data should remain within the main body content.
+
+## Structure and anatomy
+
+The component consists of:
+* A container that controls layout and spacing
+* Up to three Headline tile components
+
+Each Headline tile typically contains:
+* A prominent numerical value or statistic
+* A short supporting label or description
+
+Content should be minimal and focused. The statistic should be immediately legible, with any supporting text kept concise and clear.
+
+To preserve clarity and visual balance, the component should display no more than three tiles at any one time. It may also display one or two tiles where appropriate. Limiting the number ensures that each figure retains impact and that the layout does not become crowded or overwhelming.
+
+## Behaviour and usage guidance
+
+The Headline facts and figures component should be placed near the top of a page, below the page banner and ideally within the first screenful of content. This ensures that users encounter the key statistics early in their journey.
+
+Headline facts and figures are intended to be quickly absorbed. Content should therefore:
+* Avoid long sentences or detailed methodology
+* Use plain language
+* Focus on a single idea per tile
+
+If additional context is required to interpret a figure, that detail should sit within the main body content rather than within the tile itself.
+
+Where appropriate, tiles may link to related content, such as a statistical article or dataset. If links are used, they should feel purposeful and not purely decorative.
+
+Consistency is important. The visual weight of each tile should feel balanced so that no single figure unintentionally dominates unless there is a deliberate editorial reason to do so.
+
+## Responsive behaviour
+
+On wider viewports, tiles are displayed horizontally in a single row to encourage quick comparison between figures.
+
+On narrower viewports, such as portrait tablet and mobile, the tiles stack vertically. This ensures:
+* Readability is preserved
+* Content does not feel compressed
+* Touch interaction remains comfortable
+
+Spacing between tiles should remain consistent with the layout grid and design tokens to maintain rhythm and alignment with surrounding content.
+
+## Figma implementation guidance
+
+In Figma, the Headline facts and figures component should be assembled using the [Headline tile](/components/headlinetile) components as nested instances. Designers should not detach or override structural elements in order to add additional content beyond the intended scope.
+
+When creating examples within the library, use realistic but concise data to demonstrate intent. Avoid overcrowding tiles with explanatory text, as this undermines the at-a-glance purpose of the component.
+
+The strength of this component lies in restraint. Clear hierarchy, generous spacing, and disciplined content ensure that headline statistics remain impactful and easy to understand.
