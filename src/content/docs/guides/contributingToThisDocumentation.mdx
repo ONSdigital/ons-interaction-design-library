@@ -1,0 +1,106 @@
+---
+title: Contributing to this documentation
+---
+
+This documentation is built using a framework called [Astro](astro.build) and [Starlight](https://astro.build/themes/details/starlight/), and its [repository](https://github.com/gareth-lewis/ons-interaction-design-library-starlight) is hosted on GitHub.
+
+Most documentation changes will be written by Interaction Designers. You do not need to be a developer to contribute, but you should follow the recommended workflow to ensure changes are previewed before going live.
+
+When changes are merged into the `main` branch, the site automatically build and deploys.
+
+## Recommended ways to contribute
+
+We recommend one of the following two approaches:
+* **GitHub Codespaces** (best for occasional contributers)
+* **VS Code (local setup)** (best for regular contributers)
+
+Editing directly on GitHub is possible, but should only be used for very small copy changes.
+
+## Option 1: GitHub Codespaces (recommended)
+
+Codespaces runs a development environment in your browser. It allows you to preview the documentation site before your changes are published.
+
+### Why this is recommended
+* No installation required (you can run this on on-network machines)
+* You can preview the site
+* Lower risk of layout or navigation errors
+* No advanced technical setup required
+
+### How to use Codespaces
+
+1. Go to the GitHub repository (you may need to be added as a contributor).
+2. Click **Code**.
+3. Select the **Codespaces** tab.
+4. Click **Create codespaces on main**.
+
+Once your environment loads:
+
+5. Open the Terminal panel.
+6. Run:
+
+```
+npm install
+```
+
+7. Then run:
+
+```
+npm run dev
+```
+
+8. Open the preview link (usually shown in the Ports panel).
+9. Make your changes in the editor.
+10. Create a new branch when prompted.
+11. Commit and push your changes.
+12. Open a Pull Request.
+
+You'll be able to review how the page looks before it is merged.
+
+## Option 2: VS Code (local setup)
+
+This option is best if you contribute frequently.
+
+### You will need
+* Node.js installed
+* Git installed
+* VS Code
+
+### Setup steps
+1. Clone the repository.
+2. Open the project folder in VS Code.
+3. Run:
+
+```
+npm install
+```
+
+4. Then run:
+
+```
+npm run dev
+
+```
+
+5. Open `localhost:4321` in your browser.
+6. Create a new branch before making changes.
+7. Commit and push your branch.
+8. Open a Pull Request.
+
+This gives you a full preview of navigation, layout, and styling.
+
+## Option 3: Editing directly on GitHub (limited use)
+
+You can edit Markdown files directly in GitHub using the pencil icon.
+
+This is suitable for:
+- Small working fixes
+- Minor corrections
+- Typos
+
+However:
+- You cannot preview the fill documentation layout.
+- Navigation issues may not be visible
+- Changes go live once merged.
+
+Use this method cautiously.
+
