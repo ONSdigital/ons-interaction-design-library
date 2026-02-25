@@ -10,9 +10,9 @@ const { embedHeight = 480, designLink, devModeLink } = Astro.props;
     src={`https://www.figma.com/embed?embed_host=share&url=${designLink}`}
     allowfullscreen>
   </iframe>
-  <div class="figmaLinks">
-    <a href={ designLink }>Open in Figma Design</a>
-    <a href={ devModeLink }>Open in Figma Dev Mode</a>
+<div class="figmaLinks">
+    <a href={ designLink } target="_blank" rel="noopener">Open in Figma Design</a>
+    <a href={ devModeLink } target="_blank" rel="noopener">Open in Figma Dev Mode</a>
   </div>
 </section>
 
