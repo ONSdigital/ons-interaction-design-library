@@ -28,12 +28,14 @@ import FigmaDesign from '../../../components/FigmaDesign.astro';
 import ComponentProperties from '../../../components/ComponentProperties.astro';
 import NestedInstances from '../../../components/NestedInstances.astro';
 
-Joe to write some documentation here...
+Site header documentation coming soon...
 
-## Heading
+## Preview
 
-This is a section
-
-### Subheading
-
-This is a subsection
+<FigmaDesign
+  embedHeight={400}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=32-253&t=6mbAXSzzd9vT03FK-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=32-253&m=dev&t=6mbAXSzzd9vT03FK-1"
+/>
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
