@@ -1,0 +1,37 @@
+---
+type: "component"
+title: "Search button"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  Search button summary...
+properties:
+  - name: "Active"
+    type: "Boolean"
+    default: "False"
+  - name: "Hover"
+    type: "Boolean"
+    default: "False"
+  - name: "Focus"
+    type: "Boolean"
+    default: "False"
+nestedInstances:
+  - id: icon
+    component: "Icon"
+---
+
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+import NestedInstances from '../../../components/NestedInstances.astro';
+
+Menu button documentation coming soon...
+
+## Preview
+
+<FigmaDesign
+  embedHeight={400}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=6713-515&t=6mbAXSzzd9vT03FK-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=6713-515&m=dev&t=6mbAXSzzd9vT03FK-1"
+/>
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
