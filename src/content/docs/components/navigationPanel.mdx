@@ -9,12 +9,18 @@ properties:
   - name: "Device"
     type: "Variant"
     default: "Desktop"
+nestedInstances:
+  - id: icon
+    component: "Icon"
 ---
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
 import ComponentProperties from '../../../components/ComponentProperties.astro';
+import NestedInstances from '../../../components/NestedInstances.astro';
 
-Navigation panel documentation coming soon...
+The Navigation Panel provides users with access to the primary navigation structure of the website. It expands from the [Site Header](/components/siteheader/) when the Menu button is selected and presents a clear overview of the site's main themes, topics, and key destinations.
+
+The panel is designed to support “navigate anywhere” behaviour, allowing users to quickly move to any major area of the site without leaving their current page.
 
 ## Preview
 
@@ -24,3 +30,40 @@ Navigation panel documentation coming soon...
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=7536-3476&m=dev&t=6mbAXSzzd9vT03FK-1"
 />
 <ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
+
+## Behaviour
+
+The Navigation Panel is triggered when the [Menu button](/components/menubutton/) in the Site Header is selected.
+
+When opened, the panel expands downward from the header and pushes the page content downwards rather than overlaying it. This ensures the navigation remains part of the document flow and avoids obscuring page content.
+
+The panel can be collapsed again by selecting the [Menu button](/components/menubutton/).
+
+## Structure
+
+The Navigation Panel is organised into two primary sections.
+
+At the top of the panel is a featured links section, displayed as a horizontal band. This area highlights a small number of important or commonly accessed links and provides a short description for each. These links allow users to quickly access key areas of the website.
+
+Below this section is the main navigation area, which presents the primary structure of the site. Themes are displayed as headings, with their related topics listed underneath.
+
+## Layout
+
+The layout of the Navigation Panel adapts to the available screen width.
+
+On desktop and portrait tablet viewports (744px and above), the navigation structure is displayed in a three-column layout. This allows themes and their associated topics to be scanned quickly while keeping the panel compact.
+
+On smaller viewports, such as smartphones, the layout switches to a single column. All navigation links are displayed in a vertically stacked list, making them easier to read and interact with on touch devices.
+
+## Language switcher behaviour
+
+On smaller viewports, the language switcher is moved from the [Site Header](/components/siteheader/) into the Navigation Panel.
+
+It is positioned at the top of the panel to ensure it remains easily accessible to users. This approach also helps maintain a usable and uncluttered header on small screens, where space is limited.
+
+## Design considerations
+
+The Navigation Panel is designed to give users a clear overview of the site structure without overwhelming them with options. Grouping links under themes helps users understand how content is organised and makes it easier to locate relevant topics.
+
+Expanding the panel as part of the page layout, rather than overlaying content, reinforces the sense that the navigation is part of the page structure while avoiding disruption to the user's reading flow.

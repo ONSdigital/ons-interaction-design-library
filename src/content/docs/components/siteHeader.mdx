@@ -28,14 +28,62 @@ import FigmaDesign from '../../../components/FigmaDesign.astro';
 import ComponentProperties from '../../../components/ComponentProperties.astro';
 import NestedInstances from '../../../components/NestedInstances.astro';
 
-Site header documentation coming soon...
+The Site Header is a persistent component displayed at the top of every page. It provides global navigation and access to core site functionality.
+
+The header is intentionally simple in its default state. It presents the ONS logo on the left and a small number of global actions on the right. These actions allow users to open navigation, search the site, or switch language.
+
+The component acts primarily as a container for several smaller building block components that provide these interactions.
 
 ## Preview
 
 <FigmaDesign
-  embedHeight={400}
+  embedHeight={640}
   designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=32-253&t=6mbAXSzzd9vT03FK-1"
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=32-253&m=dev&t=6mbAXSzzd9vT03FK-1"
 />
 <ComponentProperties properties={frontmatter.properties} />
 <NestedInstances instances={frontmatter.nestedInstances} />
+
+## Structure
+
+The Site Header contains the following elements:
+* [Logo](/components/logo/) - Positioned on the left of the header and links to the homepage.
+* [Menu button](/components/menubutton/) - Opens the primary navigation panel.
+* [Search button](/components/searchbutton/) - Opens the global search interface.
+* [Language switcher](/components/languageswitcher/) - Allows users to switch between English and Welsh.
+
+These interactive controls are aligned on the right-hand side of the header and are designed to remain visible and easily accessible across all pages.
+
+While these elements are displayed within the Site Header, they are documented individually as building block components.
+
+## Navigation panel
+
+Selecting the [Menu button](/components/menubutton/) opens the Navigation Panel component.
+
+The Navigation Panel is a large expandable interface that provides access to the site's full navigation structure. It acts as a single, central location for navigating across topics, datasets, publications, and other areas of the site.
+
+The behaviour and structure of this component are documented separately.
+
+## Global search
+
+Selecting the [Search button](/components/searchbutton/) opens the [Global search](/components/globalsearch/) panel.
+
+This provides users with the ability to search across the entire website, including datasets, publications, and other content types. The search interface appears as an expandable panel layered over the page.
+
+The detailed behaviour and structure of this component are documented separately.
+
+## Language switcher
+
+The [Language switcher](/components/languageswitcher/) allows users to toggle between English and Welsh versions of the site.
+
+This control is displayed within the header so that it remains consistently available across the site. When selected, the user is directed to the equivalent page in the alternative language where available.
+
+Further details about the behaviour and implementation of this control are documented separately.
+
+## Component responsibility
+
+The Site Header itself is responsible for layout and placement of these controls, ensuring they remain consistently positioned and accessible across all pages.
+
+The interactive behaviour of the individual controls is handled by their respective components.
+
+This separation allows each building block component to be reused and documented independently while maintaining a consistent header experience across the site.
