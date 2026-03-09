@@ -1,4 +1,13 @@
 ---
+interface Instance {
+  id: string;
+  component: string;
+}
+
+interface Props {
+  instances: Instance[];
+}
+
 const { instances } = Astro.props;
 ---
 
