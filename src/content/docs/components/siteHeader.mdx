@@ -22,6 +22,7 @@ nestedInstances:
     component: "Navigation Panel"
   - id: globalsearch
     component: "Global Search"
+exampleUrl: "https://ons-ixd-design-library-examples.framer.website/examples/siteheader/en"
 ---
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
@@ -41,6 +42,11 @@ The component acts primarily as a container for several smaller building block c
   designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=32-253&t=6mbAXSzzd9vT03FK-1"
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=32-253&m=dev&t=6mbAXSzzd9vT03FK-1"
 />
+
+<a href={ frontmatter.exampleUrl } target="_blank" rel="noopener" class="starlight-link starlight-link--external">
+  View example
+</a>
+
 <ComponentProperties properties={frontmatter.properties} />
 <NestedInstances instances={frontmatter.nestedInstances} />
 
