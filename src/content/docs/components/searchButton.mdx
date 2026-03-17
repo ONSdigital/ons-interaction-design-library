@@ -4,7 +4,7 @@ title: "Search button"
 version: "1.0.0"
 atomicLevel: "atom"
 summary: >
-  Search button summary...
+  The Search button controls the visibility of the Global Search panel, enabling users to enter and submit search queries. It provides a consistent and accessible way to find content across the site.
 properties:
   - name: "Active"
     type: "Boolean"
@@ -24,7 +24,9 @@ import FigmaDesign from '../../../components/FigmaDesign.astro';
 import ComponentProperties from '../../../components/ComponentProperties.astro';
 import NestedInstances from '../../../components/NestedInstances.astro';
 
-Menu button documentation coming soon...
+The Search button is a primary control within the Site Header, allowing users to quickly access the Global Search panel from any page.
+
+It supports users who prefer to navigate directly to content by searching, rather than browsing through navigation. Its placement alongside the Menu button ensures that both navigation approaches are always readily available.
 
 ## Preview
 
@@ -35,3 +37,36 @@ Menu button documentation coming soon...
 />
 <ComponentProperties properties={frontmatter.properties} />
 <NestedInstances instances={frontmatter.nestedInstances} />
+
+## Behaviour
+
+Selecting the Search button expands the Global Search panel, allowing users to input search terms and explore results.
+
+Selecting the button again while the panel is open will collapse the Global Search panel, returning the page to its default state.
+
+If the Menu button is selected while the Global Search panel is open, the Search panel is closed and the Search button returns to its default (inactive) state. This ensures that only one global panel is open at a time and prevents overlapping interactions.
+
+## Layout
+
+The Search button is displayed within the Site Header alongside the Menu button and Language switcher.
+
+The button is presented as an icon-only control across all viewport sizes. The use of a widely recognised search icon supports user understanding without requiring a visible label, helping to maintain a clean and space-efficient header layout.
+
+## States
+
+The Search button includes four clear interactive states to communicate affordance and feedback:
+
+* **Default** - The button is inactive and ready to be selected
+* **Hover** - Indicates that the button is interactive
+* **Active** - Indicates that the Global Search panel is open
+* **Focus** - Provides a clear visual indicator for keyboard users
+
+Each state should be visually distinct and consistent with other interactive elements across the site.
+
+## Design considerations
+
+The Search button provides a direct route to content and should remain consistently positioned and easy to identify across all pages.
+
+Using an icon-only approach reduces visual clutter in the Site Header while relying on familiar patterns to maintain usability. Care should be taken to ensure the icon is clear and accessible, particularly for users who rely on assistive technologies.
+
+The interaction between the Search button and Menu button should be predictable and mutually exclusive, ensuring a simple and controlled experience when interacting with global panels.
