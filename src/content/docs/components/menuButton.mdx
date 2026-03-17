@@ -4,7 +4,7 @@ title: "Menu button"
 version: "1.0.0"
 atomicLevel: "atom"
 summary: >
-  Menu button summary...
+  The Menu button allows users to open and close the Navigation Panel from the Site Header. It provides access to the primary navigation structure and enables users to move to other areas of the site.
 properties:
   - name: "Active"
     type: "Boolean"
@@ -24,7 +24,11 @@ import FigmaDesign from '../../../components/FigmaDesign.astro';
 import ComponentProperties from '../../../components/ComponentProperties.astro';
 import NestedInstances from '../../../components/NestedInstances.astro';
 
-Menu button documentation coming soon...
+The Menu button is a primary control within the Site Header, providing users with access to the site’s main navigation through the Navigation Panel.
+
+It plays a key role in enabling users to move between different areas of the site, particularly on content-heavy pages where direct navigation options may not be immediately visible. Its placement and behaviour are consistent across the site to support familiarity and ease of use.
+
+The component is designed to be responsive and space-efficient, adapting its presentation across different screen sizes while maintaining a clear and recognisable interaction pattern.
 
 ## Preview
 
@@ -35,3 +39,36 @@ Menu button documentation coming soon...
 />
 <ComponentProperties properties={frontmatter.properties} />
 <NestedInstances instances={frontmatter.nestedInstances} />
+
+## Behaviour
+
+Selecting the Menu button expands the Navigation Panel, revealing the main site navigation. Selecting the button again collapses the panel.
+
+The button reflects its current state visually, indicating whether the navigation is open or closed. This helps users understand the current context and how to return to the default view.
+
+If the Search button is selected while the Navigation Panel is open, the Menu button returns to its default (collapsed) state. This ensures that only one global panel is open at a time and avoids overlapping interactions.
+
+## Layout
+
+On desktop viewports, the Menu button displays both an icon and label, positioned adjacent to one another. This provides clarity and supports recognition of the action.
+
+On smaller viewports (744px and below), the label is removed and only the menu icon is displayed. This helps preserve space within the Site Header and prevents elements from becoming crowded or overlapping.
+
+## States
+
+The Menu button includes clear interactive states to communicate affordance and feedback:
+
+* *Default* - The button is inactive and ready to be selected
+* *Hover* - Indicates that the button is interactive
+* *Active* - Indicates that the Navigation Panel is open
+* *Focus* - Provides a clear visual indicator for keyboard users
+
+These states should be visually distinct and consistent with other interactive elements across the site.
+
+## Design considerations
+
+The Menu button is a key control within the Site Header and should remain consistently positioned and easily identifiable across all pages.
+
+Reducing the button to an icon on smaller screens helps maintain a clean and usable header while still providing access to navigation. The use of a familiar menu icon supports recognition even when the label is not present.
+
+Care should be taken to ensure that the button clearly reflects its active state when the Navigation Panel is open, reinforcing the relationship between the control and the panel.
