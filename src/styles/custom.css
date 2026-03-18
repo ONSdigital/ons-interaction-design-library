@@ -19,3 +19,8 @@ a[aria-current="page"] {
   color: var(--color-greyscale-white);
   background-color: var(--color-primary-ocean-blue);
 }
+
+.sl-link-button.primary {
+  background-color: var(--color-primary-ocean-blue);
+  color: var(--color-greyscale-white);
+}
