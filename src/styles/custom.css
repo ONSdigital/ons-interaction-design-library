@@ -1,4 +1,21 @@
+:root {
+  --color-primary-ocean-blue: #0072ce;
+
+  --color-greyscale-white: #ffffff;
+
+  --color-link-default: var(--color-primary-ocean-blue);
+}
+
 .site-title img {
   height: 24px;
   width: auto;
+}
+
+a {
+  color: var(--color-link-default);
+}
+
+a[aria-current="page"] {
+  color: var(--color-greyscale-white);
+  background-color: var(--color-primary-ocean-blue);
 }
