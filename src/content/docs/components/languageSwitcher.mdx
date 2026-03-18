@@ -4,12 +4,18 @@ title: "Language switcher"
 version: "1.0.0"
 atomicLevel: "atom"
 summary: >
-  Language switcher summary...
+  The Language Switcher allows users to toggle between English and Welsh versions of the site.
 ---
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
 
-Menu button documentation coming soon...
+The Language Switcher is a simple link-based component positioned on the right-hand side of the Site Header. It enables users to switch between available site languages, ensuring accessibility for both English and Welsh-speaking users.
+
+The language displayed in the interface is determined by the current URL. The switcher always presents the alternative language as the link label:
+* When viewing the site in English, the link displays “Cymraeg”
+* When viewing the site in Welsh, the link displays “English”
+
+Selecting the link updates the site language and reloads the page in the chosen language.
 
 ## Preview
 
@@ -18,3 +24,28 @@ Menu button documentation coming soon...
   designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=7518-822&t=6mbAXSzzd9vT03FK-1"
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=7518-822&m=dev&t=6mbAXSzzd9vT03FK-1"
 />
+
+## Behaviour
+
+The Language Switcher functions as a standard link and follows expected link behaviours, including hover, focus, and active states.
+* The link label always reflects the other available language
+* Selecting the link navigates the user to the equivalent page in the selected language
+* The current language is derived from the URL structure
+* The component does not maintain state independently; it reflects the current page context
+
+## Responsive behaviour
+
+Due to limited space in the Site Header on smaller viewports, the Language Switcher is repositioned to maintain usability and avoid overcrowding.
+
+* On larger screens, the Language Switcher appears in the Site Header
+* On smaller screens, it is moved into the Navigation Panel
+* Within the Navigation Panel, it is positioned at the top for easy access
+
+This approach ensures the Language Switcher remains easily discoverable and usable across all device sizes without compromising the layout of the header.
+
+## Usage guidance
+
+The Language Switcher should be used consistently across all pages to provide a predictable and accessible way for users to change language.
+* Always display the alternative language as the link label
+* Do not duplicate the Language Switcher elsewhere on the page
+* Ensure the destination page matches the current page context where possible (for example, the same dataset or article in the selected language)
