@@ -4,7 +4,7 @@ title: "Global search"
 version: "1.0.0"
 atomicLevel: "atom"
 summary: >
-  Global search summary...
+  The Global Search panel provides users with a quick and accessible way to search across the entire site. It expands from the Site Header and allows users to enter and submit search queries.
 properties:
   - name: "Device"
     type: "Variant"
@@ -14,7 +14,9 @@ properties:
 import FigmaDesign from '../../../components/FigmaDesign.astro';
 import ComponentProperties from '../../../components/ComponentProperties.astro';
 
-Navigation panel documentation coming soon...
+The Global Search panel is an expandable component triggered by the Search button in the Site Header. It enables users to find content directly, offering an alternative to navigating through themes and topics.
+
+The panel is designed to be simple and focused, allowing users to quickly enter a search term and begin exploring results. It supports a wide range of content types, including datasets, publications, and supporting materials.
 
 ## Preview
 
@@ -24,3 +26,32 @@ Navigation panel documentation coming soon...
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=7536-3765&m=dev&t=6mbAXSzzd9vT03FK-1"
 />
 <ComponentProperties properties={frontmatter.properties} />
+
+## Behaviour
+
+Selecting the Search button expands the Global Search panel. The panel opens downward from the Site Header and pushes page content downwards, maintaining the natural document flow and avoiding overlap with existing content.
+
+The panel can be closed by:
+* Selecting the Search button again
+* Selecting the Menu button (which will close the search panel and open the Navigation Panel)
+
+Only one global panel should be open at any time. Opening the Navigation Panel will close the Global Search panel, and vice versa.
+
+## Structure
+
+The Global Search panel is intentionally minimal and focused on the search task.
+
+It typically includes:
+* A search input field for entering queries
+* A submit action, allowing users to trigger the search
+* Optional supporting elements such as popular searches (where applicable)
+
+The layout should prioritise clarity and ease of use, ensuring the input field is immediately visible and easy to interact with.
+
+## Design considerations
+
+The Global Search panel should feel lightweight and focused, avoiding unnecessary complexity or distraction.
+
+Search is often a primary task for users, so the input field should be clearly prioritised and easy to locate immediately upon opening the panel.
+
+By expanding within the page flow rather than overlaying content, the panel maintains a sense of continuity and avoids disrupting the user's context.

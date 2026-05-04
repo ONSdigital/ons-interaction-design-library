@@ -1,0 +1,54 @@
+---
+type: "component"
+title: "Details"
+atomicLevel: "atom"
+summary: >
+  The Details component presents a clear and consistent way for users to understand and interact with detailed information. It provides context about what the information contains, alongside a recognisable type and a clear call to action.
+properties:
+  - name: "Open"
+    type: "Boolean"
+    default: "False"
+  - name: "label"
+    type: "Text"
+    default: "Details label"
+nestedInstances:
+  - id: icon
+    component: "Icon"
+---
+
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+import NestedInstances from '../../../components/NestedInstances.astro';
+
+Overview goes here...
+
+## Preview
+
+<FigmaDesign
+  embedHeight={400}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=580-4363&t=nldLDu3sgvIPPnjv-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1204-2210&m=dev&t=nldLDu3sgvIPPnjv-1"
+/>
+
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
+
+## Purpose and goals
+
+Purpose and goals go here...
+
+## When to use this component
+
+When to use this component goes here...
+
+## Structure and anatomy
+
+Structure and anatomy goes here...
+
+## Behaviour and usage guidance
+
+Behaviour and usage guidance goes here...
+
+## Figma implementation guidance
+
+Figma implementation guidance goes here...
