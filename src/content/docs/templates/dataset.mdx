@@ -10,6 +10,12 @@ import FigmaDesign from '../../../components/FigmaDesign.astro';
 import ComponentProperties from '../../../components/ComponentProperties.astro';
 import NestedInstances from '../../../components/NestedInstances.astro';
 
+The Dataset template provides users with access to published datasets, supporting information and downloadable data files in a consistent and structured format.
+
+The template is designed to help users quickly access the latest available data while also providing clear links to methodology, related content and previous versions where relevant. It supports both simple data retrieval and deeper exploration of the context surrounding a dataset.
+
+This template is used for published datasets across the ONS website.
+
 ## Preview
 
 <FigmaDesign
@@ -18,45 +24,132 @@ import NestedInstances from '../../../components/NestedInstances.astro';
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=477-648&m=dev&t=AauwUuST4kaR7tMT-1"
 />
 
-## Purpose and goal
+## Purpose and goals
 
-The primary purpose of the Dataset page is to enable users to find, understand, and download the latest version of a dataset. It also provides clear pathways to related resources — such as older editions, previous versions, and supplementary content — helping users navigate the lifecycle of a dataset with confidence.
+The Dataset template enables users to find, understand and download the latest version of a dataset. It brings together dataset series and dataset edition content into a single page, reducing unnecessary navigation and helping users access data more quickly.
+
+Research showed that users most often want to reach the latest available data. Previously, dataset series pages acted primarily as a navigational step to dataset editions. Combining these views into a single template creates a more direct and streamlined journey.
+
+The template also provides clear pathways to supporting information, related content and previous versions, helping users understand the wider context and lifecycle of a dataset.
 
 This template aims to:
-* Present dataset information in a consistent, structured format
-* Reduce duplication and confusion between editions or versions
-* Improve user confidence in accessing and understanding data
-* Provide a seamless link between data and its wider statistical or analytical context
+* Present dataset information in a consistent and structured format
+* Reduce confusion between editions and versions
+* Improve confidence in accessing and understanding data
+* Support efficient download of data files
+* Connect datasets to related analysis, methodology and supporting content
 
 ## Structure and key features
 
-The Dataset template is composed of several key sections, each serving a distinct purpose:
+The Dataset template follows the standard ONS content page layout and is composed of several key sections.
+
+### Phase banner
+
+The page includes the Phase Banner component to indicate that the service is currently in beta.
+
+### Site header
+
+The standard Site Header component provides access to site navigation and search.
 
 ### Page banner
 
-The [page banner](/components/pagebanner) includes a heading, including the content type and dataset title as well as a short summary or description which provides users with an overview of the dataset's content and purpose.
+The Page Banner introduces the dataset and includes:
+* The dataset title
+* A short description explaining the content and purpose of the dataset
 
-### Edition selector
-A dataset may have multiple editions (separate releases, often representing different time periods). An [edition selector](/components/editionselector) positioned near the top of the page allows users to switch between editions without leaving the dataset view. The most recent edition is shown by default.
+### Table of contents
 
-### Data download options
-Users can download data and supporting information in a variety of formats (e.g. Excel, CSV/W or TXT).
-Each download option uses the [File download](/components/filedownload) component. Each download option should clearly indicate:
-* The file format (using both text and an icon)
+A table of contents displayed in the left sidebar allows users to navigate between sections of the page.
+
+## Dataset content
+
+### Edition metadata
+
+The metadata section provides key information about the dataset edition being viewed.
+
+This may include:
+* Release date
+* Next release date
+* Contact information
+* Version number
+* Total number of versions
+* Accreditation status
+
+This information helps users understand how up to date the dataset is, its status and who is responsible for it.
+
+### Get the data
+
+The Get the data section allows users to download the dataset in available formats, such as Excel, CSV or TXT.
+
+Download options use the File Download component to provide a consistent and accessible download experience.
+
+Each download option should clearly indicate:
+* File format
 * File size
-* A short description of what is included (e.g. "Full dataset", "Supporting information", etc)
+* A short description of the file contents where needed
+
+Only formats that are available should be shown.
+
+### Quality and methodology information
+
+This section links to supporting methodology content and explains what information it contains.
+
+Methodology information helps users understand:
+* How the data was collected
+* How the dataset should be interpreted
+* Any limitations or important considerations
+
+### Important notes and usage information (optional)
+
+This optional section provides additional guidance to help users understand and use the dataset appropriately.
+
+It may include:
+* Caveats or limitations
+* Changes in methodology
+* Advice on interpretation or reuse
+
+This section should only be included where additional context is necessary.
 
 ### Related content
 
-A related content area helps users to navigate and explore the wider context of the dataset, including links to related datasets, statistical articles, dashboards or data visualisations and methodology or guidance pages.
+The Related content section helps users explore content connected to the dataset.
 
-This section supports discoverability and helps connect users to other relevant data sources or analyses.
+This may include:
+* Statistical articles
+* Related datasets
+* Previous or related editions
+* Methodology or guidance pages
+* Dashboards or data visualisations
+
+This section supports discoverability and helps connect users to relevant analysis and supporting information.
 
 ### Version history
 
 Where a dataset edition has undergone revisions or corrections, a version history is shown to maintain transparency.
-This section lists previous versions in reverse chronological order, with details about what was changed and when. Older versions should remain accessible.
+
+Previous versions should remain accessible and are displayed in reverse chronological order.
+
+The Version History component may also be reused across other content types where version tracking is required.
 
 ### Contact details
 
-The [Contact details](/components/contactdetails) component provides users with details for the responsible statistical team. This includes the team name, email address, and may also include a telephone number.
+The Contact Details component provides users with details for the responsible statistical team.
+
+This may include:
+* Team name
+* Email address
+* Telephone number
+
+This component is reused across multiple content types to provide a consistent contact experience.
+
+## Future considerations
+
+### Edition selector
+
+Earlier versions of the dataset journey separated dataset series pages from dataset edition pages. In this model, users selected an edition from a dedicated series page.
+
+The current template combines these experiences into a single page focused on the latest available edition.
+
+An edition selector is not included in the initial Phase 2 release because only a single edition will be available. Including a navigational component for edition switching would therefore add unnecessary complexity.
+
+Further research and requirements gathering are needed to determine whether an edition selector is required in future iterations, and how users should navigate between historical editions where relevant.
