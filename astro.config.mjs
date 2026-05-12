@@ -20,23 +20,33 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Tokens',
-					autogenerate: { directory: 'tokens' },
+					items: [
+						{ autogenerate: { directory: 'tokens'} }
+					]
 				},
 				{
 					label: 'Components',
-					autogenerate: { directory: 'components' },
+					items: [
+						{ autogenerate: { directory: 'components'} }
+					]
 				},
 				{
 					label: 'Templates',
-					autogenerate: { directory: 'templates' },
+					items: [
+						{ autogenerate: { directory: 'templates'} }
+					]
 				},
 				{
 					label: 'Guides',
-					autogenerate: { directory: 'guides' },
+					items: [
+						{ autogenerate: { directory: 'guides'} }
+					]
 				},
 				{
 					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					items: [
+						{ autogenerate: { directory: 'reference'} }
+					]
 				},
 			],
 		}),

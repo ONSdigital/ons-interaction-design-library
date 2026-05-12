@@ -1,42 +1,62 @@
 {
   "typography-grid": {
     "type": "spacing-ref",
-    "value": "size / spacing / 1-unit"
+    "desktop": { "tokenName": "size / spacing / 1-unit", "pixelValue": "4" },
+    "tablet": { "tokenName": "size / spacing / 1-unit", "pixelValue": "4" },
+    "phone": { "tokenName": "size / spacing / 1-unit", "pixelValue": "4" }
   },
   "layout-grid": {
     "type": "spacing-ref",
-    "value": "size / spacing / 2-units"
+    "desktop": { "tokenName": "size / spacing / 2-units", "pixelValue": "8" },
+    "tablet": { "tokenName": "size / spacing / 2-units", "pixelValue": "8" },
+    "phone": { "tokenName": "size / spacing / 2-units", "pixelValue": "8" }
   },
   "inside-gutter": {
     "type": "spacing-ref",
-    "value": "size / spacing / 10-units"
+    "desktop": { "tokenName": "size / spacing / 10-units", "pixelValue": "40" },
+    "tablet": { "tokenName": "size / spacing / 10-units", "pixelValue": "40" },
+    "phone": { "tokenName": "size / spacing / 10-units", "pixelValue": "40" }
   },
-  "outside-gutter": {
+  "outer-margin": {
     "type": "spacing-ref",
-    "value": "size / spacing / 12-units"
+    "desktop": { "tokenName": "size / spacing / 12-units", "pixelValue": "48" },
+    "tablet": { "tokenName": "size / spacing / 8-units", "pixelValue": "32" },
+    "phone": { "tokenName": "size / spacing / 6-units", "pixelValue": "24" }
   },
   "container-width": {
     "type": "spacing-ref",
-    "value": "size / spacing / 326-units"
+    "desktop": { "tokenName": "size / spacing / 326-units", "pixelValue": "1304" },
+    "tablet": { "tokenName": "size / spacing / 326-units", "pixelValue": "1304" },
+    "phone": { "tokenName": "size / spacing / 326-units", "pixelValue": "1304" }
   },
   "column-count": {
     "type": "number",
-    "value": 12
+    "desktop": 12,
+    "tablet": 3,
+    "phone": 1
   },
   "sidebar-width": {
     "type": "spacing-ref",
-    "value": "size / spacing / 102-units"
+    "desktop": "size / spacing / 102-units",
+    "tablet": "size / spacing / 102-units",
+    "phone": "size / spacing / 102-units"
   },
   "text-width": {
     "type": "spacing-ref",
-    "value": "size / spacing / 158-units"
+    "desktop": "size / spacing / 158-units",
+    "tablet": "size / spacing / 158-units",
+    "phone": "container-width"
   },
   "content-width": {
     "type": "spacing-ref",
-    "value": "size / spacing / 214-units"
+    "desktop": "size / spacing / 214-units",
+    "tablet": "size / spacing / 214-units",
+    "phone": "container-width"
   },
   "device-width": {
     "type": "spacing-ref",
-    "value": "size / spacing / 360-units"
+    "desktop": "size / spacing / 360-units",
+    "tablet": "size / spacing / 360-units",
+    "phone": "size / spacing / 360-units"
   }
 }

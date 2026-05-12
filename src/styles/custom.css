@@ -24,3 +24,15 @@ a[aria-current="page"] {
   background-color: var(--color-primary-ocean-blue);
   color: var(--color-greyscale-white);
 }
+
+.token-table {
+  width: 100%;
+}
+
+.pixel-value {
+  background: #f5f5f5;
+  padding: 2px 4px;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  font-size: 14px;
+}
