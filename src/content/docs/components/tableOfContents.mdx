@@ -17,7 +17,7 @@ On this variant as users scroll through long-form content, the table of contents
 
 ## Purpose and goals
 
-The primary purpose of the In-page table of contents is to improve the findability and scannability of information on content-heavy pages. It transforms a linear reading experience into a non-linear one, catering to users who need to "skip and scan" rather than read from top to bottom. It does this by having the table on screen as the users scrolls through the body content.
+The primary purpose of the In-page table of contents is to improve the findability and scannability of information on content-heavy pages. It transforms a linear reading experience into a non-linear one, catering to users who need to "skip and scan" rather than read from top to bottom. 
 
 This component helps maintain:
 
@@ -35,7 +35,7 @@ It provides a standard navigation pattern across statistical articles and other 
 
 ## When to use this component
 
-Use the In-page table of contents on pages with a large amount of content divided into clear, logical sections. It is particularly effective for long-form content, and information pages where a user may only need to reference a specific subsection.
+Use the In-page table of contents on pages with a large amount of content divided into clear, logical sections. It is particularly effective for long-form content, and information pages where a user may only need to reference a specific section.
 
 ## When not to use this component
 
@@ -51,11 +51,41 @@ A clear, concise label (usually "Contents") that identifies the purpose of the c
 
 ### Navigation links
 
-A list of links that correspond directly to the section headings used within the body text. The wording of the links must exactly match the headings on the page. **(Numbering of sections to aid navigation to be considered and on backlog for testing)**
+A list of links that correspond directly to the section headings used within the body text. The wording of the links must exactly match the headings on the page. 
+Where section numbering is used, TOC numbers must match the content section numbers exactly — for example, if Section 3 is "3. Borrowing" in the the TOC, then H2 in the body must also read "3. Borrowing". 
+
+See Table of contents (with section numbering) for full implementation rules including highlighting logic, numbering behaviour, and visual style.
 
 ### Active state indicator
 
-A visual cue (such as a vertical bar or bold text) that highlights which section the user is currently viewing as they scroll.
+Use a weighted, high-contrast underline. 
+Research shows subtle highlights are often missed by users with low vision or those in high-glare environments. 
+For highlight use : #003c57 with 10%
+
+## Table of contents with section numbering
+Use the numbered table of contents for comprehensive statistical article and methodology content types - to help users navigate and understand the volume of information.
+
+Please note : Further discussion is underway to decide where else this should be implemented (and should not) be implemented.
+
+###Implementation rules
+1. 1. Highlighting logic
+The active state must always follow the "Topmost Heading" rule. This ensures that even in short sections, the user has a visual anchor of where they are.
+
+The rule: The highlighted item is always the heading nearest to the top of the screen.
+
+The exception: When the user hits the footer, the very last section must remain highlighted.
+
+2. Additional information
+
+a. Only one item highlighted at any time.
+b. Active item: The heading nearest to the top of the viewport (reading area) is active.
+c. Short sections: If multiple headings are visible because sections are short, the topmost heading within the viewport is the active one.
+d. Last section: The final ToC item must remain active when the user reaches the bottom of the page, even if the heading doesn't reach the top of the viewport.
+e. When multiple headings are visible simultaneously, the topmost one is highlighted — no flickering or multiple items highlighted at once.
+f. Clicking a TOC link scrolls to that section and updates the active state accordingly.
+g. The last TOC item remains highlighted when the user scrolls to the bottom of the page.
+h. Behaviour is consistent scrolling both up and down.
+
 
 ## Technical Limitations
 
@@ -70,11 +100,13 @@ To ensure the best user experience, the following rules should be applied:
 ### Link accuracy
 
 Anchor links must work correctly. Clicking a link should take the user directly to the corresponding heading, with enough padding at the top so the heading isn't obscured by the browser header.
+The section numbers should not be included in any in-page anchor links to sections - for example, the anchor link for TOC item “3. Borrowing” would remain as “#borrowing”
 
 ### Back to table of contents
 
 Because of the sticky limitations, a variant of the Back to top component must be used in conjunction with the In-page table of contents. This should work the same as the 'Back to top' component and be fixed to the bottom of the screen as the user scrolls down the page. When clicked though, it shoult return the user to the table of contents as opposed to the top of the page.
 
+This is recomended design for mobile.
   **Note:** This dual-navigation approach requires usability testing to confirm that the "Back to top" and "Sticky TOC" work harmoniously for the user.
 
 ### No independent scrolling
