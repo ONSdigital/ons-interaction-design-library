@@ -1,0 +1,121 @@
+---
+type: "component"
+title: "Topic tile"
+version: "1.0.0"
+atomicLevel: "molecule"
+summary: >
+  The Headline tile presents a single key statistic with a short title and supporting description. It is designed to communicate important information at a glance, with clarity and visual balance across all screen sizes.
+properties:
+  - name: "State"
+    type: "Variant"
+    default: "Default, Hover, Focus"
+  - name: "Topic Title"
+    type: "Text"
+    default: "[Topic Title]"
+  - name: "Description"
+    type: "Text"
+    default: "[Lorem ipsum...]"
+---
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+
+The Topic Tile component provides a clear and consistent way to link users from a Theme page to a related Topic page.
+
+The component presents a topic as a clickable tile containing a title and short description. It helps users scan available topics and navigate to the content most relevant to them.
+
+## Preview
+
+<FigmaDesign
+embedHeight={320}
+designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=11192-2494&t=CJrmIGLONByIVWW5-1"
+devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=11192-2494&m=dev&t=CJrmIGLONByIVWW5-1"
+/>
+<ComponentProperties properties={frontmatter.properties} />
+
+## Purpose and goals
+
+The Topic Tile component is used to support navigation between Themes and Topics across the ONS website.
+
+This component aims to:
+
+- Help users quickly identify available topics
+- Provide enough context for users to understand what a topic contains
+- Support efficient scanning and navigation
+- Provide a large and accessible click target
+
+## When to use this component
+
+Use the Topic Tile component on Theme pages to link users to related Topic pages.
+
+Each tile should represent a single topic and include a concise description of the content available within that topic.
+
+Do not use this component for:
+- External links
+- Calls to action
+- Promotional content
+- Navigation to individual articles or datasets
+
+## Structure and anatomy
+
+The Topic Tile component is made up of the following elements.
+
+### Topic title
+
+The title identifies the topic being linked to.
+
+Titles should:
+- Be concise and descriptive
+- Clearly reflect the name of the topic
+- Avoid unnecessary wording
+
+### Topic description
+
+The description provides a short summary of the topic and helps users decide whether the content is relevant to them.
+
+Descriptions should:
+- Be concise and easy to scan
+- Explain the type of information available
+- Avoid repeating the title
+
+### Container
+
+The content is presented within a bordered container to provide clear visual separation between tiles.
+
+The entire container is clickable and acts as a single link target.
+
+## States
+
+The Topic Tile component includes the following states.
+
+### Default
+
+The default state presents the tile in its standard appearance.
+
+### Hover
+
+The hover state indicates that the tile is interactive when a user moves their pointer over the component.
+
+### Focus
+
+The focus state uses the standard ONS focus styling to indicate when the component has keyboard focus, for example when navigating using the Tab key.
+
+Focus states must remain clearly visible and meet accessibility requirements.
+
+## Behaviour and usage rules
+
+- The entire tile must function as a single clickable link
+- Titles and descriptions should remain concise and easy to scan
+- Tiles should be used consistently within a layout
+- Focus styling must not be removed or overridden
+- Tiles must remain usable across screen sizes and input methods
+
+## Accessibility
+
+The Topic Tile component must support both keyboard and pointer interaction.
+
+Users should be able to:
+- Navigate to tiles using the keyboard
+- Clearly identify which tile has focus
+- Activate the tile using standard keyboard interactions
+
+The title and description should provide enough context for users to understand where the link will take them.
