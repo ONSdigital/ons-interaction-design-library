@@ -1,0 +1,77 @@
+---
+type: "component"
+title: "Page Banner"
+version: "1.0.0"
+atomicLevel: "atom"
+summary: >
+  The Page Banner component provides a consistent way to display important information at the top of a page. It helps users quickly understand the purpose of the page and any relevant context.
+properties:
+  - name: "File format"
+    type: "Text"
+    default: "True"
+  - name: "File name"
+    type: "Text"
+    default: "True"
+  - name: "Supporting information"
+    type: "Text"
+    default: "True"
+nestedInstances:
+  - id: icon
+    component: "Icon"
+---
+
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+
+Overview goes here...
+
+## Preview
+
+<FigmaDesign
+  embedHeight={400}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=580-4363&t=nldLDu3sgvIPPnjv-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1204-2210&m=dev&t=nldLDu3sgvIPPnjv-1"
+/>
+
+<ComponentProperties properties={frontmatter.properties} />
+<NestedInstances instances={frontmatter.nestedInstances} />
+
+## Purpose and goals
+
+Purpose and goals go here...
+
+## When to use this component
+
+When to use this component guidance goes here...
+
+## Variants
+
+Variants guidance goes here...
+
+### Theme
+
+Theme variant guidance goes here...
+
+### Topic
+
+Topic variant guidance goes here...
+
+### Page
+
+Page variant guidance goes here...
+
+## Structure and anatomy
+
+Structure and anatomy guidance goes here...
+
+## Behaviour and usage guidance
+
+Behaviour and usage guidance goes here...
+
+## Visual design considerations
+
+Visual design considerations guidance goes here...
+
+## Figma implementation guidance
+
+Figma implementation guidance goes here...
