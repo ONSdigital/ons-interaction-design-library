@@ -1,10 +1,10 @@
 ---
 type: "component"
-title: "Topic tile"
+title: "Navigation tile"
 version: "1.0.0"
 atomicLevel: "molecule"
 summary: >
-  The Headline tile presents a single key statistic with a short title and supporting description. It is designed to communicate important information at a glance, with clarity and visual balance across all screen sizes.
+  The Navigation Tile component presents a destination using a title and short description within a clickable container. It helps users understand where a link will take them before navigating.
 properties:
   - name: "State"
     type: "Variant"
@@ -19,9 +19,9 @@ properties:
 import FigmaDesign from '../../../components/FigmaDesign.astro';
 import ComponentProperties from '../../../components/ComponentProperties.astro';
 
-The Topic Tile component provides a clear and consistent way to link users from a Theme page to a related Topic page.
+The Navigation Tile component provides a clear and consistent way to help users navigate to related content.
 
-The component presents a topic as a clickable tile containing a title and short description. It helps users scan available topics, understand what content is available, and navigate to the content most relevant to them.
+The component presents a destination as a clickable tile containing a title and short description. It helps users understand what content is available before navigating and supports efficient scanning of related links.
 
 ## Preview
 
@@ -34,52 +34,52 @@ devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction
 
 ## Purpose and goals
 
-The Topic Tile component is used to support navigation between Themes and Topics across the ONS website.
+The Navigation Tile component is used to support navigation between related content across the ONS website.
 
 This component aims to:
 
-- Help users quickly identify available topics
-- Provide enough context for users to understand what a topic contains
+- Help users quickly identify available content
+- Provide enough context for users to understand where a link will take them
 - Support efficient scanning and navigation
 - Provide a large and accessible click target
-- Provide a predictable navigation pattern across Theme pages
+- Provide a predictable navigation pattern across pages
 
 ## When to use this component
 
-Use the Topic Tile component on Theme pages to link users to related Topic pages.
+Use the Navigation Tile component when users need additional context before following a link.
 
-Each tile should represent a single topic and include a concise description of the content available within that topic.
+Each tile should represent a single destination and include a concise description of the content available on the destination page.
 
-User research has shown that users rely on clear topic titles and short descriptions to understand what content is available before navigating.
+User research has shown that users rely on clear titles and short descriptions to understand what content is available before navigating.
 
 Do not use this component for:
 - External links
 - Calls to action
 - Promotional content
-- Navigation to individual articles or datasets
+- Actions that trigger functionality rather than navigation
 
 ## Structure and anatomy
 
-The Topic Tile component is made up of the following elements.
+The Navigation tile component is made up of the following elements.
 
-### Topic title
+### Title
 
-The title identifies the topic being linked to and acts as the primary label for the destination page.
+The title identifies the destination being linked to and acts as the primary label for the destination page.
 
 Titles should:
 - Be concise and descriptive
-- Clearly reflect the name of the topic
+- Clearly reflect the destination content
 - Avoid unnecessary wording
 
-### Topic description
+### Description
 
-The description provides a short summary of the topic and helps users decide whether the content is relevant to them.
+The description provides a short summary of the destination and helps users decide whether the content is relevant to them.
 
 Descriptions should:
 - Be concise and easy to scan
 - Explain the type of information available
 - Avoid repeating the title
-- Help users understand what they will find on the Topic page
+- Help users understand what they will find after navigating
 
 Descriptions should normally be included, as they provide important context and support informed navigation decisions.
 
@@ -91,7 +91,7 @@ The entire container is clickable and acts as a single link target.
 
 ## States
 
-The Topic Tile component includes the following states.
+The Navigation Tile component includes the following states.
 
 ### Default
 
@@ -114,11 +114,11 @@ Focus states must remain clearly visible and meet accessibility requirements.
 - Tiles should be used consistently within a layout
 - Focus styling must not be removed or overridden
 - Tiles must remain usable across screen sizes and input methods
-- Each tile should link to a single Topic page
+- Each tile should link to a single destination
 
 ## Accessibility
 
-The Topic Tile component must support both keyboard and pointer interaction.
+The title and description should provide enough context for users to understand where the link will take them before navigating.
 
 Users should be able to:
 - Navigate to tiles using the keyboard
