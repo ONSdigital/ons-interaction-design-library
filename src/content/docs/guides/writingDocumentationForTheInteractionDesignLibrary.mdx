@@ -1,0 +1,201 @@
+---
+title: Writing documentation for the ONS Interaction Design Library
+---
+The Interaction Design Library exists to help designers, developers, product teams and stakeholders understand:
+
+* What a component, pattern or template is
+* Why it exists
+* When it should be used
+* How it should behave
+
+Documentation should support design decisions and provide clear usage guidance. It should not duplicate information that is already maintained elsewhere.
+
+## Documentation principles
+
+### Focus on purpose over appearance
+
+Documentation should explain what a component is for and the problem it solves.
+
+Good:
+> The Navigation Tile helps users understand where a link will take them before navigating.
+
+Avoid:
+> The Navigation Tile uses a blue border and 24px padding.
+
+Visual styling is already defined in Figma and should not be repeated in documentation.
+
+### Focus on usage over implementation
+
+Documentation should describe how a component should be used, not how it is built.
+
+Good:
+> The entire tile should function as a single link.
+
+Avoid:
+> Wrap the component in a semantic anchor element.
+
+Good:
+> Descriptions should remain concise and easy to scan.
+
+Avoid:
+> Use `line-clamp: 4`.
+
+Implementation details belong in code, technical documentation or Dev Mode.
+
+### Write for a broad audience
+
+Documentation should be understandable by:
+* Designers
+* Developers
+* Product Owners
+* Content Designers
+* Stakeholders
+
+Avoid technical language where possible and explain concepts in plain English.
+
+### Document the current design
+
+Documentation should describe the component or pattern as it exists today.
+
+Avoid documenting:
+* Previous designs
+* Historical comparisons
+* Project background
+* Design evolution
+
+If design rationale or research findings are important, summarise them briefly and focus on how they influence the current design.
+
+### Avoid duplication
+
+Information should have a single source of truth.
+
+Where information already exists elsewhere, link to it rather than repeating it.
+
+Examples include:
+* Typography styles
+* Colour values
+* Design tokens
+* Accessibility standards
+* Content style guidance
+
+Duplicated information becomes difficult to maintain and can quickly become outdated.
+
+## Recommended structure
+
+Component documentation should generally follow this structure.
+
+### Introduction
+
+Provide a short overview of the component and its purpose.
+
+### Purpose and goals
+
+Explain:
+* Why the component exists
+* What user need it supports
+* What goals it helps achieve
+
+### When to use this component
+
+Describe:
+* Appropriate use cases
+* Typical scenarios
+* Any situations where it should not be used
+
+### Structure and anatomy
+
+Describe the key elements that make up the component.
+
+Focus on meaning and purpose rather than styling.
+
+### States
+
+Document any interaction states that affect user behaviour.
+
+Examples include:
+* Default
+* Hover
+* Focus
+* Expanded
+* Collapsed
+* Selected
+
+Describe what the state communicates to users.
+
+### Behaviour and usage rules
+
+Provide practical guidance on how the component should behave and be used consistently.
+
+### Accessibility
+
+Document accessibility considerations that are specific to the component.
+
+Avoid repeating general accessibility requirements that apply across the entire design system.
+
+## What to include
+
+Documentation should include:
+* Purpose and goals
+* User needs
+* Usage guidance
+* Behaviour
+* Component anatomy
+* Accessibility considerations specific to the component
+* Research insights that directly inform design decisions
+
+## What not to include
+
+Avoid documenting:
+
+### Visual specifications
+* Colours
+* Typography
+* Spacing values
+* Border sizes
+* Dimensions
+* Breakpoints
+
+These are maintained in Figma and Dev Mode.
+
+### Implementation details
+* HTML
+* CSS
+* JavaScript
+* Code snippets
+* Technical frameworks
+* Component APIs
+
+The Interaction Design Library is not technical documentation.
+
+### Historical information
+* Old designs
+* Design comparisons
+* Project history
+* Migration notes
+
+These may be useful in project documentation but should not form part of component guidance.
+
+## Writing style
+
+Use clear, concise language.
+
+Prefer:
+> Use the Navigation Tile when users need additional context before following a link.
+
+Avoid:
+> The Navigation Tile component has been specifically designed to facilitate enhanced navigational experiences across multiple user journeys.
+
+Keep sentences short and direct.
+
+Use active voice where possible.
+
+Write guidance as recommendations and rules rather than explanations of implementation.
+
+## A simple test
+
+Before adding information to documentation, ask:
+
+> If this changed in Figma tomorrow, would the documentation also need updating?
+
+If the answer is yes, the information may belong in Figma rather than the documentation.
+The library should focus on purpose, usage and behaviour, which change less frequently and remain useful over time.
