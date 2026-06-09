@@ -5,23 +5,9 @@ version: "1.0.0"
 atomicLevel: "atom"
 summary: >
   The Page Banner component provides a consistent way to display important information at the top of a page. It helps users quickly understand the purpose of the page and any relevant context.
-properties:
-  - name: "File format"
-    type: "Text"
-    default: "True"
-  - name: "File name"
-    type: "Text"
-    default: "True"
-  - name: "Supporting information"
-    type: "Text"
-    default: "True"
-nestedInstances:
-  - id: icon
-    component: "Icon"
 ---
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
-import ComponentProperties from '../../../components/ComponentProperties.astro';
 
 Overview goes here...
 
@@ -32,9 +18,6 @@ Overview goes here...
   designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=580-4363&t=nldLDu3sgvIPPnjv-1"
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1204-2210&m=dev&t=nldLDu3sgvIPPnjv-1"
 />
-
-<ComponentProperties properties={frontmatter.properties} />
-<NestedInstances instances={frontmatter.nestedInstances} />
 
 ## Purpose and goals
 
