@@ -21,7 +21,7 @@ import ComponentProperties from '../../../components/ComponentProperties.astro';
 
 The Topic Tile component provides a clear and consistent way to link users from a Theme page to a related Topic page.
 
-The component presents a topic as a clickable tile containing a title and short description. It helps users scan available topics and navigate to the content most relevant to them.
+The component presents a topic as a clickable tile containing a title and short description. It helps users scan available topics, understand what content is available, and navigate to the content most relevant to them.
 
 ## Preview
 
@@ -42,12 +42,15 @@ This component aims to:
 - Provide enough context for users to understand what a topic contains
 - Support efficient scanning and navigation
 - Provide a large and accessible click target
+- Provide a predictable navigation pattern across Theme pages
 
 ## When to use this component
 
 Use the Topic Tile component on Theme pages to link users to related Topic pages.
 
 Each tile should represent a single topic and include a concise description of the content available within that topic.
+
+User research has shown that users rely on clear topic titles and short descriptions to understand what content is available before navigating.
 
 Do not use this component for:
 - External links
@@ -61,7 +64,7 @@ The Topic Tile component is made up of the following elements.
 
 ### Topic title
 
-The title identifies the topic being linked to.
+The title identifies the topic being linked to and acts as the primary label for the destination page.
 
 Titles should:
 - Be concise and descriptive
@@ -76,6 +79,9 @@ Descriptions should:
 - Be concise and easy to scan
 - Explain the type of information available
 - Avoid repeating the title
+- Help users understand what they will find on the Topic page
+
+Descriptions should normally be included, as they provide important context and support informed navigation decisions.
 
 ### Container
 
@@ -108,6 +114,7 @@ Focus states must remain clearly visible and meet accessibility requirements.
 - Tiles should be used consistently within a layout
 - Focus styling must not be removed or overridden
 - Tiles must remain usable across screen sizes and input methods
+- Each tile should link to a single Topic page
 
 ## Accessibility
 
