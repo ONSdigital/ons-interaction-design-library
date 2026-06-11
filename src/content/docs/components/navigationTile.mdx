@@ -96,16 +96,26 @@ The Navigation Tile component includes the following states.
 ### Default
 
 The default state presents the tile in its standard appearance.
+- Background: White
+- Border: 1px Ocean Blue
+- Title: Ocean Blue
+- Summary: Black #222
 
 ### Hover
 
 The hover state indicates that the tile is interactive when a user moves their pointer over the component.
+- Background: 10% Ocean Blue tint #E9EFF4
+- Border: 1px Night Blue
+- Title: Night Blue
 
 ### Focus
 
 The focus state uses the standard ONS focus styling to indicate when the component has keyboard focus, for example when navigating using the Tab key.
-
 Focus states must remain clearly visible and meet accessibility requirements.
+- Background: Sun Yellow
+- Border: 1px Black #222
+- Title: Black #222
+- Must show a visible focus ring (Design System standard)
 
 ## Behaviour and usage rules
 
@@ -116,13 +126,96 @@ Focus states must remain clearly visible and meet accessibility requirements.
 - Tiles must remain usable across screen sizes and input methods
 - Each tile should link to a single destination
 
+## Typography
+
+**Title (link)**
+- Open Sans Bold
+- 26px / 32px
+- text-decoration: underlined (link affordance)
+
+**Summary**
+- Open Sans Regular
+- 18px / 28px
+
+## Content rules
+
+- Title: max 2 lines (line‑clamp: 2)
+- Summary: max 3 lines desktop/tablet, 4 lines mobile
+- If content exceeds the fixed height, apply truncation with ellipsis
+- Summary text is required (validated by user research)
+
+## Responsive behaviour
+
+**Desktop (1304px grid)**
+- 3‑column layout
+- Tile width: 408px
+- Tile height: 240px (fixed)
+- Padding: 24px
+
+**Tablet (768px)**
+- 3‑column layout
+- Tile width: ~235–240px
+- Tile height: 350px (fixed)
+- Padding: 16px
+
+**Mobile (393px)**
+- 1‑column layout stacked
+- Tile width: 100% of device window 320px - 440px (iPhone 16-17)
+- Tile height: 240px (fixed)
+- Padding: 16px
+
+### Rationale
+
+Equal‑height tiles are required to maintain alignment across rows. Fixed heights ensure predictable layout and consistent truncation behaviour.
+
+## Truncation rules
+
+Title: line-clamp: 2
+Summary:
+- Desktop: line-clamp: 3
+- Tablet: line-clamp: 8
+- Mobile: line-clamp: 4
+Overflow: hidden
+Ellipsis: true
+
+
+## Technical specifications
+
+### Container
+- Border: 1px solid
+- Border radius: 8px rounded corners
+- Auto layout: vertical
+- Vertical spacing: 24px on desktop, 16px on tablet & mobile
+- Height: fixed per breakpoint as noted above in Responsive Behaviour
+- Width: per breakpoint (see below)
+
+### Colours
+
+- Ocean Blue
+- Night Blue
+- Sun Yellow
+- Black #222
+- White
+
+### Breakpoints
+
+- Desktop: 1304px (new wide page layout)
+- Tablet: 768px
+- Mobile: 393px
+
 ## Accessibility
 
 The title and description should provide enough context for users to understand where the link will take them before navigating.
+The title and description should provide enough context for users to understand where the link will take them.
 
 Users should be able to:
 - Navigate to tiles using the keyboard
 - Clearly identify which tile has focus
 - Activate the tile using standard keyboard interactions
+- Minimum tap target: 44px
+- Focus ring must follow DS standard
+- Colour contrast meets WCAG AA
+- Link is underlined for clarity
+- Summary text improves comprehension
+- Entire tile is a single link (semantic <a> wrapper)
 
-The title and description should provide enough context for users to understand where the link will take them.
