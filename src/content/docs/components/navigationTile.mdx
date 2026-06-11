@@ -1,0 +1,221 @@
+---
+type: "component"
+title: "Navigation tile"
+version: "1.0.0"
+atomicLevel: "molecule"
+summary: >
+  The Navigation Tile component presents a destination using a title and short description within a clickable container. It helps users understand where a link will take them before navigating.
+properties:
+  - name: "State"
+    type: "Variant"
+    default: "Default, Hover, Focus"
+  - name: "Topic Title"
+    type: "Text"
+    default: "[Topic Title]"
+  - name: "Description"
+    type: "Text"
+    default: "[Lorem ipsum...]"
+---
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+
+The Navigation Tile component provides a clear and consistent way to help users navigate to related content.
+
+The component presents a destination as a clickable tile containing a title and short description. It helps users understand what content is available before navigating and supports efficient scanning of related links.
+
+## Preview
+
+<FigmaDesign
+embedHeight={320}
+designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=11192-2494&t=CJrmIGLONByIVWW5-1"
+devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=11192-2494&m=dev&t=CJrmIGLONByIVWW5-1"
+/>
+<ComponentProperties properties={frontmatter.properties} />
+
+## Purpose and goals
+
+The Navigation Tile component is used to support navigation between related content across the ONS website.
+
+This component aims to:
+
+- Help users quickly identify available content
+- Provide enough context for users to understand where a link will take them
+- Support efficient scanning and navigation
+- Provide a large and accessible click target
+- Provide a predictable navigation pattern across pages
+
+## When to use this component
+
+Use the Navigation Tile component when users need additional context before following a link.
+
+Each tile should represent a single destination and include a concise description of the content available on the destination page.
+
+User research has shown that users rely on clear titles and short descriptions to understand what content is available before navigating.
+
+Do not use this component for:
+- External links
+- Calls to action
+- Promotional content
+- Actions that trigger functionality rather than navigation
+
+## Structure and anatomy
+
+The Navigation tile component is made up of the following elements.
+
+### Title
+
+The title identifies the destination being linked to and acts as the primary label for the destination page.
+
+Titles should:
+- Be concise and descriptive
+- Clearly reflect the destination content
+- Avoid unnecessary wording
+
+### Description
+
+The description provides a short summary of the destination and helps users decide whether the content is relevant to them.
+
+Descriptions should:
+- Be concise and easy to scan
+- Explain the type of information available
+- Avoid repeating the title
+- Help users understand what they will find after navigating
+
+Descriptions should normally be included, as they provide important context and support informed navigation decisions.
+
+### Container
+
+The content is presented within a bordered container to provide clear visual separation between tiles.
+
+The entire container is clickable and acts as a single link target.
+
+## States
+
+The Navigation Tile component includes the following states.
+
+### Default
+
+The default state presents the tile in its standard appearance.
+- Background: White
+- Border: 1px Ocean Blue
+- Title: Ocean Blue
+- Summary: Black #222
+
+### Hover
+
+The hover state indicates that the tile is interactive when a user moves their pointer over the component.
+- Background: 10% Ocean Blue tint #E9EFF4
+- Border: 1px Night Blue
+- Title: Night Blue
+
+### Focus
+
+The focus state uses the standard ONS focus styling to indicate when the component has keyboard focus, for example when navigating using the Tab key.
+Focus states must remain clearly visible and meet accessibility requirements.
+- Background: Sun Yellow
+- Border: 1px Black #222
+- Title: Black #222
+- Must show a visible focus ring (Design System standard)
+
+## Behaviour and usage rules
+
+- The entire tile must function as a single clickable link
+- Titles and descriptions should remain concise and easy to scan
+- Tiles should be used consistently within a layout
+- Focus styling must not be removed or overridden
+- Tiles must remain usable across screen sizes and input methods
+- Each tile should link to a single destination
+
+## Typography
+
+**Title (link)**
+- Open Sans Bold
+- 26px / 32px
+- text-decoration: underlined (link affordance)
+
+**Summary**
+- Open Sans Regular
+- 18px / 28px
+
+## Content rules
+
+- Title: max 2 lines (line‑clamp: 2)
+- Summary: max 3 lines desktop/tablet, 4 lines mobile
+- If content exceeds the fixed height, apply truncation with ellipsis
+- Summary text is required (validated by user research)
+
+## Responsive behaviour
+
+**Desktop (1304px grid)**
+- 3‑column layout
+- Tile width: 408px
+- Tile height: 240px (fixed)
+- Padding: 24px
+
+**Tablet (768px)**
+- 3‑column layout
+- Tile width: ~235–240px
+- Tile height: 350px (fixed)
+- Padding: 16px
+
+**Mobile (393px)**
+- 1‑column layout stacked
+- Tile width: 100% of device window 320px - 440px (iPhone 16-17)
+- Tile height: 240px (fixed)
+- Padding: 16px
+
+### Rationale
+
+Equal‑height tiles are required to maintain alignment across rows. Fixed heights ensure predictable layout and consistent truncation behaviour.
+
+## Truncation rules
+
+Title: line-clamp: 2
+Summary:
+- Desktop: line-clamp: 3
+- Tablet: line-clamp: 8
+- Mobile: line-clamp: 4
+Overflow: hidden
+Ellipsis: true
+
+
+## Technical specifications
+
+### Container
+- Border: 1px solid
+- Border radius: 8px rounded corners
+- Auto layout: vertical
+- Vertical spacing: 24px on desktop, 16px on tablet & mobile
+- Height: fixed per breakpoint as noted above in Responsive Behaviour
+- Width: per breakpoint (see below)
+
+### Colours
+
+- Ocean Blue
+- Night Blue
+- Sun Yellow
+- Black #222
+- White
+
+### Breakpoints
+
+- Desktop: 1304px (new wide page layout)
+- Tablet: 768px
+- Mobile: 393px
+
+## Accessibility
+
+The title and description should provide enough context for users to understand where the link will take them before navigating.
+The title and description should provide enough context for users to understand where the link will take them.
+
+Users should be able to:
+- Navigate to tiles using the keyboard
+- Clearly identify which tile has focus
+- Activate the tile using standard keyboard interactions
+- Minimum tap target: 44px
+- Focus ring must follow DS standard
+- Colour contrast meets WCAG AA
+- Link is underlined for clarity
+- Summary text improves comprehension
+- Entire tile is a single link (semantic <a> wrapper)
+
