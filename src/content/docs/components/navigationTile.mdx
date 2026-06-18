@@ -1,0 +1,130 @@
+---
+type: "component"
+title: "Navigation tile"
+version: "1.0.0"
+atomicLevel: "molecule"
+summary: >
+  The Navigation Tile component presents a destination using a title and short description within a clickable container. It helps users understand where a link will take them before navigating.
+properties:
+  - name: "State"
+    type: "Variant"
+    default: "Default, Hover, Focus"
+  - name: "Topic Title"
+    type: "Text"
+    default: "[Topic Title]"
+  - name: "Description"
+    type: "Text"
+    default: "[Lorem ipsum...]"
+---
+import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
+
+The Navigation Tile component provides a clear and consistent way to help users navigate to related content.
+
+The component presents a destination as a clickable tile containing a title and short description. It helps users understand what content is available before navigating and supports efficient scanning of related links.
+
+## Preview
+
+<FigmaDesign
+embedHeight={320}
+designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=11192-2494&t=CJrmIGLONByIVWW5-1"
+devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=11192-2494&m=dev&t=CJrmIGLONByIVWW5-1"
+/>
+<ComponentProperties properties={frontmatter.properties} />
+
+## Purpose and goals
+
+The Navigation Tile component is used to support navigation between related content across the ONS website.
+
+This component aims to:
+
+- Help users quickly identify available content
+- Provide enough context for users to understand where a link will take them
+- Support efficient scanning and navigation
+- Provide a large and accessible click target
+- Provide a predictable navigation pattern across pages
+
+## When to use this component
+
+Use the Navigation Tile component when users need additional context before following a link.
+
+Each tile should represent a single destination and include a concise description of the content available on the destination page.
+
+User research has shown that users rely on clear titles and short descriptions to understand what content is available before navigating.
+
+Do not use this component for:
+- External links
+- Calls to action
+- Promotional content
+- Actions that trigger functionality rather than navigation
+
+## Structure and anatomy
+
+The Navigation tile component is made up of the following elements.
+
+### Title
+
+The title identifies the destination being linked to and acts as the primary label for the destination page.
+
+Titles should:
+- Be concise and descriptive
+- Clearly reflect the destination content
+- Avoid unnecessary wording
+
+### Description
+
+The description provides a short summary of the destination and helps users decide whether the content is relevant to them.
+
+Descriptions should:
+- Be concise and easy to scan
+- Explain the type of information available
+- Avoid repeating the title
+- Help users understand what they will find after navigating
+
+Descriptions should normally be included, as they provide important context and support informed navigation decisions.
+
+### Container
+
+The content is presented within a bordered container to provide clear visual separation between tiles.
+
+The entire container acts as a single interactive element. Users should be able to select the tile from anywhere within its bounds, rather than needing to target only the title or a specific part of the component.
+
+This approach provides a larger click target, supports accessibility, and helps create a predictable navigation experience.
+
+## States
+
+The Navigation Tile component includes the following states.
+
+### Default
+
+The default state presents the tile in its standard appearance.
+
+### Hover
+
+The hover state indicates that the tile is interactive when a user moves their pointer over the component.
+
+### Focus
+
+The focus state uses the standard ONS focus styling to indicate when the component has keyboard focus, for example when navigating using the Tab key.
+
+Focus states must remain clearly visible and meet accessibility requirements.
+
+## Behaviour and usage rules
+
+- The entire tile must function as a single clickable link
+- Titles and descriptions should remain concise and easy to scan
+- Tiles should be used consistently within a layout
+- Focus styling must not be removed or overridden
+- Tiles must remain usable across screen sizes and input methods
+- Each tile should link to a single destination
+
+
+## Accessibility
+
+The title and description should provide enough context for users to understand where the link will take them before navigating.
+
+Users should be able to:
+- Navigate to tiles using the keyboard
+- Clearly identify which tile has focus
+- Activate the tile using standard keyboard interactions
+
