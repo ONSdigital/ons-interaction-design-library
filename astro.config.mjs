@@ -21,31 +21,37 @@ export default defineConfig({
 				{
 					label: 'Tokens',
 					items: [
-						{ autogenerate: { directory: 'tokens'} }
+						{ autogenerate: { directory: 'tokens' }}
+					]
+				},
+				{
+					label: 'Styles',
+					items: [
+						{ autogenerate: { directory: 'styles' }}
 					]
 				},
 				{
 					label: 'Components',
 					items: [
-						{ autogenerate: { directory: 'components'} }
+						{ autogenerate: { directory: 'components' }}
 					]
 				},
 				{
 					label: 'Templates',
 					items: [
-						{ autogenerate: { directory: 'templates'} }
+						{ autogenerate: { directory: 'templates' }}
 					]
 				},
 				{
 					label: 'Guides',
 					items: [
-						{ autogenerate: { directory: 'guides'} }
+						{ autogenerate: { directory: 'guides' }}
 					]
 				},
 				{
 					label: 'Reference',
 					items: [
-						{ autogenerate: { directory: 'reference'} }
+						{ autogenerate: { directory: 'reference' }}
 					]
 				},
 			],
