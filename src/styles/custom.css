@@ -25,7 +25,7 @@ a[aria-current="page"] {
   color: var(--color-greyscale-white);
 }
 
-.token-table {
+/* .token-table {
   width: 100%;
 }
 
@@ -35,4 +35,25 @@ a[aria-current="page"] {
   border: 1px solid #d6d6d6;
   border-radius: 4px;
   font-size: 14px;
+} */
+
+.primitive {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #eeeeee;
+  font-size: 14px;
+  padding: 4px;
+  border-radius: 8px;
+  line-height: 24px;
+  height: 24px;
+}
+
+.token-icon {
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  height: 16px;
+  width: 16px;
+  font-size: 12px;
+  line-height: 12px;
 }
