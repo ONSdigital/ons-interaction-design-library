@@ -9,52 +9,170 @@ summary: >
 
 import FigmaDesign from '../../../components/FigmaDesign.astro';
 
-Overview goes here...
+The Page Banner component introduces the content of a page and provides users with important contextual information before they begin reading.
+
+It establishes the page hierarchy by presenting the page title alongside supporting information such as the content type, summary, publication status and metadata where appropriate. This helps users quickly understand what they are viewing and whether the content is relevant to them.
 
 ## Preview
 
 <FigmaDesign
-  embedHeight={400}
-  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=580-4363&t=nldLDu3sgvIPPnjv-1"
-  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=1204-2210&m=dev&t=nldLDu3sgvIPPnjv-1"
+  embedHeight={800}
+  designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=863-2191&t=W5MlERe2YugrFN8s-1"
+  devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=863-2191&m=dev&t=W5MlERe2YugrFN8s-1"
 />
 
 ## Purpose and goals
 
-Purpose and goals go here...
+The Page Banner provides a consistent introduction to pages across the ONS website. It establishes the page hierarchy, communicates the type of content being viewed, and presents contextual information that helps users understand the content before engaging with it.
+
+This component aims to:
+* Clearly identify the page and its content type
+* Help users understand what the page contains
+* Surface important publication information where appropriate
+* Present metadata in a consistent and predictable location
+* Establish a clear visual hierarchy at the beginning of the page
 
 ## When to use this component
 
-When to use this component guidance goes here...
+Use the Page Banner at the top of a page, immediately below the Site Header.
+
+Different variants are available depending on the type of content being presented. While the information displayed varies between variants, they all serve the same purpose of introducing the page and providing users with the context they need before reading further.
+
+The Page Banner is suitable for:
+* Theme pages
+* Topic pages
+* Statistical articles
+* Dataset pages
+* Methodology pages
+* Help and guidance pages
+* Other content pages requiring a standard page introduction
 
 ## Variants
 
-Variants guidance goes here...
+The Page Banner currently provides three variants that support different types of content.
 
-### Theme
+All variants share the same purpose of introducing a page and helping users understand its content before reading further. However, the information they display varies depending on the type of page.
 
-Theme variant guidance goes here...
+### Theme banner
 
-### Topic
+The Theme banner introduces a Theme page and provides users with a high-level overview of the Theme before they explore its Topics.
 
-Topic variant guidance goes here...
+It includes:
+* Breadcrumbs
+* A caption identifying the page as a Theme
+* The Theme title
+* A short description
+* A decorative illustration
 
-### Page
+### Topic banner
 
-Page variant guidance goes here...
+The Topic banner introduces a Topic page and follows the same structure as the Theme banner.
+
+It includes:
+* Breadcrumbs
+* A caption identifying the page as a Topic
+* The Topic title
+* A short description
+* A decorative illustration
+
+### Content Page banner
+
+The Content Page banner is used for publications and other content types that require additional contextual information.
+
+It shares the same core structure as the other Page Banner variants, but extends it with publication-specific information where appropriate.
+
+Every Content Page banner includes:
+* Breadcrumbs
+* A caption identifying the content type
+* The page title
+* A summary or description
+
+It may also include:
+* An Official Statistics Accredited badge
+* A publication notice
+* A publication status
+* Publication metadata
+
+These additional elements are unique to the Content Page banner and should only be displayed when they are relevant to the content being presented.
 
 ## Structure and anatomy
 
-Structure and anatomy guidance goes here...
+All Page Banner variants share a common structure consisting of breadcrumbs, a page caption, a page title and a summary.
 
-## Behaviour and usage guidance
+The Content Page banner extends this structure with additional publication-specific elements where required.
 
-Behaviour and usage guidance goes here...
+### Breadcrumbs
 
-## Visual design considerations
+Breadcrumbs help users understand where they are within the website and provide a simple way to navigate back through the content hierarchy.
 
-Visual design considerations guidance goes here...
+### Page caption
 
-## Figma implementation guidance
+The page caption identifies the type of content being viewed, such as Theme, Topic, Statistical article or Dataset. It provides users with immediate context before they read the page title.
 
-Figma implementation guidance goes here...
+### Page title
+
+The page title identifies the primary content of the page and should clearly communicate what users can expect to find.
+
+Titles should:
+* Be concise and descriptive
+* Clearly identify the page content
+* Avoid unnecessary wording
+
+### Summary
+
+The summary provides a brief overview of the page and helps users decide whether the content is relevant to them before continuing.
+
+Summaries should:
+* Clearly describe the purpose of the page
+* Be concise and easy to scan
+* Focus on the most important information
+* Avoid repeating the page title
+
+### Official Statistics Accredited badge (Content Page banner only)
+
+An accreditation badge indicates that a publication or dataset has been officially accredited.
+
+This should only be displayed where accreditation applies.
+
+### Publication notice (Content Page banner only)
+
+A publication notice communicates important information that users should understand before using the content.
+
+For example, it may explain that a publication has been discontinued and provide a link to the publication that replaces it.
+
+### Publication status (Content Page banner only)
+
+A publication status helps users understand whether they are viewing the most current version of the content.
+
+Depending on the publication, this may indicate that it is:
+* The latest release
+* Not the latest release
+* Amended since publication
+
+Displaying this information helps users understand the status of the content before using it.
+
+### Metadata (Content Page banner only)
+
+Metadata provides additional information about the publication and helps users understand its context.
+
+Depending on the content type, this may include:
+* Release date
+* Next release date
+* Release frequency
+* Publishing team
+* Contact details
+* Other publication-specific information
+
+Only metadata that is relevant to the content should be displayed.
+
+## Behaviour and usage rules
+
+The Page Banner should appear once at the top of every page and use the variant most appropriate for the content being presented.
+
+All variants should present a clear page title, supporting context and a consistent page hierarchy.
+
+Publication-specific elements, such as accreditation, publication status and metadata, should only be displayed by the Content Page banner and only where they are relevant.
+
+Optional elements should not leave empty space when omitted, and the layout should adapt naturally to the content available.
+
+Titles and summaries should remain concise, making it easy for users to understand the purpose of the page at a glance.
