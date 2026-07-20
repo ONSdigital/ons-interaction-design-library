@@ -6,24 +6,28 @@ atomicLevel: "atom"
 summary: >
   The Headline tile presents a single key statistic with a short title and supporting description. It is designed to communicate important information at a glance, with clarity and visual balance across all screen sizes.
 properties:
-  - name: "File format"
+  - name: "Link"
+    type: "Boolean"
+    default: "False"
+  - name: "Headline Title"
     type: "Text"
-    default: "True"
-  - name: "File name"
+    default: "Short descriptive heading"
+  - name: "Geographical information"
     type: "Text"
-    default: "True"
+    default: "Subheading with geography covered"
+  - name: "Key figure"
+    type: "Text"
+    default: "6.0 million"
   - name: "Supporting information"
     type: "Text"
-    default: "True"
-nestedInstances:
-  - id: icon
-    component: "Icon"
+    default: "Time period and essential context"
 ---
 import FigmaDesign from '../../../components/FigmaDesign.astro';
+import ComponentProperties from '../../../components/ComponentProperties.astro';
 
 The Headline tile is a simple but highly visible component used to highlight a single standout statistic. It forms the building block of the [Headline facts and figures](/components/headlinefactsfigures) component and is not intended to be used across a page.
 
-Its purpose is to surface key data quickly and clearly. The design relies on strong hierarchy, generous spacing, and restraint in content to maintain impact.
+Its purpose is to surface key data quickly and clearly. The design relies on strong hierarchy, generous spacing, and restraint in content to maintain impact. Where appropriate, geographical information can be displayed to help users understand the scope of the statistic at a glance.
 
 Although visually simple, careful content guidance is essential to preserve balance and readability.
 
@@ -34,6 +38,7 @@ Although visually simple, careful content guidance is essential to preserve bala
   designLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=5516-3157&t=AauwUuST4kaR7tMT-1"
   devModeLink="https://www.figma.com/design/iovDnFhotzD7ETK3RXADos/ONS-Interaction-Design-Library?node-id=5516-3157&m=dev&t=AauwUuST4kaR7tMT-1"
 />
+<ComponentProperties properties={frontmatter.properties} />
 
 ## Purpose and goals
 
@@ -58,10 +63,12 @@ It should not be used for detailed explanation, complex data, or multiple compet
 
 ## Structure and anatomy
 
-The Headline tile consists of three core elements:
+The Headline tile consists of four core elements:
+
 1. Figure title - a short label describing what the statistic represents
-2. Key figure - the primary data point, visually dominant
-3. Supporting information - a concise line of context or clarification
+2. Geographical information - identifies the geographical area that the statistic relates to, where applicable
+3. Key figure - the primary data point and the visual focal point of the component
+4. Supporting information - provides additional context, such as the time period or other essential details
 
 The visual hierarchy should always prioritise the key figure. The title and supporting information provide clarity but should not compete visually with the main number.
 
@@ -81,6 +88,18 @@ Prefer:
 * Clear, direct labels
 * Plain language
 
+### Geographical information
+
+Geographical information identifies the area covered by the statistic, helping users understand its scope without needing to refer to the supporting information.
+
+Where included, it should:
+* Clearly identify the relevant geography (for example, UK, England or Wales)
+* Be concise and easy to scan
+* Use recognised geographical names
+* Avoid repeating information already included elsewhere in the tile
+
+This field should only describe geographical coverage. Additional context, such as dates or methodology, should be included within the supporting information where appropriate.
+
 ### Key figure
 
 The key figure should be concise and, wherever possible, fit on a single line. Long phrases or explanatory text within the key figure reduce impact and may break the layout.
@@ -97,7 +116,7 @@ If additional explanation is required, it should sit within the supporting text.
 
 ### Supporting information
 
-Supporting text should provide brief clarification or context. It should not restate the title or overwhelm the statistic.
+Supporting text should provide brief clarification or context that is not already conveyed by the title, geographical information or key figure.
 
 Keep this text:
 * Descriptive but short
@@ -134,6 +153,8 @@ The aim is to preserve impact while maintaining legibility and comfort on touch 
 ## Behaviour and usage guidance
 
 Headline tiles may optionally link to related content, such as a statistical article or dataset. If used as links, the entire tile should feel interactive and consistent with other interactive components on the page.
+
+Where geographical information is displayed, it should be used consistently across all Headline tiles within the same Headline Facts and Figures component.
 
 When grouped within the Headline facts and figures component, visual weight between tiles should feel balanced. Avoid one tile appearing disproportionately dominant due to excessive text or unusually long content.
 
