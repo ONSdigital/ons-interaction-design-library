@@ -1,0 +1,153 @@
+---
+title: "Getting started"
+description: "Getting started with contributing to the ONS Interaction Design Library"
+---
+
+Before you can contribute to the Interaction Design Library, you'll need access to the required tools and a local development environment.
+
+This guide will walk you through installing the required software, cloning the repository and running the documentation locally.
+
+## Access you need
+
+Before setting up your environment, ensure you have the following:
+
+### GitHub
+* An ONS GitHub account.
+* Access to the `ONSdigital/ons-interaction-design-library` repository.
+* Permission to create branches and pull requests.
+
+### Figma
+* Access to the Interaction Design Library component library.
+* Permission to create branches.
+
+### Jira
+* Permission to create and manage work items for Interaction Design Library changes.
+
+### macOS
+* A Mac running a supported version of macOS.
+* An internet connection to download software and project dependencies.
+
+If you're missing access to any of these services or permissions, speak to one of the library maintainers before continuing.
+
+## Setting up your environment
+
+### Install Visual Studio Code
+
+Visual Studio Code is used to edit and preview the Interaction Design Library documentation.
+
+Download and install the latest version for your operating system.
+
+Once installed, launch Visual Studio Code before continuing.
+
+### Install Node.js
+
+The documentation site is built using Node.js.
+
+We recommend installing Node.js using Node Version Manager (NVM), as it makes future upgrades much easier.
+
+#### Install NVM
+
+Open the **Terminal** application and run:
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+```
+
+Once the installation has completed, close and reopen Terminal.
+
+#### Install Node.js
+
+Install the latest Long Term Support (LTS) version.
+
+```bash
+nvm install --lts
+```
+> Using the LTS version helps ensure everyone is working against a consistent, stable environment
+
+#### Verify the installation
+
+Check that both Node.js and npm are available.
+
+```bash
+node -v
+npm -v
+```
+
+Both commands should return a version number.
+
+### Install Git
+
+Git is including with Xcode Command Line Tooks, which are recommended for development on macOS.
+
+Open **Terminal** and run:
+
+```bash
+git --version
+```
+
+If Git isn't already installed, macOS will prompt you to install the Xcode Command Line Tools. Follow the on-screen instructions to complete the installation.
+
+Once installed, configure Git with your GitHub details:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+```
+
+Use the same email address associated with your GitHub account.
+
+Verify the installation by running:
+
+```bash
+git --version
+```
+
+## Clone the repository
+
+Open Visual Studio Code.
+
+1. Select Source Control from the Activity Bar.
+2. Select Clone Repository.
+3. Choose Clone from GitHub.
+4. Select the ONSdigital/ons-interaction-design-library repository.
+5. Choose a location on your Mac to store the project.
+
+Visual Studio Code will clone the repository and open it automatically.
+
+## Install project dependencies
+
+With the project open in Visual Studio Code:
+
+1. Select **Terminal > New Terminal** from the menu.
+2. Run:
+
+```bash
+npm install
+```
+
+This installs all project dependencies required to run the documentation locally.
+
+You only need to do this after cloning the repository, or when project dependencies have changed.
+
+## Running the documentation locally
+
+Start the local development server by running:
+
+```bash
+npm run dev
+```
+
+Once the server has started, open the address shown in the terminal (typically `http://localhost:4321`) in your browser.
+
+The site automatically refreshes whenever you save a change.
+
+To stop the server, return to the terminal and press **Control + C**.
+
+## Recommended Visual Studio Code extensions
+
+Install the following extensions from the Visual Studio Code Marketplace.
+
+| Extension | Purpose |
+| --- | --- |
+| Astro | Syntax highlighting, IntelliSense and diagnostics for `.astro` files. |
+| MDX | Editing support for `.mdx` documentation files. |
