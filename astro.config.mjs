@@ -54,6 +54,12 @@ export default defineConfig({
 						{ autogenerate: { directory: 'reference' }}
 					]
 				},
+				{
+					label: 'Contributing',
+					items: [
+						{ autogenerate: { directory: 'contributing' }}
+					]
+				},
 			],
 		}),
 	],
