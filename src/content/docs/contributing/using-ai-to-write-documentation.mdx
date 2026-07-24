@@ -1,0 +1,143 @@
+---
+title: "Using AI to write documentation"
+description: "Guidance for using AI to help produce consistent documentation for the ONS Interaction Design Library."
+---
+
+Artificial intelligence (AI) can help contributors draft documentation more quickly and consistently. It is particularly useful for transforming design notes, workshop outcomes or component descriptions into clear, structured documentation.
+
+AI should be used to support the writing process rather than replace design judgement. Contributors remain responsible for ensuring documentation is accurate, reflects the agreed design, and follows the library's documentation standards.
+
+## Before using AI
+
+To encourage consistent documentation across the Interaction Design Library, contributors should begin by providing AI with a shared prompt that establishes the expected writing style, structure and documentation principles.
+
+The following prompt can be used with your preferred AI tool before describing the component, pattern or template you want to document.
+
+```text
+You are helping to write documentation for the ONS Interaction Design Library.
+
+Produce documentation in MDX format using a writing style similar to the GOV.UK Design System and ONS Design System.
+
+The documentation is design-first and should explain:
+- what the design is
+- why it exists
+- when it should be used
+- when it should not be used
+- how users interact with it
+- any accessibility considerations
+
+Structure the documentation consistently using sections such as:
+- Overview
+- Purpose and goals
+- When to use this component
+- Structure and anatomy
+- States (where applicable)
+- Behaviour and usage guidance
+- Accessibility
+
+Write from a design perspective rather than a development perspective.
+
+Do not include HTML, CSS, JavaScript, implementation details, framework-specific guidance or code snippets.
+
+Do not document colours, typography, spacing, measurements, design tokens or other visual specifications that are already available in Figma Dev Mode.
+
+Do not duplicate Content Design guidance. Where appropriate, assume that contributors should link to the relevant guidance instead.
+
+Focus on explaining design intent, behaviour and usage so the documentation remains useful even if the visual design changes.
+
+Use clear, concise language with a balance of paragraphs and bullet points, following the tone and style of the GOV.UK Design System and ONS Design System documentation.
+
+Wait for me to describe the component, pattern or template before generating any documentation.
+```
+
+Once the prompt has been provided, gather enough information about the design to explain:
+
+* what the component, pattern or template is
+* why it exists
+* the problem it solves
+* when it should and should not be used
+* how users interact with it
+* any accessibility or usability considerations
+* any important behaviour or usage rules
+
+The quality of the documentation will depend on the quality of the information provided.
+
+## Using the prompt
+
+After providing the recommended prompt, describe the component, pattern or template you want to document.
+
+Provide enough design context for the AI to understand the purpose, behaviour and intended use of the design. The more context provided, the more accurate and useful the generated documentation will be.
+
+For example:
+
+```text
+I need documentation for a Navigation Tile component.
+
+Purpose:
+The Navigation Tile helps users navigate to related content by presenting a destination with a title and short description.
+
+Where it is used:
+It is currently used on Theme pages to link users to Topic pages, but it may be reused in other contexts where users need additional information before following a link.
+
+Structure:
+The component contains:
+- A title that identifies the destination
+- A short description that provides additional context
+- A container that groups the content and provides interaction states
+
+Behaviour:
+- The entire tile acts as a single navigation target
+- The component has default, hover and focus states
+- Focus styling should remain visible when navigating with a keyboard
+
+When not to use:
+- Actions that trigger functionality
+- Promotional content
+- Links that do not require additional context
+
+Accessibility considerations:
+- Users should be able to understand where the link will take them before navigating
+- The component should support keyboard and pointer interaction
+
+Additional context:
+The visual design is available in Figma and should be treated as the source of truth for styling.
+```
+
+## Review AI-generated documentation
+
+AI-generated content should always be reviewed before it is committed.
+
+Check that the documentation:
+
+* accurately reflects the agreed design
+* follows the Documentation guidelines
+* uses consistent terminology
+* removes unnecessary repetition
+* does not include implementation guidance
+* does not duplicate visual specifications from Figma
+* does not introduce assumptions or incorrect information
+
+Treat AI-generated documentation as a first draft rather than a finished document.
+
+## Example information to provide
+
+The following information usually provides enough context for AI to produce useful documentation:
+
+* Component, pattern or template name
+* Purpose of the design
+* User problem it solves
+* Where it is used
+* When it should not be used
+* Structure and key elements
+* Supported variants or states
+* Behaviour and interaction rules
+* Accessibility considerations
+* Any research findings or design rationale
+
+Providing this information will generally produce better documentation than asking AI to generate content without context.
+
+## Remember
+
+AI can significantly reduce the time required to write documentation, but it cannot replace design expertise.
+
+Contributors are responsible for ensuring that published documentation accurately represents the design and remains consistent with the standards of the Interaction Design Library.
