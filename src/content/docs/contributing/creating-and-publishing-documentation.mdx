@@ -1,0 +1,209 @@
+---
+title: "Creating and publishing documentation"
+description: >
+  Guidance for creating, reviewing and publishing documentation in the ONS Website Design Library.
+---
+
+This guide explains how to create new documentation or make changes to existing documentation in the Website Design Library.
+
+All documentation changes should follow the [Documentation guidelines](/guidance/documentation) and go through the same review process. This helps us keep the Library consistent, maintainable and useful for the wider team.
+
+## Before you start
+
+Before making changes, make sure you:
+
+- understand the purpose of the documentation you are creating or changing
+- have checked whether similar guidance already exists in the Library
+- have reviewed the relevant Figma designs
+- have followed the [Documentation guidelines](/guidance/documentation)
+- have considered whether the change needs to be reviewed by other designers or teams
+
+If you are creating component documentation, you can also use the [Using AI to write documentation](/guidance/using-ai-to-write-documentation) guidance to help produce a first draft.
+
+## 1. Create or find the work item
+
+Work on the Website Design Library should be tracked through the [Website Design Library project](https://github.com/orgs/ONSdigital/projects/198).
+
+Create a new item if one does not already exist for the work.
+
+Add the item to the appropriate column:
+
+- **Backlog** — for work that has been identified but is not currently prioritised
+- **To do** — for work that has been prioritised and is ready to be picked up
+- **In progress** — when you are actively working on it
+
+If the work already has an existing item, use that rather than creating a duplicate.
+
+## 2. Create a working branch
+
+Once you have a work item, open it in GitHub.
+
+In the right-hand sidebar, find the **Development** section and select **Create a branch**.
+
+Follow the prompts to create the branch.
+
+GitHub will provide a command for switching to the new branch. Copy this command, as you will use it in your local repository.
+
+## 3. Switch to the branch in VS Code
+
+Open the Website Design Library repository in VS Code.
+
+Open the integrated terminal and run the command provided by GitHub to switch to your new branch.
+
+You can check which branch you are working on by running `git branch` in the terminal. Your working branch should be shown as the current branch.
+
+Do not make documentation changes directly on the `main` branch.
+
+## 4. Create or update the documentation
+
+Create new documentation in the appropriate location within the `content/docs` folder, or edit the existing documentation if you are making a change.
+
+Follow the established documentation structure and writing style.
+
+Keep the documentation focused on:
+
+- the purpose of the design
+- when it should be used
+- when it should not be used
+- how it behaves
+- how users interact with it
+- accessibility considerations
+- any other information that helps designers make appropriate design decisions
+
+Avoid duplicating information that is maintained elsewhere. For example, visual specifications should remain in Figma and content guidance should remain with the Content Design team.
+
+### Keep your branch up to date
+
+If you are working on a change for an extended period, regularly bring the latest changes from `main` into your working branch.
+
+This reduces the likelihood of conflicts when your work is ready to be merged.
+
+Do not wait until the end of a long piece of work to update your branch.
+
+## 5. Check your changes
+
+Before creating a Pull Request, review your changes carefully.
+
+Check that:
+
+- the documentation follows the [Documentation guidelines](/guidance/documentation)
+- the content is clear and concise
+- links work correctly
+- headings and page structure are consistent with other Library documentation
+- you have not included unnecessary visual specifications or implementation details
+- any relevant Figma links are included
+- there are no unnecessary changes to other files
+
+You should also run the Library locally and check that the documentation renders correctly.
+
+This is particularly important when working with MDX, as an incorrectly formatted tag, link or other piece of syntax can prevent the site from building.
+
+## 6. Commit your changes
+
+Once you are happy with your changes, commit them to your working branch.
+
+Use a descriptive commit message that explains what the commit contains.
+
+For example:
+
+`Add Navigation Tile documentation`
+
+or:
+
+`Update Page Banner usage guidance`
+
+Avoid generic commit messages such as:
+
+`Commit`
+
+`Changes`
+
+`Update`
+
+Descriptive commit messages make it easier to understand the history of the Library and identify which changes were made in a particular commit.
+
+## 7. Push your branch
+
+Push your working branch to GitHub.
+
+Your changes should remain on your working branch until they have been reviewed and approved.
+
+Do not push changes directly to `main`.
+
+## 8. Create a Pull Request
+
+Open the Website Design Library repository on GitHub.
+
+GitHub should display a notification indicating that your branch has recently been updated and offering to create a Pull Request.
+
+Select the option to create a Pull Request.
+
+Give the Pull Request a clear title that describes the change.
+
+In the description, provide enough information for reviewers to understand:
+
+- what has changed
+- why the change was made
+- any important design decisions
+- anything you would particularly like reviewers to consider
+
+Link the Pull Request to the relevant project item where appropriate.
+
+## 9. Request a review
+
+Add members of the Interaction Design team as reviewers.
+
+Documentation changes should be peer reviewed before they are merged into `main`.
+
+Reviewers should consider both the content and the design guidance, including whether:
+
+- the documentation accurately represents the design
+- the guidance is clear and useful
+- the component or pattern is being described at the appropriate level
+- unnecessary implementation or visual specification has been included
+- the terminology is consistent with the rest of the Library
+- the documentation follows the established writing style and structure
+
+Reviewers can approve the Pull Request or request changes.
+
+## 10. Make any requested changes
+
+If reviewers request changes, make the updates on the same working branch.
+
+Push the changes to GitHub and the Pull Request will update automatically.
+
+Continue the review process until the changes have been approved.
+
+If the review raises a question about the design itself rather than the documentation, resolve the design decision with the appropriate members of the Interaction Design team before merging.
+
+## 11. Merge the Pull Request
+
+Once the Pull Request has been approved, the approver should merge it into `main`.
+
+The working branch should then be closed or deleted.
+
+Only merge changes that have completed the required review process.
+
+## 12. Check the published documentation
+
+Merging the Pull Request will trigger the Library's build and deployment process.
+
+Once the deployment has completed, check the live Website Design Library to make sure the changes have published correctly.
+
+If there are any problems with the build or published documentation, investigate these before considering the work complete.
+
+## Keeping the Library healthy
+
+The Website Design Library is a shared resource, so contributing to it is not only about adding content. Changes should help maintain a consistent and sustainable source of design guidance.
+
+When making changes:
+
+- prefer clear and purposeful documentation over documenting every design detail
+- reuse existing guidance where appropriate
+- avoid creating duplicate components or guidance
+- keep documentation focused on design intent rather than implementation
+- use Figma as the source of truth for visual specifications
+- use descriptive commit messages
+- ask for peer review when a change affects an established design pattern or principle
+
+The aim is for the Library to remain useful as the website and its design evolve, without creating unnecessary documentation or maintenance overhead.
