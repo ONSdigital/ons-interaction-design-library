@@ -57,8 +57,27 @@ export default defineConfig({
 				{
 					label: 'Contributing',
 					items: [
-						{ autogenerate: { directory: 'contributing' }}
-					]
+						{
+							label: 'Overview',
+							slug: 'contributing/overview',
+						},
+						{
+							label: 'Getting started',
+							slug: 'contributing/getting-started',
+						},
+						{
+							label: 'Documentation guidelines',
+							slug: 'contributing/documentation-guidelines',
+						},
+						{
+							label: 'Using AI to write documentation',
+							slug: 'contributing/using-ai-to-write-documentation',
+						},
+						{
+							label: 'Creating and publishing documentation',
+							slug: 'contributing/creating-and-publishing-documentation',
+						},
+					],
 				},
 			],
 		}),
