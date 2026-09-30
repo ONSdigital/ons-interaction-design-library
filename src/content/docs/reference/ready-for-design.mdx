@@ -1,0 +1,404 @@
+---
+title: Ready for Design
+description: Ready for Design
+---
+
+Ready for Design is a checkpoint that ensures work has been sufficiently understood and defined before Interaction Design begins.
+
+It provides a shared understanding of:
+* The problem we are trying to solve
+* The users and their needs
+* The scope of the work
+* Relevant business and service rules
+* Known variations and exceptions
+* Content and data requirements
+* Dependencies
+* Outstanding decisions and their owners
+* What success looks like
+
+The purpose is not to eliminate uncertainty or prevent discovery.
+
+Instead, it is to ensure that fundamental product, service and business questions are identified and owned before Interaction Design is expected to produce a solution.
+
+## 1. Why do we need this?
+
+Design works best when designers have a clear understanding of the problem they are being asked to solve.
+
+When fundamental information is missing, Interaction Design can unintentionally become the place where product, business and service questions are discovered and resolved.
+
+This creates several risks:
+* Design work takes longer than expected.
+* Interaction Designers spend time investigating questions that should have been resolved earlier.
+* Different people may make different assumptions about how a service works.
+* Designs may need to be substantially changed when new information emerges.
+* Inconsistent business or service practices can become embedded in new design.
+* Designers can become responsible for resolving questions they do not own.
+* Delivery teams may begin implementation before important decisions have been made.
+
+Ready for Design aims to move these questions upstream where possible.
+
+## 2. Example: Dataset work
+
+The Dataset work provides an example of why this is important.
+
+During the development of the Dataset experience, Interaction Design uncovered significant variation in how datasets were structured and published.
+
+For example:
+* Some datasets use editions while other use versions in different ways
+* Some datasets have a single edition with versions representing corrections
+* Datasets can be ordered chronologically in some circumstances
+* Other datasets are grouped or ordered by geography
+* Some datasets can have multiple current or latest editions because data for England, Scotland, Wales and Northern Ireland is released separately
+* Approached to historical releases are not always consistent
+
+These differences have a direct impact on the design of navigation, presentation and reusable templates.
+
+The difficulty was not simply that information was missing from a design brief.
+
+Some of these questions had not been identified as questions that needed answering before Interaction Design began.
+
+As a result, Interaction Design became responsible for discovering how the service worked while simultaneously trying to design a consistent and reusable experience.
+
+This type of discovery is valuable, but it can significantly increase the complexity and duration of Interaction Design work.
+
+Ready for Design provides a mechanism for identifying this type of uncertainty earlier, where reasonably possible, and ensuring that unresolved questions have clear ownership.
+
+## 3. What Ready for Design means
+
+Ready for Design does not mean that everything is known or that discovery is finished.
+
+Interaction Design is an iterative process and new information will always emerge.
+
+Ready for Design does not mean:
+* Every requirement is completely defined
+* Every edge case has been resolved
+* The solution has already been designed
+* Design cannot challenge existing requirements
+* No further discovery will be necessary
+* All uncertainty has been removed
+
+Ready for Design does mean:
+* The problem is understood sufficiently to begin
+* The user need is understood
+* The scope is understood
+* Relevant business and service rules are documented
+* Important domain concepts and terminology are understood
+* Known variations and exceptions have been identified
+* Dependencies and constraints are understood
+* Outstanding decisions have identified owners
+* There is sufficient information for Interaction Design to make meaningful process
+
+There standard is therefore:
+> We know enough to start Design, and we know what we do not yet know.
+
+## 4. What needs to be established?
+
+The following areas should be considered before work is accepted into Design.
+
+### 4.1 User need
+
+We should understand:
+* Who are the users?
+* What are they trying to achieve?
+* What problem or need are we addressing?
+* What evidence do we have for this need?
+* What outcome are we trying to achieve for users?
+
+The relevant user needs and evidence should be documented or linked from the Jira item.
+
+### 4.2 Problem and outcome
+
+The problem should be clearly described without prescribing a design solution.
+
+We should understand:
+* What problem are we solving?
+* Why does it need to be solved?
+* What happens if we do nothing?
+* What does success look like?
+
+This helps ensure that Interaction Design is solving the underlying problem rather than simply implementing a predetermined solution.
+
+### 4.3 Scope
+
+The scope of the work should be sufficiently clear.
+
+This should include:
+* What is included
+* What is out of scope
+* Which services, journeys or content are affected
+* Known dependencies
+* Related work that may affect the outcome
+
+### 4.4 Business and service rules
+
+The service or business rules that could affect the user experience should be understood and documented.
+
+This may include:
+* Eligibility rules
+* Required information
+* Validation rules
+* Business processes
+* Rules governing different user types
+* Content requirements
+* Legal or policy requirements
+* Relationships between important concepts
+* Rules governing different states or outcomes
+
+Where relevant, important domain concepts should have agreed definitions.
+
+For example:
+What is a dataset?
+What is an edition
+What is a version?
+What is a release?
+How do these concepts relate to one another?
+
+Interaction Design should not be expected to infer fundamental service rules from existing interfaces.
+
+### 4.5 Known variations and exceptions
+
+Existing services may not always operate consistently.
+
+Before Design begins, we should identify known variations such as:
+* different publishing processes
+* different content structures
+* different data structures
+* different user journeys
+* legacy behaviour
+* geographic or organisational differences
+* legitimate exceptions to standard processes
+
+Where variations exist, we should understand whether the new service should:
+* accommodate the variation
+* standardise the variation
+* remove the variation
+* treat it as out of scope
+
+If this decision has not been made, the decision owner should be identified.
+
+### 4.6 Content and data
+
+Where relevant, we should understand:
+* what content is required
+* what data is required
+* where the data or content comes from
+* who owns it
+* whether realistic examples are available
+* whether there are known variations in structure or quality
+
+Design should not be expected to create a reusable solution without understanding significant variations in the content or data it needs to represent.
+
+### 4.7 Technical and service constraints
+
+Design does not need a technical solution before it starts.
+
+However, known constraints that could materially affect the design should be identified.
+
+These might include:
+* existing systems or services
+* technical dependencies
+* data availability
+* integration requirements
+* accessibility requirements
+* security or privacy constraints
+* platform limitations
+* implementation constraints
+
+### 4.8 User stories and acceptance criteria
+
+Where Agile delivery is being used, the relevant User Stories should be available and sufficiently understood.
+
+Acceptance criteria should describe what needs to be true for the work to be considered successful.
+
+User Stories and acceptance criteria should describe the required user or service outcome rather than prescribing a specific interface solution.
+
+### 4.9 Decisions and ownership
+
+Any outstanding decisions should be documented.
+
+For each significant unresolved question, identify:
+
+**Question:**
+What needs to be decided?
+
+**Impact:**
+Could the answer materially affect Design?
+
+**Owner:**
+Who is responsible for making the decision?
+
+**Required by:**
+When does the decision need to be made?
+
+This makes uncertainty visible rather than allowing it to become an implicit responsibility of the designer.
+
+## 5. The Ready for Design checkpoint
+
+Once the required information has been assembled, the work should be reviewed in a Design Readiness Check.
+
+The purpose of the meeting is not to design the solution.
+
+It is to answer:
+
+**Is this work sufficiently understood and defined for Design to begin?**
+
+The discussion should focus on:
+1. What problem are we solving?
+2. Who are the users?
+3. What do we know about their needs?
+4. What does the service currently do?
+5. What business and service rules apply?
+6. What variations or exceptions exist?
+7. What is in and out of scope?
+8. What dependencies and constraints exist?
+9. What decisions remain outstanding?
+10. Could any of those decisions materially affect Design?
+
+## 6. Outcomes of the checkpoint
+
+The checkpoint should have three possible outcomes.
+
+🟢 **Ready for Design**
+The work is sufficiently understood and can enter the Design process.
+
+🟠 **Ready with actions**
+The work can begin, but there are minor outstanding actions that have clear owners and are not expected to prevent meaningful Design progress.
+
+🔴 **Discovery required**
+Fundamental questions remain unresolved and could materially affect the Design.
+
+The work should not be considered ready until those questions have been addressed or an explicit decision has been made to proceed with the known uncertainty.
+
+## 7. What happens when Design discovers something new?
+
+Ready for Design is not intended to prevent Design from discovering new information.
+
+New information is expected.
+
+However, there is an important distinction between normal design discovery and discovering a fundamental unresolved service or product question.
+
+For example:
+
+**Normal design discovery:**
+
+User research shows that people misunderstand an existing label.
+
+Design can investigate, test and iterate on the solution.
+
+**Fundamental service discovery:**
+
+Design discovers that different publishing teams use the concepts of “edition” and “version” differently.
+
+This may require a product or service decision before the design can meaningfully progress.
+
+Where Design uncovers a fundamental question, the work should be assessed.
+
+If the question could materially affect the direction, scope or validity of the design:
+
+1. **Identify**
+Document the question and what prompted it.
+
+2. **Assess**
+Determine whether it is a design question or a wider product, business, service, content or technical question.
+
+3. **Pause where necessary**
+If the question is fundamental, the Design work should move to Blocked / Discovery Required.
+
+4. **Assign ownership**
+The appropriate Product, Business, Service, Content or Technical owner should take responsibility for resolving the question.
+
+Design can contribute to this discovery, but should not automatically become the owner of the underlying service decision.
+
+5. **Resolve**
+The decision, rationale and any resulting changes to requirements should be documented.
+
+6. **Return to Design**
+Design resumes once there is sufficient clarity to continue.
+
+This creates a feedback loop rather than treating Ready for Design as a one-way gate.
+
+## 8. Jira implementation
+
+A Ready for Design Jira template should provide a consistent way of capturing the information required for the checkpoint.
+
+The template should cover:
+* User need
+* Problem
+* Scope
+* User Stories
+* Acceptance criteria
+* Business and service rules
+* Known variations
+* Content and data
+* Technical constraints
+* Dependencies
+* Outstanding decisions
+* Decision owners
+
+Not every field will apply to every piece of work.
+
+The Jira template should therefore distinguish between information that is always required and information that is required where applicable.
+
+Completion of the template does not automatically mean that work is ready.
+
+The Design Readiness Check provides an opportunity to challenge assumptions, identify gaps and confirm that the appropriate people agree that the work is ready.
+
+## 9. Where this applies
+
+Ready for Design should apply to work entering the Design process where unresolved product, service, content, business or technical questions could materially affect the outcome.
+
+This can include:
+* Dataset experiences
+* Findability
+* Content work
+* New features and journeys
+* Changes to existing services
+* Reusable templates and patterns
+* Cross-service experiences
+* Work involving multiple teams or publishing processes
+* Other work where Design is expected to make significant user experience decisions
+
+The process should be proportionate to the complexity and risk of the work.
+
+A small change should not require the same level of discovery as a cross-service transformation.
+
+## 10. Principles
+
+**Understand before designing**
+Design should begin with a shared understanding of the problem, users and service.
+
+**Make uncertainty visible**
+Unknowns are acceptable. Hidden unknowns are a risk.
+
+**Don't make Design the default owner of unresolved service questions**
+Design should contribute to discovery without automatically inheriting ownership of product, business or service decisions.
+
+**Discovery can continue during Design**
+Ready for Design is not a claim that everything is known.
+
+**Stop when necessary**
+If Design uncovers a fundamental unresolved question, it is appropriate to pause and resolve it rather than designing around an assumption.
+
+**Keep it proportionate**
+The process should support delivery, not become a barrier to it.
+
+## 11. What good looks like
+
+A successful Ready for Design process means that when a designer begins work, they can answer:
+* What problem are we solving?
+* Who are we solving it for?
+* What do we know about their needs?
+* How does the service work?
+* What rules and constraints do I need to understand?
+* What variations and exceptions do I need to account for?
+* What decisions have already been made?
+* What remains uncertain?
+* Who owns those uncertainties?
+
+And most importantly:
+
+**What am I being asked to solve through Design, and what has already been established before I start?**
+
+The goal is not to make Design predictable.
+
+The goal is to ensure that Design is spending its time solving design problems, rather than discovering fundamental product and service requirements by accident.
