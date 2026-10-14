@@ -13,7 +13,7 @@ import FigmaDesign from '../../components/FigmaDesign.astro'; */}
 
 The In-page table of contents provides a persistent list of links that allows users to navigate quickly between different sections of a single page. By reflecting the page’s heading structure, it offers a clear mental map of the content and reduces the effort required to find specific information.
 
-On this variant as users scroll through long-form content, the table of contents remains visible, providing constant context of their current location within the page hierarchy. Below the medium break point (740 px) screen width the table will stack on above the body contents as per the standard variant.
+In this variant, as users scroll through long-form content, the table of contents remains visible, providing constant context of their location within the page hierarchy. Below the medium break point (740 px) screen width the table will stack on above the body contents as per the standard variant.
 
 ## Purpose and goals
 
@@ -31,7 +31,7 @@ It reduces the physical effort of scrolling on long pages, especially for mobile
 
 ### Consistency
 
-It provides a standard navigation pattern across statistical articles and other content pages, making the ONS site easier to navigate and discover. Used constantly it will aid users mental modal when using the site.
+It provides a standard navigation pattern across statistical articles and other content pages, making the ONS site easier to navigate and discover. Used consistently across the site, it can help users develop a clearer mental model of navigation and content structure.
 
 ## When to use this component
 
@@ -60,7 +60,7 @@ See Table of contents (with section numbering) for full implementation rules inc
 
 Use a weighted, high-contrast underline. 
 Research shows subtle highlights are often missed by users with low vision or those in high-glare environments. 
-For highlight use : #003c57 with 10%
+For highlight use : Night Blue #003c57 with 10% tint
 
 ## Table of contents with section numbering
 Use the numbered table of contents for comprehensive statistical article and methodology content types - to help users navigate and understand the volume of information.
@@ -88,11 +88,16 @@ The exception: When the user hits the footer, the very last section must remain 
 - Behaviour is consistent scrolling both up and down.
 
 
-## Technical Limitations
+## Behaviour in long-form content
 
-This component uses JavaScript to calculate the height of the table of contents relative to the user's viewport to ensure the majority of users get the sticky version which worked well in usability testing. This also ensures no users would experience the poor ux of having table of contents links hidden below the fold and users with javascript disabled have a funtional table of contents.
-- **Sticky logic:** If the component height is less than the viewport height, it becomes "sticky."
-- **Default state:** If the component is taller than the viewport, it remains fixed in its flow and scrolls up with the body content. This is to avoid a situation where users cannot reach the bottom links in the table of contents, which would result in a poor user experience.
+The In-page table of contents adapts to available viewport space to support navigation through long-form content.
+
+Where sufficient space is available, the table of contents remains visible alongside the page content.
+
+Where navigation items exceed the available viewport height, a scrollable variant may be used to ensure all links remain accessible.
+
+This approach helps maintain orientation and access to navigation without requiring users to scroll through large amounts of content.
+
 
 ## Behaviour and usage rules
 
@@ -110,70 +115,55 @@ Because of the sticky limitations, a variant of the Back to top component must b
 This is recomended design for mobile.
   **Note:** This dual-navigation approach requires usability testing to confirm that the "Back to top" and "Sticky TOC" work harmoniously for the user.
 
-### Scrollbar
+### Scrollable variant
 
-- The leftcol ToC will scroll independently of the main page content. 
-- A scrollbar will appear for Stats Articles that have a lot of content eg: Crime in England & Wales which has 23 sections.
-- The scrollbar should only appear when the screen size is reduced or when there are more sections than the viewport. Otherwise the ToC should remain sticky as is.
-- Scrollbar is disabled on mobile where content stacks 100% width
+In some cases, the number of navigation items within the table of contents may exceed the available viewport height.
 
-## Scrollbar implementation details
+When this occurs, a scrollable variant may be used to ensure all navigation items remain accessible to users.
 
-- A new scrollable wrapper (leftcol-scroll) has been added to the HTML inside the sticky left column.
+This is most likely to occur on long-form content types such as statistical articles, methodology pages and publications containing a large number of sections.
 
-This wrapper contains:
+The scrollable variant helps users:
 
-- The Table of Contents (ToC)
-- Print button (ONS DS component)
-- Explore data block containing the important link 'View all data used in this article' (NOTE: there is a Jira ticket in progress to move the Explore data block outside the scrollbar wrapper)
+- access navigation items that would otherwise fall below the fold
+- maintain awareness of page structure while reading
+- move efficiently between sections of content
+- retain orientation within long documents
 
-All three elements now scroll together within the sticky left column, while the main page scroll remains independent.
+The scrollable variant should rely on native browser scrolling behaviour rather than introducing custom scrollbar patterns. Scrollbar appearance is determined by the user's browser and operating system.
 
-The sticky behaviour is applied at the column level; the scroll behaviour is applied to the inner wrapper. This avoids nested scroll traps and mirrors GOVUKs approach.
+## When to use the scrollable variant
+
+Use the scrollable variant when:
+
+- the table of contents exceeds the available viewport height
+- navigation items become difficult to access
+- users cannot easily discover links located below the fold
+- the page contains a large number of sections
+
+## When not to use the scrollable variant
+
+Do not use the scrollable variant when:
+
+- all navigation items are visible within the available space
+- the content is short and unlikely to exceed the viewport height
+- a standard table of contents provides access to all sections
 
 ## Accessibility considerations
 
-The scrollable region uses native browser/OS scrollbars (no custom styling, no JavaScript).
-This ensures:
-- compatibility with macOS/Windows scrollbar preferences
-- correct behaviour in high‑contrast and forced‑colour modes
-- predictable keyboard navigation (Tab → focusable items; arrow keys → scroll region)
-- screen readers correctly announce the ToC and related content as navigation/aside landmarks
+The scrollable variant should rely on native browser scrolling behaviour.
 
-## Mobile considerations
+This supports:
 
-- On mobile breakpoints, the sticky left column collapses into the standard ONS mobile layout.
-- The ToC appears in its usual mobile position (above the article content), and the scrollable behaviour is not applied — matching GOVUK’s mobile pattern.
-- The print button and related content follow the mobile stacking order and remain accessible.
+- operating system accessibility settings
+- high contrast and forced colour modes
+- keyboard navigation
+- screen reader expectations
+- user-defined input preferences
+- platform-specific interaction methods, including mouse, trackpad and touch input
 
-## CSS for scrollbar
+Native browser behaviour should be preferred over custom scrollbar styling wherever possible.
 
-.leftcol-scroll {
-  overflow-y: auto;
-  max-height: calc(100vh - 12rem);
-  padding-right: 1.25rem;
-  border-bottom: 1px solid var(--ons-color-grey-15);
-}
-
-/* Disable left-column scroll on mobile using ONS 'm' breakpoint = 768px */
-@media (max-width: 48rem) {
-  .leftcol-scroll {
-    overflow: visible;
-    max-height: none;
-    padding-right: 0;
-  }
-}
-
-## Paul test
-
-.ons-list--toc {
-  padding-left: 2rem;
-}
-
-## Behaviour notes
-Scrollbar visibility varies on macOS depending on system settings, input method, and layout timing.
-This is expected native behaviour and matches GOVUK’s implementation.
-No JavaScript is used to control scrollbars or sticky positioning.
 
 
 ## Figma implementation guidance
