@@ -36,3 +36,13 @@ a[aria-current="page"] {
   border-radius: 4px;
   font-size: 14px;
 }
+
+[data-has-hero] .page {
+  background: linear-gradient(180deg, rgba(199, 223, 253, 1) 0%, rgba(255, 255, 255, 1) 100%) 0 0 / 100% 1000px no-repeat;
+}
+
+[data-has-hero] header {
+    backdrop-filter: blur(16px);
+    background-color: #0000;
+    border-bottom: 1px solid #0000;
+}
