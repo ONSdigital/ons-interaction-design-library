@@ -70,6 +70,10 @@ export default defineConfig({
 							slug: 'contributing/documentation-guidelines',
 						},
 						{
+							label: 'Creating a Copilot AI Agent',
+							slug: 'contributing/creating-a-copilot-ai-agent',
+						},
+						{
 							label: 'Using AI to write documentation',
 							slug: 'contributing/using-ai-to-write-documentation',
 						},

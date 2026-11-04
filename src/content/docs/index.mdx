@@ -18,10 +18,20 @@ hero:
       variant: minimal
 ---
 
+import { CardGrid, Card} from '@astrojs/starlight/components';
+
 ___
+
 
 ## Welcome to the Website Design Library
 
 The Website Design Library is the single source of truth for components, patterns and templates designed specifically for the ONS website. It brings together the guidance and design decisions that help teams create consistent, accessible and user-focused experiences.
 
 We're continuing to build and improve the library, adding new components, patterns, and templates as the website evolves. We'll also be introducing release notes, a roadmap and further guidance to help teams stay informed about what's changing and what's coming next.
+
+<CardGrid stagger>
+  <Card title="Get started" icon="open-book">
+    <p>Learn how to use the Website Design Library and get started with the components, patterns and templates.</p>
+    <a href="/components/figure" class="card-link">Get started</a>
+  </Card>
+</CardGrid>
