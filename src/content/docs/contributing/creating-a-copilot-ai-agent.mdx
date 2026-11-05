@@ -2,6 +2,7 @@
 title: "Creating a Copilot AI Agent"
 description: "How to create a personal Copilot Agent that helps produce consistent Website Design Library documentation"
 ---
+import { Aside } from '@astrojs/starlight/components';
 
 This guide explains how to create a personal Copilot Agent that helps Interaction Designers produce consistent, design-first documentation for the Website Design Library.
 
@@ -168,15 +169,17 @@ Before returning the documentation, check that it:
 Wait for the contributor to describe the component, pattern or template before producing documentation.
 ```
 
-### Do not use Suggest improvements
+<Aside type="caution">
+    ### Do not use Suggest improvements
 
-Do not select **Suggest improvements** for the Instructions.
+    Do not select **Suggest improvements** for the Instructions.
 
-To ensure that everyone in the Interaction Design team creates an Agent using the same configuration, copy the approved instructions exactly as provided in this guide.
+    To ensure that everyone in the Interaction Design team creates an Agent using the same configuration, copy the approved instructions exactly as provided in this guide.
 
-Using AI-generated improvements could introduce differences between individual Agents and make their behaviour and documentation output less consistent.
+    Using AI-generated improvements could introduce differences between individual Agents and make their behaviour and documentation output less consistent.
 
-Improvements to the Agent instructions should instead be agreed by the team, tested and incorporated into the shared instructions in this guide. Contributors can then update their personal Agents using the same agreed version.
+    Improvements to the Agent instructions should instead be agreed by the team, tested and incorporated into the shared instructions in this guide. Contributors can then update their personal Agents using the same agreed version.
+</Aside>
 
 ## Step 5: Leave Skills empty
 
