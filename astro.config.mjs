@@ -64,14 +64,6 @@ export default defineConfig({
 									label: 'Structure and organisation',
 									slug: 'contributing/component-library/structure-and-organisation',
 								},
-								{
-									label: 'Making changes to the library',
-									slug: 'contributing/component-library/making-changes-to-the-library',
-								},
-								{
-									label: 'Building components',
-									slug: 'contributing/component-library/building-components',
-								}
 							]
 						},
 						{
