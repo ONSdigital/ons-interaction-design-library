@@ -1,0 +1,200 @@
+---
+title: "Structure and organisation"
+description: "How to structure and organise the component library for consistency and maintainability"
+---
+import { Aside } from '@astrojs/starlight/components';
+
+The Website Design Library is organised so that designers can understand **what something is, where it belongs, and how it relates to the rest of the library**.
+
+A consistent structure makes the library easier to navigate and maintain as it grows. It also helps prevent components being created at the wrong level or exposing unnecessary complexity to designers using the library.
+
+The library follows four broad levels:
+
+**Foundations** → **Building Blocks** → **Components** → **Templates**
+
+<Aside>
+    #### How this relates to Figma components
+
+    The categories above describe **how we organise and use things within the Website Design Library**. They do not necessarily describe different object types in Figma.
+
+    In Figma:
+    * **Building Blocks** may be created as components because they need to be reused within other components.
+    * **Components** are the reusable interface elements we expose for designers to use.
+    * **Templates** may also be created as components where this makes them easier to reuse and maintain.
+
+    So, although Building Blocks, Components and Templates can all technically be **Figma components**, they have different purposes within the Website Design Library.
+
+    When this guidance refers to **Components** with a capital C, it means the designer-facing **Components area of our library**, rather than every object that happens to be a component in Figma.
+</Aside>
+
+Each level builds on the one before it.
+
+## Foundations
+
+Foundations contain the shared design decisions that underpin everything else in the library.
+
+This includes things such as:
+* colour
+* typography
+* spacing
+* layout
+* iconography
+* primitives and design tokens
+
+Foundations are not components that designers place directly onto a page. Instead, they provide the shared values and rules that components and templates use.
+
+For example, a component may use spacing and colour tokens defined within the Foundations rather than defining its own values.
+
+## Building Blocks
+
+Building Blocks are reusable pieces that help us construct larger components, but are **not normally things a designer needs to choose independently when designing a page**.
+
+They exist primarily to make the library easier to build, maintain and update.
+
+For example, several components may share the same underlying link, icon, container or structural element. Rather than recreating that element within every component, it can exist once as a Building Block and be reused.
+
+#### Building Blocks are implementation details
+
+A useful principle is:
+
+> **Expose components at the level designers need to make design decisions.**
+
+Designers should not need to understand how a component has been assembled internally before they can use it.
+
+If something only exists to construct another component, consider whether it belongs in Building Blocks rather than alongside the components designers are expected to use.
+
+## Components
+
+Components are the reusable interface elements that designers use when creating designs.
+
+These should represent meaningful design choices.
+
+Examples might include:
+* Site Header
+* Button
+* Navigation Tile
+* Table of Contents
+* File Download
+
+A designer looking for a component should be able to find the thing they recognise from the Website Design Library without needing to understand its internal construction.
+
+Components may themselves contain Building Blocks or other Components.
+
+#### Organise around use, not construction
+
+The way something is constructed in Figma should not determine how it is presented to designers.
+
+For example, a Site Header might contain several nested components internally. A designer wanting to add a Site Header should not need to find and assemble those pieces individually.
+
+They should be able to use the **Site Header Component** and configure the options that are relevant to their design.
+
+This keeps the library focused on the decisions designers actually need to make.
+
+## Templates
+
+Templates show how components, content and layout come together to create larger page structures.
+
+Examples could include:
+* Statistical Article
+* Topic Page
+* Theme Page
+* Dataset Page
+
+Templates may combine multiple Components and Building Blocks, while applying the relevant Foundations.
+
+They provide a useful starting point for designing a recognised page type, rather than requiring designers to assemble that page from individual components each time.
+
+#### Templates and finished designs
+
+Templates provide reusable starting points for recognised page types. They show how Foundations, Building Blocks and Components come together to create a consistent page structure.
+
+A Template should not represent a specific live page or piece of content.
+
+When a Template is used to create a design for a real piece of work, that design should live in the appropriate Figma design file, rather than in the Website Design Library.
+
+For example, the library might contain a **Statistical Article Template** showing the expected structure of a statistical article. A designer can use that Template as the starting point for a specific statistical article, replacing the example content with real content and making the design decisions needed for that piece of work.
+
+The resulting design belongs to the project or product work. It does not become part of the library.
+
+This helps maintain a clear separation between:
+* **Library assets**: reusable things we maintain for designers to use
+* **Design work**: specific applications of those assets to real content and user needs
+
+The library should provide the **building blocks and starting points for design**, rather than becoming a collection of finished designs.
+
+## Deciding where something belongs
+
+When adding something to the library, start by asking:
+
+**Is this a design value or rule?**
+It probably belongs in **Foundations**.
+
+**Is this mainly used to construct other components?**
+It probably belongs in **Building Blocks**.
+
+**Is this something a designer would deliberately choose to place or configure?**
+It probably belongs in **Components**.
+
+**Does this bring components together into a recognised page or larger layout?**
+It probably belongs in **Templates**.
+
+**Is this a design for a specific real page, service or piece of content?**
+It belongs in the relevant **design file**, not the Website Design Library.
+
+Not everything will fit perfectly into these definitions. When something could sit at more than one level, think about how designers need to use it, rather than only how it has been constructed.
+
+## Pages and sections in Figma
+
+Use **pages** for the major areas of the library.
+
+Within a page, use **sections** to organise related content and make the page easier to navigate.
+
+Avoid creating a new page simply because something needs grouping. A section is usually sufficient when the content still belongs to the same part of the library.
+
+For example, the Components page can contain individual sections for different component groups without turning every group into a separate Figma page.
+
+The aim is to keep the overall library structure **shallow and predictable**.
+
+## Published and unpublished components
+
+Not everything required to build the Figma library needs to be exposed to designers using it.
+
+Components that designers are expected to use should be published and made discoverable through the library.
+
+Internal components that exist only to construct or manage other components should normally remain unpublished where possible.
+
+This helps prevent designers from accidentally using an internal Building Block when a higher-level Component should be used instead.
+
+A useful test is:
+
+> **Would a designer ever need to deliberately choose this item when creating a design?**
+
+If the answer is no, it probably does not need to be exposed as a consumable library component.
+
+## Naming
+
+Names should describe **what something is**, rather than how it happens to have been constructed.
+
+Use consistent terminology across:
+* the Figma component library
+* Website Design Library documentation
+* design discussions
+* Jira stories and other supporting work
+
+Where a documented Component is called **Navigation Tile**, for example, designers should be able to search the Figma library for **Navigation Tile** rather than needing to know a different Figma-specific name.
+
+Avoid adding unnecessary technical detail to component names where the library structure already provides that context.
+
+## Keep the library understandable
+
+As the library grows, organisation should help designers find what they need without requiring them to understand how the whole system works.
+
+Before introducing another level, page, category or abstraction, ask:
+
+> **Does this make the library easier for somebody else to understand and use?**
+
+If it mainly reflects how the library was built rather than how somebody needs to use it, it may not need to be exposed.
+
+The goal is not to create the cleverest possible Figma architecture.
+
+**The goal is to create a library that designers can understand, use and contribute to confidently.**

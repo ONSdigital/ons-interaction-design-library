@@ -58,29 +58,43 @@ export default defineConfig({
 					label: 'Contributing',
 					items: [
 						{
-							label: 'Overview',
-							slug: 'contributing/overview',
+							label: 'Figma component library',
+							items: [
+								{
+									label: 'Structure and organisation',
+									slug: 'contributing/component-library/structure-and-organisation',
+								},
+							]
 						},
 						{
-							label: 'Getting started',
-							slug: 'contributing/getting-started',
-						},
-						{
-							label: 'Documentation guidelines',
-							slug: 'contributing/documentation-guidelines',
-						},
-						{
-							label: 'Creating a Copilot AI Agent',
-							slug: 'contributing/creating-a-copilot-ai-agent',
-						},
-						{
-							label: 'Using AI to write documentation',
-							slug: 'contributing/using-ai-to-write-documentation',
-						},
-						{
-							label: 'Creating and publishing documentation',
-							slug: 'contributing/creating-and-publishing-documentation',
-						},
+							label: 'Documentation',
+							items: [
+								{
+									label: 'Overview',
+									slug: 'contributing/documentation/overview',
+								},
+								{
+									label: 'Getting started',
+									slug: 'contributing/documentation/getting-started',
+								},
+								{
+									label: 'Documentation guidelines',
+									slug: 'contributing/documentation/documentation-guidelines',
+								},
+								{
+									label: 'Creating a Copilot AI Agent',
+									slug: 'contributing/documentation/creating-a-copilot-ai-agent',
+								},
+								{
+									label: 'Using AI to write documentation',
+									slug: 'contributing/documentation/using-ai-to-write-documentation',
+								},
+								{
+									label: 'Creating and publishing documentation',
+									slug: 'contributing/documentation/creating-and-publishing-documentation',
+								},
+							]
+						}	
 					],
 				},
 			],
